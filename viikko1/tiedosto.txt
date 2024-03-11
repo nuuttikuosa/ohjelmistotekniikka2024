@@ -1,1 +1,64 @@
 kurjaa
+OPINTOJAKSON TIEDOT
+Esitiedot
+Esitietovaatimuksena ovat Ohjelmoinnin jatkokurssi , Tietokantojen perusteet, Tietokannat ja web-ohjelmointi tai vastaavat tiedot sekä Tietokone työvälineenä.
+
+Osaamistavoitteet
+Kurssin suoritettuasi
+
+tunnet ohjelmistotuotantoprosessin vaiheet,
+olet tietoinen vesiputousmallin ja ketterän ohjelmistotuotannon luonteesta,
+osaat soveltaa versionhallintaa osana ohjelmistokehitystä,
+osaat soveltaa UML-mallinnustekniikkaa vaatimusmäärittelyssä ja ohjelmiston suunnittelussa tarkoituksenmukaisella tavalla
+tunnet ohjelmiston testauksen eri vaiheet
+osaat soveltaa automatisoitua testausta yksinkertaisissa ohjelmistoprojekteissa
+tunnet tärkeimpiä ohjelmiston suunnitteluperiaatteita ja osaa soveltaa niitä yksinkertaisissa projekteissa
+Asiasisältö
+Kurssilla tutustutaan eräisiin keskeisiin ohjelmistojen suunnitteluperiaatteisiin, ohjelmistotuotantoprosessin vaiheisiin, versionhallintaan, testaukseen sekä ohjelmiston rakenteen ja toiminnan mallintamiseen UML-kielen avulla. Opittua sovelletaan harjoitustyötä laadittaessa.
+
+Oppimateriaalit
+Opettajan laatima verkkomateriaali
+
+Oheiskirjallisuus:
+
+Larman, C.: Applying UML and Patterns: An Introduction to Object-Oriented Analysis and Design and Iterative Development (3rd Edition) Prentice Hall 2004
+Fowler M.: UML Distilled: A Brief Guide to the Standard Object Modeling Language. Kolmas painos.
+Lisätiedot
+Suoritustavat
+Kurssiin kuuluu aloitusluento, harjoituksia ja harjoitustyö. Harjoituksia ja harjoitustyötä voidaan tehdä itsenäisesti, pienryhmässä tai opettajan ohjaamassa tilaisuudessa.
+
+
+Arviointimenetelmät ja -kriteerit
+
+Kurssin arvostelu perustuu harjoitustehtäviin ja harjoitustyöhön.
+
+Arviointiasteikko on 1-5.
+
+
+Oppimista tukevat aktiviteetit ja opetusmenetelmät
+Opiskelja tutustuu kurssin aiheisiin perehtymällä itsenäisesti kurssimateriaaliin ja oheislukemistoon. Opiskelija syventää osaamistaan tekemällä harjoitustehtäviä sekä harjoitustyön, mitä tuetaan ohjatuilla harjoitustilaisuuksilla.
+
+
+
+Kohderyhmä
+Opintojakso sopii kaikille tietojenkäsittelytieteen opinnoista kiinnostuneille. Kurssilla opitaan erityisesti käytännön ohjelmistotuotannossa hyödyllisiä asioita.
+
+
+Järjestämisajankohta opetusperiodin tarkkuudella
+Kurssi järjestetään syyslukukaudella, periodissa 2 ja kevätlukukaudella periodissa 4.
+
+
+Suositeltava suoritusajankohta tai -vaihe
+Tietojenkäsittelytieteen kandiohjelman opiskelijat: Ensimmäisen opiskeluvuoden kevät, kurssien Ohjelmoinnin jatkokurssi, sekä Tietokantojen perusteet jälkeen.
+
+
+Opintokokonaisuus
+Tietojenkäsittelytieteen kandiohjelman aineopintokokonaisuuteen kuuluva kurssi.
+
+
+Vanhentuminen
+Normaalit säännöt.
+
+
+Mahdolliset opetuskielet
+Kurssimateriaali suomeksi
