@@ -19,14 +19,7 @@ Kurssilla tutustutaan eräisiin keskeisiin ohjelmistojen suunnitteluperiaatteisi
 Oppimateriaalit
 Opettajan laatima verkkomateriaali
 
-Oheiskirjallisuus:
-
-Larman, C.: Applying UML and Patterns: An Introduction to Object-Oriented Analysis and Design and Iterative Development (3rd Edition) Prentice Hall 2004
-Fowler M.: UML Distilled: A Brief Guide to the Standard Object Modeling Language. Kolmas painos.
-Lisätiedot
-Suoritustavat
-Kurssiin kuuluu aloitusluento, harjoituksia ja harjoitustyö. Harjoituksia ja harjoitustyötä voidaan tehdä itsenäisesti, pienryhmässä tai opettajan ohjaamassa tilaisuudessa.
-
+Harjoitellaan GIT käyttöä
 
 Arviointimenetelmät ja -kriteerit
 
