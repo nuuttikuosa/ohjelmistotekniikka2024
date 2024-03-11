@@ -1,4 +1,5 @@
 kurjaa
+
 OPINTOJAKSON TIEDOT
 Esitiedot
 Esitietovaatimuksena ovat Ohjelmoinnin jatkokurssi , Tietokantojen perusteet, Tietokannat ja web-ohjelmointi tai vastaavat tiedot sekä Tietokone työvälineenä.
