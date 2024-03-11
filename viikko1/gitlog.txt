@@ -20,7 +20,7 @@ Date:   Mon Mar 11 23:40:42 2024 +0200
  3 files changed, 3 insertions(+)
 
 commit ebe6cc044b6c8ab0ac94d4fdc6ee6342267879f7
-Author: Nuutti Kuosa <nuutti.kuosa@helsinki.fi>
+
 Date:   Mon Mar 11 22:55:28 2024 +0200
 
     -p option harjoittelua
