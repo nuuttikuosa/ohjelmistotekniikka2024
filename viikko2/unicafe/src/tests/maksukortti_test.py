@@ -31,3 +31,6 @@ class TestMaksukortti(unittest.TestCase):
 
     def test_saldo_on_rahaa(self):
         self.assertEqual(self.maksukortti.ota_rahaa(1500), False)
+
+    def test_onko_string_tuloste_oikein(self):
+        self.assertEqual(str(self.maksukortti), "Kortilla on rahaa 10.00 euroa")
