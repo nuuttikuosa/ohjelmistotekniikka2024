@@ -2,13 +2,13 @@
     "python.testing.unittestArgs": [
         "-v",
         "-s",
-        "./src",
+        "./unicafe",
         "-p",
-        "test_*.py"
+        "*_test.py"
     ],
     "python.testing.pytestEnabled": true,
     "python.testing.unittestEnabled": false,
     "python.testing.pytestArgs": [
-        "src"
+        "unicafe"
     ]
 }
