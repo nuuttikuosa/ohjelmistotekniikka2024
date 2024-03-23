@@ -29,5 +29,5 @@ The application has a graphical user interface where user can see graphical card
 
 ## Possible development ideas for the future releases
 - The application will propose the best possible play:
-which cards to keep and which to discard. This depends on the payout table. e.g. if Royal Flush has a very high pay-out then drawing it whit with one card can be profitable. Or if flush has a very high payout, some 2 card flush draws might be profitable.
+which cards to keep and which to discard. This depends on the payout table. e.g. if Royal Flush has a very high pay-out then drawing it with one card can be profitable. Or if flush has a very high payout, some 2 card flush draws might be profitable.
     
