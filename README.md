@@ -9,3 +9,7 @@ Vaatimukset: **tarkentuvat**
 [komentorivi](https://github.com/nuuttikuosa/ohjelmistotekniikka2024/blob/main/viikko1/komentorivi.txt)
 [loki](https://github.com/nuuttikuosa/ohjelmistotekniikka2024/blob/main/viikko1/gitlog.txt)
 
+### Viikko 2 - unit testaus pyydetyt tiedostot hakemistossa viikko2. testikattavus 100%
+### tehty ohjeen mukaisesti
+[vaatimusmäärittely](https://github.com/nuuttikuosa/ohjelmistotekniikka2024/blob/main/videopoker/documentation/requirements.md)
+[työaikakirjanpito](https://github.com/nuuttikuosa/ohjelmistotekniikka2024/blob/main/videopoker/documentation/working_hours.md)
