@@ -1,0 +1,18 @@
+[tool.poetry]
+name = "videopoker"
+version = "0.1.0"
+description = "My videopoker application"
+authors = ["Nuutti Kuosa <nuutti.kuosa@helsinki.fi>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.8"
+
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^8.1.1"
+coverage = "^7.4.4"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
