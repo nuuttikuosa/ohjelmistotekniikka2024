@@ -1,8 +1,8 @@
 # Requirements for video poker application
 
-## Purpose of application 
+## Purpose of the application 
 
-With the video poker application user can analyze different video pokers and their pay-out tables and calculate their return to player. User can also play those video pokers.
+With the video poker application user can analyze different video pokers and their pay-out tables and calculate their return to the player. User can also play those video pokers.
 In future releases application will recommend optimal play. The motivation for the application is that there are progressive video pokers 
 in some casinos and when a progressive pot is high enough then the game can have a positive expected value like the lotto can have a positive EV, 
 if no one has won the jackpot for a long time. 
@@ -29,4 +29,5 @@ The application has a graphical user interface where user can see graphical card
 
 ## Possible development ideas for the future releases
 - The application will propose the best possible play:
+
 which cards to keep and which to discard. This depends on the payout table. e.g. if Royal Flush has a very high pay-out then drawing it whit with one card can be profitable. Or if flush has a very high payout, some 2 card flush draws might be profitable.
