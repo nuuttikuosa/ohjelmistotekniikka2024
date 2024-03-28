@@ -8,7 +8,7 @@ class Deck:
         self.cards.append(card)
     
     def number_of_cards(self):
-        return self.cards.length()
+        return len(self.cards)
     
     def get_card(self, index):
         return self.cards.pop(index)
