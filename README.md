@@ -7,7 +7,7 @@ Ohjelma on testattu Pythonon 3.8. Oletettavasti ei toimi vanhemmilla versioilla.
 
 ## Dokumentaatio
 - [Vaatimusmäärittely](./videopoker/documentation/requirements.md)
-- [Työaikakirjanpito](./videopoker/documentantion/working_hours.md)
+- [Työaikakirjanpito](./videopoker/documentation/working_hours.md)
 - [Changelog](./videopoker/documentation/changelog.md)
 
 
