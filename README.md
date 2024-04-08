@@ -18,11 +18,11 @@ Ohjelma on testattu Pythonon 3.8. Oletettavasti ei toimi vanhemmilla versioilla.
 poetry install
 ```
 2. Käynnistä sovellus komennolla:
-
 ```bash
 poetry run invoke start
 ...
 
+## Komentorivitoiminnot
 
 ### Testaus
 
