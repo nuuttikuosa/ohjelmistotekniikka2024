@@ -1,6 +1,14 @@
-# ohjelmistotekniikka2024
-## harjoitustyö - videopokeri
-Vaatimukset: **tarkentuvat**
+# Videopokeri
+
+Tämän sovelluksen avulla voi pelata videopokeria. Ohjelma on kirjoitettu Pytholilla.
+
+## Python-versiosta
+Ohjelma on testattu Pythonon 3.8. Oletettavasti ei toimi vanhemmilla versioilla.
+
+## Dokumentaatio
+- [Vaatimusmäärittely](./dokumentation/requirements.md)
+- [Työaikakirjanpito](./dokumentantion/working_hours.md)
+- [Changelog](./dokumentation/changelog.md)
 
 
 ## Tehtävät
