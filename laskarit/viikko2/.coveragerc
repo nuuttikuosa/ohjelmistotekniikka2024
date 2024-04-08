@@ -1,0 +1,3 @@
+[run]
+source = unicafe/src
+omit = unicafe/src/**/__init__.py,unicafe/src/tests/**,unicafe/src/ui/**,unicafe/src/index.py

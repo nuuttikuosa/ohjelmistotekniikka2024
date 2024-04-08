@@ -1,0 +1,131 @@
+commit cc390c18e3807f11bfefd5dba1cf9f74eeb15ace
+Author: Nuutti Kuosa <nuutti.kuosa@helsinki.fi>
+Date:   Mon Mar 11 23:46:11 2024 +0200
+
+    muutoksia fileihin
+
+ viikko1/tiedostoja/file1.txt                 | 1 -
+ viikko1/tiedostoja/{file2.txt => file22.txt} | 0
+ 2 files changed, 1 deletion(-)
+
+commit 757ba6e0fe8d50cb90a6609f58c196a772737034
+Author: Nuutti Kuosa <nuutti.kuosa@helsinki.fi>
+Date:   Mon Mar 11 23:40:42 2024 +0200
+
+    tiedostoja hakemisto
+
+ viikko1/tiedostoja/file1.txt | 1 +
+ viikko1/tiedostoja/file2.txt | 1 +
+ viikko1/tiedostoja/file3.txt | 1 +
+ 3 files changed, 3 insertions(+)
+
+commit ebe6cc044b6c8ab0ac94d4fdc6ee6342267879f7
+
+Date:   Mon Mar 11 22:55:28 2024 +0200
+
+    -p option harjoittelua
+
+ viikko1/eka.txt    | 1 +
+ viikko1/kolmas.txt | 2 ++
+ 2 files changed, 3 insertions(+)
+
+commit 37adfeed05af2726e8b695bb65df22edff764f07
+Author: Nuutti Kuosa <nuutti.kuosa@helsinki.fi>
+Date:   Mon Mar 11 22:53:53 2024 +0200
+
+    tiedoston nimeäminen
+
+ viikko1/{tiedosto.txt => eka.txt} | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+commit 87986edee23fb8d963c5bc541fb66bc2bfdaf351
+Author: Nuutti Kuosa <nuutti.kuosa@helsinki.fi>
+Date:   Mon Mar 11 22:51:03 2024 +0200
+
+    poistettu toinen
+
+ viikko1/toinen.txt | 2 --
+ 1 file changed, 2 deletions(-)
+
+commit 59bc21afca77e4d2e2e560fb53c5bcb573b85202
+Author: Nuutti Kuosa <nuutti.kuosa@helsinki.fi>
+Date:   Mon Mar 11 22:48:27 2024 +0200
+
+    tiedoston editointi
+
+ viikko1/tiedosto.txt | 9 +--------
+ 1 file changed, 1 insertion(+), 8 deletions(-)
+
+commit f0821790a56732ca81a06780a186ad54b57506c3
+Author: Nuutti Kuosa <nuutti.kuosa@helsinki.fi>
+Date:   Mon Mar 11 22:47:30 2024 +0200
+
+    lisää tekstiä tiedostoon
+
+ viikko1/tiedosto.txt | 63 ++++++++++++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 63 insertions(+)
+
+commit f65ec162eaea50826ca33c7f9017e6290fe28ac0
+Author: Nuutti Kuosa <nuutti.kuosa@helsinki.fi>
+Date:   Mon Mar 11 22:43:17 2024 +0200
+
+    stuff lisätty
+
+ viikko1/stuff/duftuf.txt | 1 +
+ 1 file changed, 1 insertion(+)
+
+commit af9c51f0a3c855c6bf563892154f0ac09604a046
+Author: Nuutti Kuosa <nuutti.kuosa@helsinki.fi>
+Date:   Mon Mar 11 22:42:08 2024 +0200
+
+    muutoksia toiseen ja kolmanteen
+
+ viikko1/kolmas.txt | 2 +-
+ viikko1/toinen.txt | 1 +
+ 2 files changed, 2 insertions(+), 1 deletion(-)
+
+commit c6c04c380b5dd7f779e9a6441f3247ff494bed15
+Author: Nuutti Kuosa <nuutti.kuosa@helsinki.fi>
+Date:   Mon Mar 11 22:40:54 2024 +0200
+
+    kolmas luotu
+
+ viikko1/kolmas.txt | 1 +
+ 1 file changed, 1 insertion(+)
+
+commit 910bb79aa1ef70c06be991ab7922b1cf5b63a11a
+Author: Nuutti Kuosa <nuutti.kuosa@helsinki.fi>
+Date:   Mon Mar 11 22:36:54 2024 +0200
+
+    muutos ja lisäys
+
+ viikko1/tiedosto.txt | 1 +
+ viikko1/toinen.txt   | 1 +
+ 2 files changed, 2 insertions(+)
+
+commit 161b51b34328a217fb19527e0d5b4d63eef45315
+Author: Nuutti Kuosa <nuutti.kuosa@helsinki.fi>
+Date:   Mon Mar 11 22:34:57 2024 +0200
+
+    tietosto luotu
+
+ viikko1/tiedosto.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+commit 62d8e55c1713322a431d74f5be17eb3ccf9e4bc1
+Author: Nuutti Kuosa <nuutti.kuosa@helsinki.fi>
+Date:   Mon Mar 11 20:32:22 2024 +0200
+
+    readme muutoksia
+
+ README.md | 2 ++
+ 1 file changed, 2 insertions(+)
+
+commit 5e48308232c686d776d00330164e40b8906df0aa
+Author: Nuutti Kuosa <nuutti.kuosa@helsinki.fi>
+Date:   Mon Mar 11 19:57:44 2024 +0200
+
+    first commit
+
+ README.md | 1 +
+ 1 file changed, 1 insertion(+)
