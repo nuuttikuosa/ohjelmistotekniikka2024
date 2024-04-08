@@ -6,9 +6,9 @@ Tämän sovelluksen avulla voi pelata videopokeria. Ohjelma on kirjoitettu Pytho
 Ohjelma on testattu Pythonon 3.8. Oletettavasti ei toimi vanhemmilla versioilla.
 
 ## Dokumentaatio
-- [Vaatimusmäärittely](./dokumentation/requirements.md)
-- [Työaikakirjanpito](./dokumentantion/working_hours.md)
-- [Changelog](./dokumentation/changelog.md)
+- [Vaatimusmäärittely](./videopoker/dokumentation/requirements.md)
+- [Työaikakirjanpito](./videopoker/dokumentantion/working_hours.md)
+- [Changelog](./videopoker/dokumentation/changelog.md)
 
 
 ## Tehtävät
