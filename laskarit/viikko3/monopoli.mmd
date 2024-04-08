@@ -1,0 +1,28 @@
+classDiagram
+    Monopolipeli "1" -- "2" Noppa
+    Monopolipeli "1" -- "1" Pelilauta
+    Pelilauta "1" -- "40" Ruutu
+    Ruutu "1" -- "1" Ruutu : seuraava
+    Ruutu "1" -- "0..8" Pelinappula
+    Pelinappula "1" -- "1" Pelaaja
+    Pelaaja "2..8" -- "1" Monopolipeli
+
+    Ruutu <|-- Aloitusruutu
+    Ruutu <|-- Vankila
+    Ruutu <|-- Sattuma_ja_yhteismaa
+    Ruutu <|-- Asemat_ja_laitokset
+    Ruutu <|-- Normaalit_kadut
+
+    Monopolipeli "1" -- "1" Aloitusruutu
+    Monopolipeli "1" -- "1" Vankila
+  
+    Toiminto "1" -- "1" Ruutu
+    Sattuma_ja_yhteismaa "1" -- "n" Kortti
+    Kortti "1" -- "1" Toiminto
+
+    Normaalit_kadut "1" -- "0..1" Hotelli
+    Normaalit_kadut "1" -- "0..4" Talo
+
+    Pelaaja "0..1" -- "0..n" Normaalit_kadut
+    Pelaaja "0..1" -- "0-1000 000" Raha
+
