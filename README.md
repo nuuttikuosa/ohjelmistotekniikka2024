@@ -11,19 +11,12 @@ Ohjelma on testattu Pythonon 3.8. Oletettavasti ei toimi vanhemmilla versioilla.
 - [Changelog](./videopoker/documentation/changelog.md)
 
 
-. Asenna riippuvuudet komennolla:
+1. Asenna riippuvuudet komennolla:
 
 ```bash
 poetry install
 ```
-
-2. Suorita vaadittavat alustustoimenpiteet komennolla:
-
-```bash
-poetry run invoke build
-```
-
-3. Käynnistä sovellus komennolla:
+2. Käynnistä sovellus komennolla:
 
 ```bash
 poetry run invoke start
