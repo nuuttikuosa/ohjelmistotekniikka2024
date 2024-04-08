@@ -20,7 +20,7 @@ poetry install
 2. Käynnistä sovellus komennolla:
 ```bash
 poetry run invoke start
-...
+```
 
 ## Komentorivitoiminnot
 
