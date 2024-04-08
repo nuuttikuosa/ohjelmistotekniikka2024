@@ -10,6 +10,7 @@ Ohjelma on testattu Pythonon 3.8. Oletettavasti ei toimi vanhemmilla versioilla.
 - [Työaikakirjanpito](./videopoker/documentation/working_hours.md)
 - [Changelog](./videopoker/documentation/changelog.md)
 
+## Asennus
 
 1. Asenna riippuvuudet komennolla:
 
@@ -21,3 +22,21 @@ poetry install
 ```bash
 poetry run invoke start
 ...
+
+### Testaus
+
+Testit suoritetaan komennolla:
+
+```bash
+poetry run invoke test
+```
+
+### Testikattavuus
+
+Testikattavuusraportti generoidaan komennolla:
+
+```bash
+poetry run invoke coverage-report
+```
+
+Raportti löytyy _htmlcov_-hakemistosta.
