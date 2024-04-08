@@ -16,3 +16,18 @@ unit testaus pyydetyt tiedostot hakemistossa viikko2. testikattavus 100%
 [työaikakirjanpito](https://github.com/nuuttikuosa/ohjelmistotekniikka2024/blob/main/videopoker/documentation/working_hours.md)
 Videopoker src hakemistossa on hieman koodia ja yksikkötestejä aloittamaani projektityötä varten. Näitä ei tarvinnut palauttaa vielä tällä viikolla.
 videopoker / documentation hakemistossa on tyotunnit ja vaatimukset.
+
+### Viikko 3 -
+Hakemistorakenne on muotoa:
+laskarit/
+  ...
+videopokeri/
+  dokumentaatio/
+    ...
+  src/
+    ...
+  pyproject.toml
+  poetry.lock
+  ...
+README.md
+...
