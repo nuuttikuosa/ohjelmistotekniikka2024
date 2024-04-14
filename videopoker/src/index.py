@@ -2,11 +2,13 @@ from dealer import Dealer
 from videopokerservice import VideoPokerService
 from pokerevaluator import PokerHandEvaluator
 
+from card import PlayingCard
+from hand import PokerHand
 
 def main():
 
     print("Now we play Videopoker!")
-    evaluator = PokerHandEvaluator(1)
+    evaluator = PokerHandEvaluator()
 
     user_input = input("Please enter an integer seed: ")
     try:

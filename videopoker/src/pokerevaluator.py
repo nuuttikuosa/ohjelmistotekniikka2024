@@ -3,7 +3,7 @@ from enum import IntEnum, unique
 
 
 @unique
-class Quality(IntEnum):
+class HandValue(IntEnum):
     HIGH_CARD = 1
     PAIR = 2
     TWO_PAIRS = 3
@@ -14,14 +14,7 @@ class Quality(IntEnum):
     FOUR = 8
     STRAIGHT_FLUSH = 9
 
-
 class PokerHandEvaluator:
-    def __init__(self, type: int):
-
-        if type == 1:
-            self.evaluator = self.basic_evaluation
-        else:
-            self.evaluator = None
 
     def basic_evaluation(self, hand: list):
 
@@ -34,21 +27,21 @@ class PokerHandEvaluator:
         counts = sorted(count.values())
 
         if flush and straight:
-            q = Quality.STRAIGHT_FLUSH
+            q = HandValue.STRAIGHT_FLUSH
         elif counts == [1, 4]:
-            q = Quality.FOUR
+            q = HandValue.FOUR
         elif counts == [2, 3]:
-            q = Quality.FULL_HOUSE
+            q = HandValue.FULL_HOUSE
         elif flush:
-            q = Quality.FLUSH
+            q = HandValue.FLUSH
         elif straight:
-            q = Quality.STRAIGHT
+            q = HandValue.STRAIGHT
         elif counts == [1, 1, 3]:
-            q = Quality.THREE
+            q = HandValue.THREE
         elif counts == [1, 2, 2]:
-            q = Quality.TWO_PAIRS
+            q = HandValue.TWO_PAIRS
         elif counts == [1, 1, 1, 2]:
-            q = Quality.PAIR
+            q = HandValue.PAIR
         else:
-            q = Quality.HIGH_CARD
+            q = HandValue.HIGH_CARD
         return q
