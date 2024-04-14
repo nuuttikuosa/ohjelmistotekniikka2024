@@ -1,6 +1,7 @@
+from subprocess import call
 from invoke import task
-import subprocess
 from sys import platform
+import subprocess
 
 @task
 def start(ctx):
@@ -14,8 +15,8 @@ def coverage(ctx):
 def coverage_report(ctx):
    ctx.run("coverage html", pty=True)
    if platform != "win32":
-      subprocess.Popen(["xdg-open", "htmlcov/index.html"])
-
+      ##call(("xdg-open", "htmlcov/index.html"))
+      subprocess.Popen(["xdg-open", "htmlcov/index.html"], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
 @task
 def test(ctx):
     ctx.run("pytest src", pty=True)
