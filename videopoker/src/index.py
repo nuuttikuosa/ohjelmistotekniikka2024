@@ -2,8 +2,6 @@ from dealer import Dealer
 from videopokerservice import VideoPokerService
 from pokerevaluator import PokerHandEvaluator
 
-from card import PlayingCard
-from hand import PokerHand
 
 def main():
 

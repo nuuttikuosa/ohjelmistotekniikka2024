@@ -14,6 +14,7 @@ class HandValue(IntEnum):
     FOUR = 8
     STRAIGHT_FLUSH = 9
 
+
 class PokerHandEvaluator:
 
     def basic_evaluation(self, hand: list):
