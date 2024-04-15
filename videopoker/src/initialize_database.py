@@ -64,21 +64,33 @@ def inser_data(connection):
         note)
         VALUES (
         1,
-        'Game1',
-        'Note for Game1'
+        'Jacks or Better',
+        '800 for Royal Flush'
         );
         """)
 
-    cursor.execute("""
-        INSERT INTO
-        pay_tables (
-        hand,
-        payout,
-        game_id)
-        VALUES (
-        1, 100, 1
-        );
-        """)
+    cursor.execute(
+        """INSERT INTO pay_tables (hand, payout, game_id) VALUES (100, 800, 1);""")
+    cursor.execute(
+        """INSERT INTO pay_tables (hand, payout, game_id) VALUES (90, 50, 1);""")
+    cursor.execute(
+        """INSERT INTO pay_tables (hand, payout, game_id) VALUES (80, 25, 1);""")
+    cursor.execute(
+        """INSERT INTO pay_tables (hand, payout, game_id) VALUES (70, 9, 1);""")
+    cursor.execute(
+        """INSERT INTO pay_tables (hand, payout, game_id) VALUES (60, 6, 1);""")
+    cursor.execute(
+        """INSERT INTO pay_tables (hand, payout, game_id) VALUES (50, 4, 1);""")
+    cursor.execute(
+        """INSERT INTO pay_tables (hand, payout, game_id) VALUES (40, 3, 1);""")
+    cursor.execute(
+        """INSERT INTO pay_tables (hand, payout, game_id) VALUES (30, 2, 1);""")
+    cursor.execute(
+        """INSERT INTO pay_tables (hand, payout, game_id) VALUES (21, 1, 1);""")
+    cursor.execute(
+        """INSERT INTO pay_tables (hand, payout, game_id) VALUES (20, 0, 1);""")
+    cursor.execute(
+        """INSERT INTO pay_tables (hand, payout, game_id) VALUES (10, 0, 1);""")
 
     connection.commit()
 

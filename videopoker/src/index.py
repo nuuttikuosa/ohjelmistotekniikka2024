@@ -17,15 +17,20 @@ def main():
 
     videopoker = VideoPokerService(Dealer(integer_seed), evaluator)
 
+    games = videopoker.get_games()
+    for game in games:
+        print(str(game))
+    pay_out_table = videopoker.get_pay_out_table(1)
+
+    for payout in pay_out_table:
+        print(payout[0].name, payout[1])
+
     more = "y"
     while more == "y":
         videopoker.deal_hand(5)
         print("Here is your hand\n")
         print(videopoker.get_hand())
         print(videopoker.evaluate_hand())
-   # print(videopoker.evaluate_hand().value)
-
-    # k = list(map(int, input("Please enter multiple values: ").split()))
 
         cards_to_replace = list(
             map(int, input("What cards do you want to replace: ").split()))

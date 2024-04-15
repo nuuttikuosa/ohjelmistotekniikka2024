@@ -1,18 +1,5 @@
 from collections import Counter
-from enum import IntEnum, unique
-
-
-@unique
-class HandValue(IntEnum):
-    HIGH_CARD = 1
-    PAIR = 2
-    TWO_PAIRS = 3
-    THREE = 4
-    STRAIGHT = 5
-    FLUSH = 6
-    FULL_HOUSE = 7
-    FOUR = 8
-    STRAIGHT_FLUSH = 9
+from hand_value import HandValue
 
 
 class PokerHandEvaluator:
@@ -26,8 +13,9 @@ class PokerHandEvaluator:
         straight = ranks == list(range(ranks[0], ranks[0] + 5))
         count = Counter(ranks)
         counts = sorted(count.values())
-
-        if flush and straight:
+        if flush and straight and ranks[4] == 14:
+            q = HandValue.ROYAL_FLUSH
+        elif flush and straight:
             q = HandValue.STRAIGHT_FLUSH
         elif counts == [1, 4]:
             q = HandValue.FOUR
