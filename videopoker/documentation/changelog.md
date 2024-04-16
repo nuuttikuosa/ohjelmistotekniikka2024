@@ -8,7 +8,7 @@
 
 ## Viikko 4
 - Tehty GameRepository luokka, joka käyttää sqlite tietokantaa, johon eri videopokerityyppien voittotaulukot
-  on tallennettu. Tehty kannanluontilauseet ja tiedon insertointilauseet jätkä tao parempi videopokerille,
+  on tallennettu. Tehty kannanluontilauseet ja tiedon insertointilauseet jätkä tai parempi videopokerille,
   jossa huonoin pari, josta maksetaan voitto on jätkäpari. Toistaiseksi tietokannasta vain haetaan tietoa.
 - Lisätty VideoPokerService luokkaan toiminnallisuutta, että hakee GameRepository luokasta kaikki tallennetut
   maksutaulukot eli pelit ja niihin liittyvät yksityiskohtaiset maksutaulukot.
