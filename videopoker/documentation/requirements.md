@@ -21,9 +21,9 @@ The application has a graphical user interface where user can see graphical card
 
 ## Functionality of the first version
 
-- User can create payout table for new video poker (can edit these is db using sql)
-- User can modify the pay-out table existing video poker (can edit these is db using sql)
-- User can select existing payout table (can edit these is db using sql)
+- User can create payout table for new video poker (can edit these in db using sql)
+- User can modify the pay-out table existing video poker (can edit these in db using sql)
+- User can select existing payout table (can edit these in db using sql)
 - user can play selected video poker (Done - text-based UI) 
 - user can calculate the expected value for the selected pay-out table 
 
