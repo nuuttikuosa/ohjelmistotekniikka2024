@@ -1,6 +1,6 @@
 # Videopokeri
 
-Tämän sovelluksen avulla voi pelata videopokeria. Ohjelma on kirjoitettu Pytholilla.
+Tämän sovelluksen avulla voi pelata videopokeria. Ohjelma on kirjoitettu Pythonilla.
 
 ## Python-versiosta
 Ohjelma on testattu Pythonon 3.8. Oletettavasti ei toimi vanhemmilla versioilla.
