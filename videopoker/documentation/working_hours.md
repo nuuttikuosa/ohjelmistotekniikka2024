@@ -11,4 +11,4 @@
 | 14.4. | 4    | Fixing lint errors and polishing code. Investigating reference application  |
 | 15.4. | 5    | Implementation of GameRepository class and required changes for UI and VideoPokerService   |
 | 16.4. | 3    | Arechitecture document and Class Diagram  |
-| yht   | 31   | |
+| Total   | 31   | |
