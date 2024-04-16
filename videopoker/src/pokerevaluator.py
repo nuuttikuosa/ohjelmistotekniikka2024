@@ -14,23 +14,23 @@ class PokerHandEvaluator:
         count = Counter(ranks)
         counts = sorted(count.values())
         if flush and straight and ranks[4] == 14:
-            q = HandValue.ROYAL_FLUSH
+            hand_value = HandValue.ROYAL_FLUSH
         elif flush and straight:
-            q = HandValue.STRAIGHT_FLUSH
+            hand_value = HandValue.STRAIGHT_FLUSH
         elif counts == [1, 4]:
-            q = HandValue.FOUR
+            hand_value = HandValue.FOUR
         elif counts == [2, 3]:
-            q = HandValue.FULL_HOUSE
+            hand_value = HandValue.FULL_HOUSE
         elif flush:
-            q = HandValue.FLUSH
+            hand_value = HandValue.FLUSH
         elif straight:
-            q = HandValue.STRAIGHT
+            hand_value = HandValue.STRAIGHT
         elif counts == [1, 1, 3]:
-            q = HandValue.THREE
+            hand_value = HandValue.THREE
         elif counts == [1, 2, 2]:
-            q = HandValue.TWO_PAIRS
+            hand_value = HandValue.TWO_PAIRS
         elif counts == [1, 1, 1, 2]:
-            q = HandValue.PAIR
+            hand_value = HandValue.PAIR
         else:
-            q = HandValue.HIGH_CARD
-        return q
+            hand_value = HandValue.HIGH_CARD
+        return hand_value
