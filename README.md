@@ -42,3 +42,10 @@ poetry run invoke coverage-report
 ```
 
 Raportti löytyy _htmlcov_-hakemistosta.
+
+### Pylint
+
+Tiedoston [.pylintrc](./videopoker/.pylintrc) määrittelemät tarkistukset voi suorittaa komennolla:
+
+```bash
+poetry run invoke lint
