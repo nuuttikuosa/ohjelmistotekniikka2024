@@ -2,8 +2,11 @@ from entities.dealer import Dealer
 from services.videopokerservice import VideoPokerService
 from entities.pokerevaluator import PokerHandEvaluator
 
+from entities.card import PlayingCard
+from entities.hand import PokerHand
 
 def main():
+
 
     print("Now we play Videopoker!")
     evaluator = PokerHandEvaluator()

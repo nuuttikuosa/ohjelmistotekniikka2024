@@ -29,6 +29,11 @@ class TestPlayingCard(unittest.TestCase):
         self.QueenOfClubs = PlayingCard(10)
         self.KingOfClubs = PlayingCard(11)
 
+        self.JackOfDiamonds = PlayingCard(22)
+        self.QueenOfDiamonds = PlayingCard(23)
+        self.KingOfDiamonds = PlayingCard(24)
+
+
         self.hand = PokerHand()
 
         self.evaluator = PokerHandEvaluator()
@@ -59,6 +64,16 @@ class TestPlayingCard(unittest.TestCase):
         self.hand.add_card(self.EightOfClubs)
         self.assertEqual(self.evaluator.basic_evaluation(
             self.hand.get_hand_as_string_list()), HandValue.FLUSH)
+
+    def test_royal_flush(self):
+        self.hand.add_card(self.AceOfClubs)
+        self.hand.add_card(self.KingOfClubs)
+        self.hand.add_card(self.QueenOfClubs)
+        self.hand.add_card(self.JackOfClubs)
+        self.hand.add_card(self.TenOfClubs)
+        self.assertEqual(self.evaluator.basic_evaluation(
+            self.hand.get_hand_as_string_list()), HandValue.ROYAL_FLUSH)
+
 
     def test_straight_flush(self):
         self.hand.add_card(self.AceOfClubs)
@@ -105,9 +120,46 @@ class TestPlayingCard(unittest.TestCase):
         self.assertEqual(self.evaluator.basic_evaluation(
             self.hand.get_hand_as_string_list()), HandValue.TWO_PAIRS)
 
-    def test_one_pair(self):
+    def test_pair_of_aces(self):
         self.hand.add_card(self.AceOfDiamonds)
         self.hand.add_card(self.AceOfHearts)
+        self.hand.add_card(self.TenOfClubs)
+        self.hand.add_card(self.JackOfClubs)
+        self.hand.add_card(self.QueenOfClubs)
+        self.assertEqual(self.evaluator.basic_evaluation(
+            self.hand.get_hand_as_string_list()), HandValue.PAIR_JACKS_OR_BETTER)
+
+    def test_pair_of_kings(self):
+        self.hand.add_card(self.KingOfClubs)
+        self.hand.add_card(self.KingOfDiamonds)
+        self.hand.add_card(self.TenOfClubs)
+        self.hand.add_card(self.JackOfClubs)
+        self.hand.add_card(self.QueenOfClubs)
+        self.assertEqual(self.evaluator.basic_evaluation(
+            self.hand.get_hand_as_string_list()), HandValue.PAIR_JACKS_OR_BETTER)
+
+    def test_pair_of_queens(self):
+        self.hand.add_card(self.AceOfDiamonds)
+        self.hand.add_card(self.QueenOfDiamonds)
+        self.hand.add_card(self.TenOfClubs)
+        self.hand.add_card(self.JackOfClubs)
+        self.hand.add_card(self.QueenOfClubs)
+        self.assertEqual(self.evaluator.basic_evaluation(
+            self.hand.get_hand_as_string_list()), HandValue.PAIR_JACKS_OR_BETTER)
+
+    def test_pair_of_jacks(self):
+        self.hand.add_card(self.AceOfDiamonds)
+        self.hand.add_card(self.JackOfDiamonds)
+        self.hand.add_card(self.TenOfClubs)
+        self.hand.add_card(self.JackOfClubs)
+        self.hand.add_card(self.QueenOfClubs)
+        self.assertEqual(self.evaluator.basic_evaluation(
+            self.hand.get_hand_as_string_list()), HandValue.PAIR_JACKS_OR_BETTER)
+
+
+    def test_one_pair(self):
+        self.hand.add_card(self.DeuceOfDiamonds)
+        self.hand.add_card(self.DeuceOfClubs)
         self.hand.add_card(self.TenOfClubs)
         self.hand.add_card(self.JackOfClubs)
         self.hand.add_card(self.QueenOfClubs)
