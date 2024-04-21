@@ -1,8 +1,8 @@
-from dealer import Dealer
-from deck import Deck
-from card import PlayingCard
+from entities.dealer import Dealer
+from entities.deck import Deck
+from entities.card import PlayingCard
 
-from game_repository import (
+from repositories.game_repository import (
     game_repository as default_game_reposotory
 )
 

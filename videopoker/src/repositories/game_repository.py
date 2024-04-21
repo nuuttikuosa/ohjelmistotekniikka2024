@@ -1,6 +1,6 @@
 from database_connection import get_database_connection
-from game import Game
-from hand_value import HandValue
+from entities.game import Game
+from entities.hand_value import HandValue
 
 
 def get_game_by_row(row):

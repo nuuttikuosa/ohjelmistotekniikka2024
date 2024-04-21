@@ -1,7 +1,7 @@
 from random import choice, seed
 
-from deck import Deck
-from hand import PokerHand
+from entities.deck import Deck
+from entities.hand import PokerHand
 
 
 class Dealer:

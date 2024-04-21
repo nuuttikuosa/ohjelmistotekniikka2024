@@ -1,6 +1,6 @@
-from dealer import Dealer
-from videopokerservice import VideoPokerService
-from pokerevaluator import PokerHandEvaluator
+from entities.dealer import Dealer
+from services.videopokerservice import VideoPokerService
+from entities.pokerevaluator import PokerHandEvaluator
 
 
 def main():

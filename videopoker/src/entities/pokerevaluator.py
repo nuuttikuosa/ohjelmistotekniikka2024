@@ -1,5 +1,5 @@
 from collections import Counter
-from hand_value import HandValue
+from entities.hand_value import HandValue
 
 
 class PokerHandEvaluator:

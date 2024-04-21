@@ -1,4 +1,4 @@
-from card import PlayingCard
+from entities.card import PlayingCard
 
 
 class Deck:
