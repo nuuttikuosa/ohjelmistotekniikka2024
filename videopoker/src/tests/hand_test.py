@@ -1,6 +1,6 @@
 import unittest
-from card import PlayingCard
-from hand import PokerHand
+from entities.card import PlayingCard
+from entities.hand import PokerHand
 
 
 class TestPlayingCard(unittest.TestCase):

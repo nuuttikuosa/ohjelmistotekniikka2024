@@ -1,5 +1,5 @@
 import unittest
-from card import PlayingCard
+from entities.card import PlayingCard
 
 
 class TestPlayingCard(unittest.TestCase):
