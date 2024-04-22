@@ -7,19 +7,17 @@ class PokerHandEvaluator:
         count = ranks.count(card_rank)
         return count == 2
 
-
     def __jacks_or_better_pair(self, ranks: list):
         if self.__contains_pair(ranks, 11):
             return True
-        elif self.__contains_pair(ranks, 12):
+        if self.__contains_pair(ranks, 12):
             return True
-        elif self.__contains_pair(ranks, 13):
+        if self.__contains_pair(ranks, 13):
             return True
-        elif self.__contains_pair(ranks, 14):
+        if self.__contains_pair(ranks, 14):
             return True
-        else:
-            return False
 
+        return False
 
     def basic_evaluation(self, hand: list):
 
@@ -47,7 +45,7 @@ class PokerHandEvaluator:
         elif counts == [1, 2, 2]:
             hand_value = HandValue.TWO_PAIRS
         elif counts == [1, 1, 1, 2]:
-            if(self.__jacks_or_better_pair(ranks)):
+            if self.__jacks_or_better_pair(ranks):
                 hand_value = HandValue.PAIR_JACKS_OR_BETTER
             else:
                 hand_value = HandValue.PAIR

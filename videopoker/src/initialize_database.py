@@ -97,8 +97,6 @@ def inser_data(connection):
     cursor.execute(
         """INSERT INTO users (id, name, balance) VALUES (2, "Pro", 1500);""")
 
-
-
     connection.commit()
 
 

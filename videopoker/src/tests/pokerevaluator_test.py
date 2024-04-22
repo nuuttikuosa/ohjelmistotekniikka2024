@@ -33,7 +33,6 @@ class TestPlayingCard(unittest.TestCase):
         self.QueenOfDiamonds = PlayingCard(23)
         self.KingOfDiamonds = PlayingCard(24)
 
-
         self.hand = PokerHand()
 
         self.evaluator = PokerHandEvaluator()
@@ -73,7 +72,6 @@ class TestPlayingCard(unittest.TestCase):
         self.hand.add_card(self.TenOfClubs)
         self.assertEqual(self.evaluator.basic_evaluation(
             self.hand.get_hand_as_string_list()), HandValue.ROYAL_FLUSH)
-
 
     def test_straight_flush(self):
         self.hand.add_card(self.AceOfClubs)
@@ -155,7 +153,6 @@ class TestPlayingCard(unittest.TestCase):
         self.hand.add_card(self.QueenOfClubs)
         self.assertEqual(self.evaluator.basic_evaluation(
             self.hand.get_hand_as_string_list()), HandValue.PAIR_JACKS_OR_BETTER)
-
 
     def test_one_pair(self):
         self.hand.add_card(self.DeuceOfDiamonds)

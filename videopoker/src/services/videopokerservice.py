@@ -63,6 +63,5 @@ class VideoPokerService:
     def create_player(self, player: User):
         return self.user_repository.create(player)
 
-    def update_player (self,player: User):
+    def update_player(self, player: User):
         self.user_repository.update(player)
-

@@ -1,10 +1,10 @@
 from entities.dealer import Dealer
-from services.videopokerservice import VideoPokerService
 from entities.pokerevaluator import PokerHandEvaluator
 from entities.user import User
+from services.videopokerservice import VideoPokerService
+
 
 def main():
-
 
     print("Now we play Videopoker!")
     evaluator = PokerHandEvaluator()
@@ -42,7 +42,8 @@ def main():
     if current_player is None:
         current_player = videopoker.create_player(User(player_name, 1000))
 
-    print(f"Terve {current_player.name}, sinulla on {current_player.balance} pelirahaa")
+    print(
+        f"Terve {current_player.name}, sinulla on {current_player.balance} pelirahaa")
 
     more = "y"
     while more == "y":
