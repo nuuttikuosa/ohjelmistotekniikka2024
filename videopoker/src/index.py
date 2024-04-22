@@ -58,9 +58,13 @@ def main():
         print("Here is your new hand:\n")
         print(videopoker.get_hand())
         print(videopoker.evaluate_hand())
-
-        print(f"You won {videopoker.get_pay_out_for_hand(pay_out_table)}")
+        winning = videopoker.get_pay_out_for_hand(pay_out_table)
+        print(f"You won {winning }")
+        current_player.balance += winning
+        print(f"your balance {current_player.balance }")
         more = input("Do you want to continue? (y/n)")
+
+    videopoker.update_player(current_player)
 
 
 if __name__ == "__main__":
