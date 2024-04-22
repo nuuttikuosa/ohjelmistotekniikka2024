@@ -29,7 +29,7 @@ def create_tables(connection):
         CREATE TABLE users(
         id integer primary key,
         name text,
-        saldo integer
+        balance integer
         );
         """)
 
@@ -91,6 +91,13 @@ def inser_data(connection):
         """INSERT INTO pay_tables (hand, payout, game_id) VALUES (20, 0, 1);""")
     cursor.execute(
         """INSERT INTO pay_tables (hand, payout, game_id) VALUES (10, 0, 1);""")
+
+    cursor.execute(
+        """INSERT INTO users (id, name, balance) VALUES (1, "Peluri", 1000);""")
+    cursor.execute(
+        """INSERT INTO users (id, name, balance) VALUES (2, "Pro", 1500);""")
+
+
 
     connection.commit()
 
