@@ -1,11 +1,11 @@
 # Requirements for video poker application
 
-## Purpose of the application 
+## Purpose of the application
 
 With the video poker application user can analyze different video pokers and their pay-out tables and calculate their return to the player. User can also play those video pokers.
-In future releases application will recommend optimal play. The motivation for the application is that there are progressive video pokers 
-in some casinos and when a progressive pot is high enough then the game can have a positive expected value like the lotto can have a positive EV, 
-if no one has won the jackpot for a long time. 
+In future releases application will recommend optimal play. The motivation for the application is that there are progressive video pokers
+in some casinos and when a progressive pot is high enough then the game can have a positive expected value like the lotto can have a positive EV,
+if no one has won the jackpot for a long time.
 
 ## Users
 
@@ -17,15 +17,16 @@ There will be two main screens. One is to modify payouts for different videopoke
 
 The application will open to the screen where user can select different video pokers - different payout. From here user can select a pay-out table to play or create a new one or modify an existing one.
 
-The application has a graphical user interface where user can see graphical cards and select which ones to keep and which ones to discard and draw new ones. 
+The application has a graphical user interface where user can see graphical cards and select which ones to keep and which ones to discard and draw new ones.
 
 ## Functionality of the first version
 
 - User can create payout table for new video poker (can edit these in db using sql)
 - User can modify the pay-out table existing video poker (can edit these in db using sql)
 - User can select existing payout table (can edit these in db using sql)
-- user can play selected video poker (Done - text-based UI) 
-- user can calculate the expected value for the selected pay-out table 
+- user can play selected video poker (Done for Jacks or better Video poker- text-based UI)
+- user can create and select user profile from db - amounf of winnings will be updated to db. (Done)
+- user can calculate the expected value for the selected pay-out table
 
 ## Possible development ideas for the future releases
 - The application will propose the best possible play:

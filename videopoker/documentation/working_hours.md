@@ -11,4 +11,7 @@
 | 14.4. | 4    | Fixing lint errors and polishing code. Investigating reference application  |
 | 15.4. | 5    | Implementation of GameRepository class and required changes for UI and VideoPokerService   |
 | 16.4. | 3    | Architecture document and Class Diagram  |
-| Total   | 31   | |
+| 21.4. | 2    | Refactoring code to packages according to reference application  |
+| 22.4. | 5    | Implementing user repository. Adding functionality to evaluation function. Adding unit tests |
+| 23.4. | 4    | Architecture document and sequance diagram. Making first release  |
+| Total   | 42   | |
