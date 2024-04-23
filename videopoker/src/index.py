@@ -45,7 +45,8 @@ def main():
     print(
         f"Terve {current_player.name}, sinulla on {current_player.balance} pelirahaa")
 
-    more = "y"
+    more = "n"
+    more = input("Do you want to Play Video poker? (y/n)")
     while more == "y":
         videopoker.deal_hand(5)
         print("Here is your hand\n")
