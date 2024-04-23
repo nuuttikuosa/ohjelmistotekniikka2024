@@ -8,9 +8,6 @@ class PokerHand:
     def add_card(self, card: PlayingCard):
         self.cards.append(card)
 
-    def number_of_cards(self):
-        return len(self.cards)
-
     def get_hand_as_string_list(self):
         return [str(c) for c in self.cards]
 
@@ -20,6 +17,9 @@ class PokerHand:
 
     def replace_card(self, old_card: int, new_card: PlayingCard):
         self.cards[old_card] = new_card
+
+    def number_of_cards(self):
+        return len(self.cards)
 
     def __str__(self):
         return " ".join([str(c) for c in self.cards])

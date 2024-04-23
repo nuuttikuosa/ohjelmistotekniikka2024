@@ -9,7 +9,8 @@ class Dealer:
     def __init__(self, seed_value: int):
         seed(seed_value)
 
-    def deal_hand(self, count: int, card_deck: Deck):
+    @staticmethod
+    def deal_hand(count: int, card_deck: Deck):
         hand = PokerHand()
 
         for _ in range(count):
@@ -19,7 +20,8 @@ class Dealer:
 
         return hand
 
-    def replace_cards(self, cards: list, hand: PokerHand, card_deck: Deck):
+    @staticmethod
+    def replace_cards(cards: list, hand: PokerHand, card_deck: Deck):
 
         cards.sort(reverse=True)
         hand.remove_cards(cards)
