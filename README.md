@@ -1,6 +1,7 @@
 # Videopokeri
 
 Tämän sovelluksen avulla voi pelata videopokeria. Ohjelma on kirjoitettu Pythonilla.
+Ohjelman ensimmäinen julkaisu (Release) - viikko5 löytyy [täältä](https://github.com/nuuttikuosa/ohjelmistotekniikka2024/releases/tag/viikko5) 
 
 ## Ylimääräinen koodikatselmointi
 
@@ -23,13 +24,27 @@ Ohjelma on testattu Pythonon 3.8. Oletettavasti ei toimi vanhemmilla versioilla.
 ```bash
 poetry install
 ```
-2. Käynnistä sovellus komennolla:
+
+2. Suorita vaadittavat alustustoimenpiteet komennolla:
+
+```bash
+poetry run invoke build
+```
+
+3. Käynnistä sovellus komennolla:
 ```bash
 poetry run invoke start
 ```
 
 ## Komentorivitoiminnot
 
+### Ohjelman suorittaminen
+
+Ohjelman pystyy suorittamaan komennolla:
+
+```bash
+poetry run invoke start
+```
 ### Testaus
 
 Testit suoritetaan komennolla:
