@@ -1,6 +1,8 @@
 # Videopokeri
 
 Tämän sovelluksen avulla voi pelata videopokeria. Ohjelma on kirjoitettu Pythonilla.
+
+## Releases
 Ohjelman ensimmäinen julkaisu (Release) - viikko5 löytyy [täältä](https://github.com/nuuttikuosa/ohjelmistotekniikka2024/releases/tag/viikko5) 
 
 ## Ylimääräinen koodikatselmointi
