@@ -16,6 +16,6 @@
 
 ## Viikko 5
 - Laajennettu käsien evaluaatiota lisäämällä säännöt isoille pareille (Jacks or Better). Näistä voi saada eri palkinnon kuin tavallisesta parista.
-- lisättu käyttäjä repository käyttäjäprofiileille. Käyttäjä voi valita aikaisemman käyttäjäprofiilin tai luoda uuden käyttäjän. Käyttäjän pelitilin saldo päivitetään repositoryyn, kun käyttäjä lopettaa pelaamisen.
+- lisätty käyttäjä repository käyttäjäprofiileille. Käyttäjä voi valita aikaisemman käyttäjäprofiilin tai luoda uuden käyttäjän. Käyttäjän pelitilin saldo päivitetään repositoryyn, kun käyttäjä lopettaa pelaamisen.
 - lisätty VideoPokerService luokkaan user reposlitory toiminallisuutta ja refaktoroitu koodin rakenne eri loogisiin "pakkauksiin" eli hakemistoihin esimerkkisovelluksen mallin mukaisesti.
 - käyttöliittymä on toteutettu väliaikaisesti index.py tiedostoon. Ensiviikolla eriytän käyttäliittymän erilliseen graafiseen UI komponenttiin. Tähän asti on ollut tarkoituksena rakentaan sovelluksen "back-end" toiminnallisuus ja varmistaa väliaikaisen käyttöliittymä kautta että luokat integroituvat toisiinsa ja perustoiminnallisuus on virheetön.
