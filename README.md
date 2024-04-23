@@ -2,6 +2,11 @@
 
 Tämän sovelluksen avulla voi pelata videopokeria. Ohjelma on kirjoitettu Pythonilla.
 
+## Ylimääräinen koodikatselmointi
+
+[Nostettu issue löytyy täältä](https://github.com/levomaaa/ot-harjoitustyo/issues/1)
+
+
 ## Python-versiosta
 Ohjelma on testattu Pythonon 3.8. Oletettavasti ei toimi vanhemmilla versioilla.
 
