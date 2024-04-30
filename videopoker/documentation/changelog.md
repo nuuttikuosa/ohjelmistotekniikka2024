@@ -19,3 +19,12 @@
 - lisätty käyttäjä repository käyttäjäprofiileille. Käyttäjä voi valita aikaisemman käyttäjäprofiilin tai luoda uuden käyttäjän. Käyttäjän pelitilin saldo päivitetään repositoryyn, kun käyttäjä lopettaa pelaamisen.
 - lisätty VideoPokerService luokkaan user reposlitory toiminallisuutta ja refaktoroitu koodin rakenne eri loogisiin "pakkauksiin" eli hakemistoihin esimerkkisovelluksen mallin mukaisesti.
 - käyttöliittymä on toteutettu väliaikaisesti index.py tiedostoon. Ensiviikolla eriytän käyttäliittymän erilliseen graafiseen UI komponenttiin. Tähän asti on ollut tarkoituksena rakentaan sovelluksen "back-end" toiminnallisuus ja varmistaa väliaikaisen käyttöliittymä kautta että luokat integroituvat toisiinsa ja perustoiminnallisuus on virheetön.
+
+## Viikko 6
+- tehty ensimmänen versio graafisesta käyttööliittymästä. Tätä laajennetaan viimeisen viikon aikana. Tällä hetkellä pelillä on sekä graafinen käyttöliittymä sekä tekstikäyttöliittymä, jotka käyttävät samaa palvelukerrosta.
+- lisätty unittestien kattavuutta repository luokkiin.
+- tehty ensimmäinen versio arkkitehtuurikuvauksesta
+- tehty ensimmäinen versio käyttöohjeesta
+- kirjoitettu noin puolelle luokista docstring dokumentaatio
+
+  
