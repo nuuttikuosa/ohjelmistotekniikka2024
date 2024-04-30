@@ -79,7 +79,6 @@ class UserView:
             command=self._login_handler
         )
 
-
         self._frame.grid_columnconfigure(0, weight=1, minsize=400)
 
         login_button.grid(padx=5, pady=5, sticky=constants.EW)

@@ -1,6 +1,5 @@
 from entities.dealer import Dealer
 from entities.pokerevaluator import PokerHandEvaluator
-from entities.user import User
 from services.videopokerservice import VideoPokerService
 
 
@@ -36,8 +35,9 @@ def main():
 
     videopoker.login(player_name)
 
+    current_player = videopoker.get_current_player()
     print(
-        f"Terve {videopoker.get_current_player().name}, sinulla on {videopoker.get_current_player().balance} pelirahaa")
+        f"Terve {current_player.name}, sinulla on {current_player.balance} pelirahaa")
 
     more = "n"
     more = input("Do you want to Play Video poker? (y/n)")
@@ -59,7 +59,6 @@ def main():
 
         print(f"your balance {videopoker.get_current_player().balance }")
         more = input("Do you want to continue? (y/n)")
-
 
 
 if __name__ == "__main__":

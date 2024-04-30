@@ -3,6 +3,7 @@ from services.videopokerservice import video_poker_service
 from entities.card import PlayingCard
 from entities.hand import PokerHand
 
+
 class VideoPokerHandView:
     """Video pokerin korttien näyttämisestä ja valitsemisesta vastaava näkymä."""
 
@@ -79,7 +80,7 @@ class VideoPokerView:
         self._handle_stop_playing = handle_stop_playing
         self._user = video_poker_service.get_current_player()
         self._frame = None
-        #self._create_todo_entry = None
+        # self._create_todo_entry = None
         self._hand_frame = None
         self._hand_view = None
 
@@ -94,7 +95,7 @@ class VideoPokerView:
         self._frame.destroy()
 
     def _user_handler(self):
-        #todo_service.logout()
+        # todo_service.logout()
         self._handle_stop_playing()
 
     def _handle_select_card(self, card_id):
@@ -138,9 +139,9 @@ class VideoPokerView:
         )
 
     def _handle_deal_cards(self):
-        #todo_content = self._create_todo_entry.get()
+        # todo_content = self._create_todo_entry.get()
         # pitää kirjoittaa koodia että korttien vaihtaminen  onistuu
-        #if todo_content:
+        # if todo_content:
         #    todo_service.create_todo(todo_content)
         #    self._initialize_todo_list()
         #    self._create_todo_entry.delete(0, constants.END)

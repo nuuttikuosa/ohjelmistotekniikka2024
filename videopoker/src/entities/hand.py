@@ -26,5 +26,3 @@ class PokerHand:
 
     def __str__(self):
         return " ".join([str(c) for c in self.cards])
-
-

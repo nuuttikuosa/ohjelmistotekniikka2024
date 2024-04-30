@@ -13,8 +13,10 @@ from repositories.user_repository import (
     user_repository as default_user_repository
 )
 
+
 class UserExistsError(Exception):
     pass
+
 
 class VideoPokerService:
     def __init__(self,
@@ -61,7 +63,7 @@ class VideoPokerService:
                 pay_out = pay_row[1]
 
         self.current_player.balance += pay_out
-        self.update_player(self.cu)
+        self.update_player(self.current_player)
 
         return pay_out
 
@@ -78,8 +80,8 @@ class VideoPokerService:
         players = self.get_players()
 
         for player in players:
-                if user == player.name:
-                    self.current_player = player
+            if user == player.name:
+                self.current_player = player
 
         if self.current_player is None:
             self.current_player = self.create_player(User(user, 1000))
@@ -91,5 +93,4 @@ class VideoPokerService:
         self.selected_cards.append(card_id)
 
 
-video_poker_service = VideoPokerService(Dealer(3),PokerHandEvaluator())
-
+video_poker_service = VideoPokerService(Dealer(3), PokerHandEvaluator())
