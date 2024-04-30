@@ -4,11 +4,10 @@ Lataa projektin viimeisimmän [releasen](https://github.com/ohjelmistotekniikka-
 
 ## Konfigurointi
 
-Tallennukseen käytettävien tiedostojen nimiä voi halutessaan konfiguroida käynnistyshakemistossa _.env_-tiedostossa. Tiedostot luodaan automaattisesti _data_-hakemistoon, jos niitä ei siellä vielä ole. Tiedoston muoto on seuraava:
+Tallennukseen käytettävän tietokannan nimeä voi konfiguroida muokkaamalla käynnistyshakemistossa olevaa _config.py_-tiedostoa. Tietokanta luodaan _data_-hakemistoon, jos sitä ei ole. Konfiguraation muoto on seuraava:
 
 ```
-TODOS_FILENAME=todos.csv
-DATABASE_FILENAME=database.sqlite
+DATABASE_FILENAME = "game_database.sqlite"
 ```
 
 ## Ohjelman käynnistäminen
@@ -25,30 +24,28 @@ Jonka jälkeen suorita alustustoimenpiteet komennolla:
 poetry run invoke build
 ```
 
-Nyt ohjelman voi käynnistää komennolla:
+Nyt ohjelman voi käynnistää komennolla tekstikäyttöliittymään:
 
 ```
 poetry run invoke start
+```
+ja graafiseen käyttöliittymään:
+
+```
+poetry run invoke startGUI
 ```
 
 ## Kirjautuminen
 
 Sovellus käynnistyy kirjautumisnäkymään:
 
-![](./kuvat/kayttoohje-kirjautuminen.png)
+![](./kuvat/login-ikkuna.png)
 
-Kirjautuminen onnistuu kirjoittamalla olemassaoleva käyttäjätunnus sekä syötekenttään ja painamalla "Login"-painiketta.
+Kirjautuminen onnistuu kirjoittamalla gamename syötekenttään ja painamalla "Login"-painiketta.
 
-## Uuden käyttäjän luominen
+## Videopokerin pelaaminen
 
-Kirjautumisnäkymästä on mahdollista siirtyä uuden käyttäjän luomisnäkymään panikkeella "Create user".
+Peli jakaa käyttäjälle viisi korttia, joista jokaisen alla on lukitsemispainike, jollla lukitaan ne kortit jotka halutaa pitää toiselle kierrokselle.
 
-Uusi käyttäjä luodaan syöttämällä tiedot syötekenttiin ja painamalla "Create"-painiketta:
-
-![](./kuvat/kayttoohje-uusi-kayttaja.png)
-
-Jos käyttäjän luominen onnistuu, siirrytään siirrytään käyttäjän tekemättömät työt listaavaan näkymään.
-
-## Todojen luominen ja tehdyksi merkkaaminen
-
-Onnistuneen kirjautumisen myötä siirrytään käyttäjän tekemättömät työt listaavaan näkymään:
+## Videopokerin pelaamisen lopettaminen
+Kun käyttäjä päättää lopettaa videopokerin pelaamisen, niin sovellus tallentaa pelitilin saldon tietkantaa seuraavaa pelisessiota varten.
