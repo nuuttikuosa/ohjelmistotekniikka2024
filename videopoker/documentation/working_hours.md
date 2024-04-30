@@ -16,5 +16,5 @@
 | 23.4. | 4    | Architecture document and sequance diagram. Making first release  |
 | 28.4. | 2    | Investigating reference application GUI   |
 | 29.4. | 5    | Starting to implement first version of GUI and needed modifications to service glass |
-| 30.4. | 10    | Fihished first version of the GUI - Need to extend and imrove during the last week. wrote first version of the user instruction manual and architecture documentation  |
+| 30.4. | 10    | Fihished first version of the GUI - Need to extend and improve during the last week. wrote first version of the user instruction manual and architecture documentation  |
 | Total   | 59   | |
