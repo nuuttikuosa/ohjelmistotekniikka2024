@@ -36,7 +36,7 @@ Ohjelman luokkakaavio on seuraavanlainen:
 
 ## Ohjelman rakenteeseen jääneet heikkoudet
 
-## Videopokerikäsien arviointi
+### Videopokerikäsien arviointi
 Keskeinen arviointifunktio on hieman liian pitkä ja monimutkainen. Pylint ilmoittaa liian pitkistä ja monimutkaisista metodeista luokan PokerHandEvaluator metodissa basic_evaluation. Evaluointi on kuitenkin logiikaltaan sellainen, että jos se jaettaisiin kahteen funktioon, niin koodin looginen ymmärrettävyys kärsisi, joten olen pitänyt tämän toiminnallisuuden yhtenä kokonaisuutena. Periaatteessa suorien ja värien arvioinnin voi eriyttää muutta käden arvioinnista. 
 
 ### Käyttöliittymä
