@@ -4,6 +4,7 @@ from entities.card import PlayingCard
 class Deck:
     """Luokka, jonka avulla ylläpidetään korttipakkaa.
     """
+
     def __init__(self):
         """Luokan konstruktori, joka luo uuden korttipakan.
 

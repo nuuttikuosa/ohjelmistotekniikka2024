@@ -9,7 +9,6 @@ class PlayingCard:
         id: Kokonaisluku, joka toimii kortin id:nä, välillä 0-51.
     """
 
-
     suits_long = ('Club', 'Diamond', 'Heart', 'Spade')
     suits_short = ('C', 'D', 'H', 'S')
     faces_long = ('2', '3', '4', '5', '6', '7', '8', '9',
@@ -40,7 +39,6 @@ class PlayingCard:
                 Lyhyt versio maan englanninnimisestä termistä
         """
 
-
         return PlayingCard.suits_short[self.id_number // 13]
 
     def get_short_face(self):
@@ -67,7 +65,5 @@ class PlayingCard:
             Returns:
                 kortin tyyppi kahden merkin tunnisteena.
         """
-
-
 
         return self.get_short_face() + self.get_short_suit()

@@ -3,7 +3,8 @@ from enum import IntEnum, unique
 
 @unique
 class HandValue(IntEnum):
-    """Enumaraatioluokka, jonka avulla ylläpidetään tietoa mahdollista käsien arvoista ja niiden järjestyksestä.
+    """Enumaraatioluokka, jonka avulla ylläpidetään tietoa mahdollista
+    käsien arvoista ja niiden järjestyksestä.
     """
 
     HIGH_CARD = 10

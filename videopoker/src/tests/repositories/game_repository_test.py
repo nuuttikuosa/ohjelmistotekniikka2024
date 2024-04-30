@@ -49,7 +49,7 @@ class TestGameRepository(unittest.TestCase):
         game_repository.delete_all()
         connection = get_database_connection()
         self.create_test_data(connection)
-        self.game = Game(1, "Jacks or Better","800 for Royal Flush")
+        self.game = Game(1, "Jacks or Better", "800 for Royal Flush")
 
     def test_find_games(self):
         games = game_repository.find_games()

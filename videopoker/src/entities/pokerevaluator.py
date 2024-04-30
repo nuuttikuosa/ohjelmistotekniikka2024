@@ -6,6 +6,7 @@ class PokerHandEvaluator:
     """Luokka, joka arvioi pokerikäden arvon. Käyttää käden arvo enumeraatiota.
 
     """
+
     def __contains_pair(self, ranks: list, card_rank: int):
         """Palauttaa tiedon sisältääkö pokerikäsi tietynkokoisen parin
 

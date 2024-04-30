@@ -20,6 +20,7 @@ class UserExistsError(Exception):
 
 class VideoPokerService:
     """Sovelluslogiikasta vastaa luokka."""
+
     def __init__(self,
                  dealer: Dealer,
                  evaluator,
@@ -91,7 +92,8 @@ class VideoPokerService:
         return self.game_repository.find_games()
 
     def get_pay_out_table(self, game_id: int):
-        """Palauttaa erilaiset tietokantaan tallennetut maksusäännöt, jotka liittyvät annettuun peliin
+        """Palauttaa erilaiset tietokantaan tallennetut maksusäännöt,
+        jotka liittyvät annettuun peliin
         Arg:
             game_id: pokeripelin id tietokannassa (int)
         Returns:
