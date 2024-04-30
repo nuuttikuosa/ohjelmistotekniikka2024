@@ -3,7 +3,7 @@
 Tämän sovelluksen avulla voi pelata videopokeria. Ohjelma on kirjoitettu Pythonilla.
 
 ## Releases
-Ohjelman toinen julkaisu (Release) - viikko6 löytyy [täältä](https://github.com/nuuttikuosa/ohjelmistotekniikka2024/releases/tag/viikko5) 
+Ohjelman toinen julkaisu (Release) - viikko6 löytyy [täältä](https://github.com/nuuttikuosa/ohjelmistotekniikka2024/releases/tag/viikko6) 
 
 ## Koodikatselmointi
 
