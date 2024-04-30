@@ -33,3 +33,12 @@ Kehitysversiossa kortit käytetään käyttöliittymällä kirjainyhdistelminä,
 Ohjelman luokkakaavio on seuraavanlainen:
 
 ![Luokkakaavio](./kuvat/arkkitehtuuri-luokkakaavio.png)
+
+## Ohjelman rakenteeseen jääneet heikkoudet
+
+## Videopokerikäsien arviointi
+Keskeinen arviointifunktio on hieman liian pitkä ja monimutkainen. Pylint ilmoittaa liian pitkistä ja monimutkaisista metodeista luokan PokerHandEvaluator metodissa basic_evaluation. Evaluointi on kuitenkin logiikaltaan sellainen, että jos se jaettaisiin kahteen funktioon, niin koodin looginen ymmärrettävyys kärsisi, joten olen pitänyt tämän toiminnallisuuden yhtenä kokonaisuutena. Periaatteessa suorien ja värien arvioinnin voi eriyttää muutta käden arvioinnista. 
+
+### Käyttöliittymä
+
+Käyttöliittymän tyhmittelyä voisi parantaa rajattomasti, mutta koska en ole kovinkaan visuaalinen henkilö. Oikeassa ohjelmistoprojektissa käyttöliittymän viilaus olisi UX designerin eikä toteuttajan tehtävä.
