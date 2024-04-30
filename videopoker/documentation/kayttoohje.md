@@ -39,7 +39,7 @@ poetry run invoke startGUI
 
 Sovellus käynnistyy kirjautumisnäkymään:
 
-![](./kuvat/kayttoohje-kirjautuminen.png)
+![](./kuvat/login-ikkuna.png)
 
 Kirjautuminen onnistuu kirjoittamalla gamename syötekenttään ja painamalla "Login"-painiketta.
 
