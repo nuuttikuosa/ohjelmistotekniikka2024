@@ -21,5 +21,10 @@ class PokerHand:
     def number_of_cards(self):
         return len(self.cards)
 
+    def get_cards(self):
+        return self.cards
+
     def __str__(self):
         return " ".join([str(c) for c in self.cards])
+
+

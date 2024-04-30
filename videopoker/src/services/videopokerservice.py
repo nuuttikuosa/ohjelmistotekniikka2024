@@ -2,6 +2,7 @@ from entities.dealer import Dealer
 from entities.deck import Deck
 from entities.card import PlayingCard
 from entities.user import User
+from entities.pokerevaluator import PokerHandEvaluator
 
 
 from repositories.game_repository import (
@@ -12,6 +13,8 @@ from repositories.user_repository import (
     user_repository as default_user_repository
 )
 
+class UserExistsError(Exception):
+    pass
 
 class VideoPokerService:
     def __init__(self,
@@ -21,6 +24,7 @@ class VideoPokerService:
                  user_repository=default_user_repository):
         self.dealer = dealer
         self.hand = None
+        self.current_player = None
         self.game_repository = game_repository
         self.user_repository = user_repository
         deck = Deck()
@@ -28,6 +32,7 @@ class VideoPokerService:
             deck.add_card(PlayingCard(i))
         self.deck = deck
         self.evaluator = evaluator
+        self.selected_cards = []
 
     def deal_hand(self, count: int):
         self.hand = self.dealer.deal_hand(count, self.deck)
@@ -55,6 +60,9 @@ class VideoPokerService:
             if pay_row[0].value == hand_value.value:
                 pay_out = pay_row[1]
 
+        self.current_player.balance += pay_out
+        self.update_player(self.cu)
+
         return pay_out
 
     def get_players(self):
@@ -65,3 +73,23 @@ class VideoPokerService:
 
     def update_player(self, player: User):
         self.user_repository.update(player)
+
+    def login(self, user):
+        players = self.get_players()
+
+        for player in players:
+                if user == player.name:
+                    self.current_player = player
+
+        if self.current_player is None:
+            self.current_player = self.create_player(User(user, 1000))
+
+    def get_current_player(self):
+        return self.current_player
+
+    def select_card(self, card_id):
+        self.selected_cards.append(card_id)
+
+
+video_poker_service = VideoPokerService(Dealer(3),PokerHandEvaluator())
+

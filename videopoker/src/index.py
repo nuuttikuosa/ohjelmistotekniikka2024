@@ -34,16 +34,10 @@ def main():
     print("Select player or give a new name to create player")
     player_name = input("Please enter name: ")
 
-    current_player = None
-    for player in players:
-        if player_name == player.name:
-            current_player = player
-
-    if current_player is None:
-        current_player = videopoker.create_player(User(player_name, 1000))
+    videopoker.login(player_name)
 
     print(
-        f"Terve {current_player.name}, sinulla on {current_player.balance} pelirahaa")
+        f"Terve {videopoker.get_current_player().name}, sinulla on {videopoker.get_current_player().balance} pelirahaa")
 
     more = "n"
     more = input("Do you want to Play Video poker? (y/n)")
@@ -62,11 +56,10 @@ def main():
         print(videopoker.evaluate_hand())
         winning = videopoker.get_pay_out_for_hand(pay_out_table)
         print(f"You won {winning }")
-        current_player.balance += winning
-        print(f"your balance {current_player.balance }")
+
+        print(f"your balance {videopoker.get_current_player().balance }")
         more = input("Do you want to continue? (y/n)")
 
-    videopoker.update_player(current_player)
 
 
 if __name__ == "__main__":
