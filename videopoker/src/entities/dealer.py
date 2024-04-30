@@ -11,6 +11,14 @@ class Dealer:
 
     @staticmethod
     def deal_hand(count: int, card_deck: Deck):
+        """Jakaa käden korttipakasta.
+        Args:
+            count: jaettavien korttien määrä
+            card_deck:korttipakka josta kortit jaetaan
+        Returns:
+                pyydetyn määrän satunnaosia kortteja korttipakasta
+        """
+
         hand = PokerHand()
 
         for _ in range(count):
@@ -22,6 +30,14 @@ class Dealer:
 
     @staticmethod
     def replace_cards(cards: list, hand: PokerHand, card_deck: Deck):
+        """Korvaa pyydetyn määrän kortteja  korttipakasta.
+        Args:
+            cards: kokonaislukulista, korttien sijainnit jotka korvataan
+            hand: käsi, josta kortit korvataan
+            card_deck:korttipakka josta kortit jaetaan
+        Returns:
+                Käsi, josta kortit on satunnaisesti korvattu.
+        """
 
         cards.sort(reverse=True)
         hand.remove_cards(cards)

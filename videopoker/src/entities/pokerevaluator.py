@@ -3,11 +3,30 @@ from entities.hand_value import HandValue
 
 
 class PokerHandEvaluator:
+    """Luokka, joka arvioi pokerikäden arvon. Käyttää käden arvo enumeraatiota.
+
+    """
     def __contains_pair(self, ranks: list, card_rank: int):
+        """Palauttaa tiedon sisältääkö pokerikäsi tietynkokoisen parin
+
+        Args:
+            ranks: lista kokonaislukuja, joka kertoo jokaisen arvon frekvenssin
+            card_rank: tutkittavan parin suuruus
+        Returns:
+            boolean arvoisen tiedon siitä, onko pokerikädessä analysoitavaa paria.
+        """
+
         count = ranks.count(card_rank)
         return count == 2
 
     def __jacks_or_better_pair(self, ranks: list):
+        """Palauttaa tiedon sisältääkö pokerikäsi ison parin (jätkä tai isompi) n
+
+        Args:
+            ranks: lista kokonaislukuja, joka kertoo jokaisen arvon frekvenssin
+        Returns:
+            boolean arvoisen tiedon siitä, onko pokerikädessä isoa paria.
+        """
         if self.__contains_pair(ranks, 11):
             return True
         if self.__contains_pair(ranks, 12):
@@ -20,6 +39,14 @@ class PokerHandEvaluator:
         return False
 
     def basic_evaluation(self, hand: list):
+        """Analysoi onko pokerikädessä pokerin sääntöjen mukaista korttiyhdistelmää
+            josta maksettaisiin voittoja
+
+        Args:
+            hand: lista kahden merkin mittaisia merkkijonoja, jotka kertovat korttien tyypin
+        Returns:
+            hand value tyyppisen enumeraation, joka kertoo käden arvon.
+        """
 
         flush = len(set(suit for _, suit in hand)) == 1
         ranks = sorted('--23456789TJQKA'.find(rank) for rank, _ in hand)
