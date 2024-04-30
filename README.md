@@ -18,6 +18,7 @@ Ohjelma on testattu Pythonon 3.8. Oletettavasti ei toimi vanhemmilla versioilla.
 - [Arkkitehtuurikuvaus](./videopoker/documentation/arkkitehtuuri.md)
 - [Työaikakirjanpito](./videopoker/documentation/working_hours.md)
 - [Changelog](./videopoker/documentation/changelog.md)
+- [Käyttöohje](./videopoker/documentation/changelog.md)
 
 ## Asennus
 
@@ -36,6 +37,10 @@ poetry run invoke build
 3. Käynnistä sovellus komennolla:
 ```bash
 poetry run invoke start
+```
+4. Tai vaihtoehtoisesti alustava graafisen käyttöliittymän versio komennolla
+```bash
+poetry run invoke startGUI
 ```
 
 ## Komentorivitoiminnot
