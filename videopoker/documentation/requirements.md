@@ -24,7 +24,7 @@ The application has a graphical user interface where user can see graphical card
 - User can create payout table for new video poker (can edit these in db using sql)
 - User can modify the pay-out table existing video poker (can edit these in db using sql)
 - User can select existing payout table (can edit these in db using sql)
-- user can play selected video poker (Done for Jacks or better Video poker- text-based UI)
+- user can play selected video poker (Done for Jacks or better Video poker- text-based UI, done first version of the GUI - need to extends during the last week)
 - user can create and select user profile from db - amounf of winnings will be updated to db. (Done)
 - user can calculate the expected value for the selected pay-out table
 
