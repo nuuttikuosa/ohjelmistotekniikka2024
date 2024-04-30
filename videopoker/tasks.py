@@ -7,6 +7,12 @@ def start(ctx):
    ctx.run("python3 src/index.py", pty=True)
 
 @task
+def startGUI(ctx):
+   ctx.run("python3 src/index2.py", pty=True)
+
+
+
+@task
 def coverage(ctx):
    ctx.run("coverage run --branch -m pytest", pty=True)
 

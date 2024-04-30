@@ -48,5 +48,15 @@ class UserRepository:
 
         return user
 
+    def delete_all(self):
+        """Poistaa kaikki pelaajat.
+        """
+
+        cursor = self._connection.cursor()
+
+        cursor.execute("DELETE FROM users")
+
+        self._connection.commit()
+
 
 user_repository = UserRepository(get_database_connection())

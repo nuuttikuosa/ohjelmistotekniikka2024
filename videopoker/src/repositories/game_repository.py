@@ -34,5 +34,16 @@ class GameRepository:
 
         return list(map(get_pay_out_by_row, rows))
 
+    def delete_all(self):
+        """Poistaa kaikki pelikonfiguraatiot.
+        """
+
+        cursor = self.__connection.cursor()
+
+        cursor.execute("DELETE FROM pay_tables")
+        cursor.execute("DELETE FROM games")
+
+        self.__connection.commit()
+
 
 game_repository = GameRepository(get_database_connection())
