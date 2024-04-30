@@ -18,8 +18,8 @@ Ohjelma on testattu Pythonon 3.8. Oletettavasti ei toimi vanhemmilla versioilla.
 - [Arkkitehtuurikuvaus](./videopoker/documentation/arkkitehtuuri.md)
 - [Työaikakirjanpito](./videopoker/documentation/working_hours.md)
 - [Changelog](./videopoker/documentation/changelog.md)
-- [Käyttöohje](./videopoker/documentation/changelog.md)
-
+- [Käyttöohje]([./videopoker/documentation/kayttoohje.md]
+  
 ## Asennus
 
 1. Asenna riippuvuudet komennolla:
