@@ -7,7 +7,7 @@ Ohjelman toinen julkaisu (Release) - viikko6 löytyy [täältä](https://github.
 
 ## Koodikatselmointi
 
-[Nostettu issue löytyy täältä]([https://github.com/iita-mari/ot-harjoitustyo/issues/1])
+[Nostettu issue löytyy täältä](https://github.com/iita-mari/ot-harjoitustyo/issues/1)
 
 
 ## Python-versiosta
