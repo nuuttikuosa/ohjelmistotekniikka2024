@@ -21,7 +21,6 @@ class UI:
         self.__image_repository = image_repository
         self._current_view = None
 
-
     def start(self):
         """Käynnistää käyttöliittymän."""
         self._show_user_view()
@@ -46,6 +45,7 @@ class UI:
         self._hide_current_view()
 
         video_poker_service.deal_hand(5)
-        self._current_view = VideoPokerView(self._root, self._show_user_view, self.__image_repository)
+        self._current_view = VideoPokerView(
+            self._root, self._show_user_view, self.__image_repository)
 
         self._current_view.pack()

@@ -3,6 +3,7 @@ from tkinter import ttk, constants
 from services.videopokerservice import video_poker_service
 from entities.card import PlayingCard
 from entities.hand import PokerHand
+from PIL import Image, ImageTk
 
 
 class VideoPokerHandView:
@@ -23,7 +24,7 @@ class VideoPokerHandView:
         self._root = root
         self._hand = video_poker_service.get_hand()
         self._handle_select_card = handle_select_card
-        self.__card_image_repository =card_image_repository
+        self.__card_image_repository = card_image_repository
         self._frame = None
 
         self._initialize()
@@ -38,9 +39,12 @@ class VideoPokerHandView:
 
     def _initialize_card_item(self, card: PlayingCard, column):
         item_frame = ttk.Frame(master=self._frame)
-        card_image = self.__card_image_repository.get_card_picture(str(card))
+
+        # card_image = self.__card_image_repository.get_card_picture(str(card))
         label = ttk.Label(master=item_frame, text=str(card))
-        label.configure(image=card_image, compound=tk.BOTTOM) # Fix this tkinter.BOTTOM
+        label.configure(image=self.__card_image_repository.get_card_picture(
+            str(card)), compound=tk.TOP)
+
         select_card_button = ttk.Button(
             master=item_frame,
             text="Select",
@@ -57,7 +61,7 @@ class VideoPokerHandView:
             sticky=constants.NSEW
         )
 
-        #item_frame.grid_columnconfigure(0, weight=1)
+        # item_frame.grid_columnconfigure(0, weight=1)
        # item_frame.pack(fill=constants.X)
         item_frame.grid(row=0, column=column, padx=5, pady=5, sticky=tk.NSEW)
 
@@ -85,7 +89,7 @@ class VideoPokerView:
         self._root = root
         self._handle_stop_playing = handle_stop_playing
         self._user = video_poker_service.get_current_player()
-        self._card_image_repository =  card_image_repository
+        self._card_image_repository = card_image_repository
         self._frame = None
         # self._create_todo_entry = None
         self._hand_frame = None
@@ -194,5 +198,5 @@ class VideoPokerView:
             sticky=constants.EW
         )
 
-        self._frame.grid_columnconfigure(0, weight=1, minsize=600)
+        self._frame.grid_columnconfigure(0, weight=1, minsize=800)
         self._frame.grid_columnconfigure(1, weight=0)
