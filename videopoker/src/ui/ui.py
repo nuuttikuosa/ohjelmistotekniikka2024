@@ -2,11 +2,15 @@ from ui.user_view import UserView
 from ui.video_poker_view import VideoPokerView
 from services.videopokerservice import video_poker_service
 
+from repositories.image_repository import (
+    image_repository as default_image_repository
+)
+
 
 class UI:
     """Sovelluksen käyttöliittymästä vastaava luokka."""
 
-    def __init__(self, root):
+    def __init__(self, root, image_repository=default_image_repository):
         """Luokan konstruktori. Luo uuden käyttöliittymästä vastaavan luokan.
 
         Args:
@@ -14,7 +18,9 @@ class UI:
                 TKinter-elementti, jonka sisään käyttöliittymä alustetaan.
         """
         self._root = root
+        self.__image_repository = image_repository
         self._current_view = None
+
 
     def start(self):
         """Käynnistää käyttöliittymän."""
@@ -40,6 +46,6 @@ class UI:
         self._hide_current_view()
 
         video_poker_service.deal_hand(5)
-        self._current_view = VideoPokerView(self._root, self._show_user_view)
+        self._current_view = VideoPokerView(self._root, self._show_user_view, self.__image_repository)
 
         self._current_view.pack()

@@ -1,3 +1,4 @@
+import tkinter as tk
 from tkinter import ttk, constants
 from services.videopokerservice import video_poker_service
 from entities.card import PlayingCard
@@ -7,7 +8,7 @@ from entities.hand import PokerHand
 class VideoPokerHandView:
     """Video pokerin korttien näyttämisestä ja valitsemisesta vastaava näkymä."""
 
-    def __init__(self, root, hand: PokerHand, handle_select_card):
+    def __init__(self, root, handle_select_card, card_image_repository):
         """Luokan konstruktori. Luo uuden korttinäkymän.
 
         Args:
@@ -20,8 +21,9 @@ class VideoPokerHandView:
         """
 
         self._root = root
-        self._hand = hand
+        self._hand = video_poker_service.get_hand()
         self._handle_select_card = handle_select_card
+        self.__card_image_repository =card_image_repository
         self._frame = None
 
         self._initialize()
@@ -34,40 +36,44 @@ class VideoPokerHandView:
         """"Tuhoaa näkymän."""
         self._frame.destroy()
 
-    def _initialize_card_item(self, card: PlayingCard):
+    def _initialize_card_item(self, card: PlayingCard, column):
         item_frame = ttk.Frame(master=self._frame)
+        card_image = self.__card_image_repository.get_card_picture(str(card))
         label = ttk.Label(master=item_frame, text=str(card))
-
+        label.configure(image=card_image, compound=tk.BOTTOM) # Fix this tkinter.BOTTOM
         select_card_button = ttk.Button(
             master=item_frame,
             text="Select",
             command=lambda: self._handle_select_card(str(card))
         )
 
-        label.grid(row=0, column=0, padx=5, pady=5, sticky=constants.W)
+        label.grid(row=0, column=0, padx=5, pady=5, sticky=constants.N)
 
         select_card_button.grid(
-            row=0,
-            column=1,
+            row=1,
+            column=0,
             padx=5,
             pady=5,
-            sticky=constants.EW
+            sticky=constants.NSEW
         )
 
-        item_frame.grid_columnconfigure(0, weight=1)
-        item_frame.pack(fill=constants.X)
+        #item_frame.grid_columnconfigure(0, weight=1)
+       # item_frame.pack(fill=constants.X)
+        item_frame.grid(row=0, column=column, padx=5, pady=5, sticky=tk.NSEW)
 
     def _initialize(self):
         self._frame = ttk.Frame(master=self._root)
+        # lisätty
+        self._frame.grid(row=0, column=0, padx=5, pady=5, sticky=tk.NSEW)
 
-        for card in self._hand.get_cards():
-            self._initialize_card_item(card)
+        for index, card in enumerate(self._hand.get_cards()):
+            self._initialize_card_item(card, index)
 
 
 class VideoPokerView:
     """Tehtävien listauksesta ja lisäämisestä vastaava näkymä."""
 
-    def __init__(self, root, handle_stop_playing):
+    def __init__(self, root, handle_stop_playing, card_image_repository):
         """Luokan konstruktori. Luo uuden tehtävänäkymän.
 
         Args:
@@ -79,6 +85,7 @@ class VideoPokerView:
         self._root = root
         self._handle_stop_playing = handle_stop_playing
         self._user = video_poker_service.get_current_player()
+        self._card_image_repository =  card_image_repository
         self._frame = None
         # self._create_todo_entry = None
         self._hand_frame = None
@@ -110,8 +117,8 @@ class VideoPokerView:
 
         self._todo_list_view = VideoPokerHandView(
             self._hand_frame,
-            hand,
-            self._handle_select_card
+            self._handle_select_card,
+            self._card_image_repository
         )
 
         self._todo_list_view.pack()
@@ -187,5 +194,5 @@ class VideoPokerView:
             sticky=constants.EW
         )
 
-        self._frame.grid_columnconfigure(0, weight=1, minsize=400)
+        self._frame.grid_columnconfigure(0, weight=1, minsize=600)
         self._frame.grid_columnconfigure(1, weight=0)
