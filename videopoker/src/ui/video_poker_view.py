@@ -1,7 +1,7 @@
 import tkinter as tk
 from tkinter import ttk, constants
-from services.videopokerservice import video_poker_service
 from entities.card import PlayingCard
+from services.videopokerservice import VideoPokerService
 from entities.hand import PokerHand
 from PIL import Image, ImageTk
 
@@ -9,7 +9,7 @@ from PIL import Image, ImageTk
 class VideoPokerHandView:
     """Video pokerin korttien näyttämisestä ja valitsemisesta vastaava näkymä."""
 
-    def __init__(self, root, handle_select_card, card_image_repository):
+    def __init__(self, root, video_poker_service: VideoPokerService, card_image_repository):
         """Luokan konstruktori. Luo uuden korttinäkymän.
 
         Args:
@@ -22,10 +22,12 @@ class VideoPokerHandView:
         """
 
         self._root = root
-        self._hand = video_poker_service.get_hand()
-        self._handle_select_card = handle_select_card
+
+        self._video_poker_service = video_poker_service
+        self._hand = self._video_poker_service.get_hand()
         self.__card_image_repository = card_image_repository
         self._frame = None
+        self.__buttons = {}
 
         self._initialize()
 
@@ -36,6 +38,15 @@ class VideoPokerHandView:
     def destroy(self):
         """"Tuhoaa näkymän."""
         self._frame.destroy()
+
+    def handle_press_button(self, card_id: str):
+        self._video_poker_service.select_card(card_id)
+
+        if card_id in self._video_poker_service.get_selected_cards():
+            self.__buttons[card_id].config(text="Vapauta")
+        else:
+            self.__buttons[card_id].config(text="Valitse")
+
 
     def _initialize_card_item(self, card: PlayingCard, column):
         item_frame = ttk.Frame(master=self._frame)
@@ -48,8 +59,10 @@ class VideoPokerHandView:
         select_card_button = ttk.Button(
             master=item_frame,
             text="Select",
-            command=lambda: self._handle_select_card(str(card))
+            command=lambda: self.handle_press_button(str(card))
         )
+
+        self.__buttons[str(card)]= select_card_button
 
         label.grid(row=0, column=0, padx=5, pady=5, sticky=constants.N)
 
@@ -77,7 +90,7 @@ class VideoPokerHandView:
 class VideoPokerView:
     """Tehtävien listauksesta ja lisäämisestä vastaava näkymä."""
 
-    def __init__(self, root, handle_stop_playing, card_image_repository):
+    def __init__(self, root, handle_stop_playing, video_poker_service, card_image_repository):
         """Luokan konstruktori. Luo uuden tehtävänäkymän.
 
         Args:
@@ -90,6 +103,7 @@ class VideoPokerView:
         self._handle_stop_playing = handle_stop_playing
         self._user = video_poker_service.get_current_player()
         self._card_image_repository = card_image_repository
+        self.__video_poker_service = video_poker_service
         self._frame = None
         # self._create_todo_entry = None
         self._hand_frame = None
@@ -109,23 +123,17 @@ class VideoPokerView:
         # todo_service.logout()
         self._handle_stop_playing()
 
-    def _handle_select_card(self, card_id):
-        video_poker_service.select_card(card_id)
-        self._initialize_hand_view()
-
     def _initialize_hand_view(self):
         if self._hand_view:
             self._hand_view.destroy()
 
-        hand = video_poker_service.get_hand()
-
-        self._todo_list_view = VideoPokerHandView(
+        self._hand_view = VideoPokerHandView(
             self._hand_frame,
-            self._handle_select_card,
+            self.__video_poker_service,
             self._card_image_repository
         )
 
-        self._todo_list_view.pack()
+        self._hand_view.pack()
 
     def _initialize_header(self):
         user_label = ttk.Label(

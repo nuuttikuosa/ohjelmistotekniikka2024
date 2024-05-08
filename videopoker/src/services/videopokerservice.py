@@ -165,11 +165,16 @@ class VideoPokerService:
         return self.current_player
 
     def select_card(self, card_id):
-        """Valitsee korti podettäväksi myös pelin toisella kierroksella
+        """Valitsee kortti pidettäväksi myös pelin toisella kierroksella
+            Tai poistaa kortin valittujen korttien joukosta, jos se on jo valittu.
         Args:
             kortin id
         """
-        self.selected_cards.append(card_id)
-
+        if card_id in self.selected_cards:
+            self.selected_cards = [item for item in self.selected_cards if item != card_id]
+        else:
+            self.selected_cards.append(card_id)
+    def get_selected_cards(self):
+        return self.selected_cards
 
 video_poker_service = VideoPokerService(Dealer(3), PokerHandEvaluator())

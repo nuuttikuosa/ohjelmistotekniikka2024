@@ -46,6 +46,6 @@ class UI:
 
         video_poker_service.deal_hand(5)
         self._current_view = VideoPokerView(
-            self._root, self._show_user_view, self.__image_repository)
+            self._root, self._show_user_view, video_poker_service, self.__image_repository)
 
         self._current_view.pack()
