@@ -4,6 +4,10 @@ from entities.card import PlayingCard
 from entities.user import User
 from entities.pokerevaluator import PokerHandEvaluator
 
+NUMBER_OF_CARDS_IN_HAND = 5
+NUMBER_OF_CARDS_IN_DECK = 52
+
+DEFAULT_PAY_OUT_TABLE = 1
 
 from repositories.game_repository import (
     game_repository as default_game_reposotory
@@ -44,19 +48,21 @@ class VideoPokerService:
         self.game_repository = game_repository
         self.user_repository = user_repository
         deck = Deck()
-        for i in range(52):
+        for i in range(NUMBER_OF_CARDS_IN_DECK):
             deck.add_card(PlayingCard(i))
         self.deck = deck
         self.evaluator = evaluator
         self.selected_cards = []
 
-    def deal_hand(self, count: int):
+        self.set_pay_out_table(DEFAULT_PAY_OUT_TABLE)
+
+    def deal_hand(self, count: int = NUMBER_OF_CARDS_IN_HAND):
         """Jakaa pokerikäden, pyydetyn määrän kortteja
 
         Args:
             count: haluttu määrä kortteja
         """
-
+        self.selected_cards = []
         self.hand = self.dealer.deal_hand(count, self.deck)
 
     def get_hand(self):
@@ -67,13 +73,15 @@ class VideoPokerService:
         """
         return self.hand
 
-    def replace_cards(self, cards: list):
+    def replace_cards(self):
         """Vaihtaa pokerikädestä pyydetyt kortit
 
-        Args:
-            vaihdettavien korttien lokaatiot kokonaislukulistassa
+        Returns:
+            Korttipakka, josta on vaihdettu pyydetyt kortit uusiin.
         """
-        self.dealer.replace_cards(cards, self.hand, self.deck)
+
+
+        self.dealer.replace_cards(self.selected_cards, self.hand, self.deck)
 
     def evaluate_hand(self):
         """Evaluoi tämänhetkisen käden
@@ -82,6 +90,12 @@ class VideoPokerService:
             pokerikäden arvo HandValue enumeraationa
         """
         return self.evaluator.basic_evaluation(self.hand.get_hand_as_string_list())
+
+    def get_hand_value_text(self):
+
+        value_text = str(self.evaluate_hand())
+        parts = value_text.split(".")
+        return parts[1]
 
     def get_games(self):
         """Palauttaa erilaiset tietokantaan tallennetut videopokerikonfiguraatiot
@@ -102,7 +116,7 @@ class VideoPokerService:
 
         return self.game_repository.get_pay_table(game_id)
 
-    def get_pay_out_for_hand(self, pay_table: list):
+    def get_pay_out_for_hand(self):
         """Palauttaa käden voiton
         Arg:
             pay_table: lista voittomaksusääntöjä
@@ -111,7 +125,7 @@ class VideoPokerService:
         """
         pay_out = 0
         hand_value = self.evaluate_hand()
-        for pay_row in pay_table:
+        for pay_row in self.__pay_out_table:
             if pay_row[0].value == hand_value.value:
                 pay_out = pay_row[1]
 
@@ -176,5 +190,9 @@ class VideoPokerService:
             self.selected_cards.append(card_id)
     def get_selected_cards(self):
         return self.selected_cards
+
+    def set_pay_out_table(self, game_id: int):
+        self.__pay_out_table = self.get_pay_out_table(game_id)
+
 
 video_poker_service = VideoPokerService(Dealer(3), PokerHandEvaluator())

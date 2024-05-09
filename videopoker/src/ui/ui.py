@@ -44,7 +44,6 @@ class UI:
     def _show_video_poker_view(self):
         self._hide_current_view()
 
-        video_poker_service.deal_hand(5)
         self._current_view = VideoPokerView(
             self._root, self._show_user_view, video_poker_service, self.__image_repository)
 

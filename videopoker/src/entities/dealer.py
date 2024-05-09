@@ -29,21 +29,20 @@ class Dealer:
         return hand
 
     @staticmethod
-    def replace_cards(cards: list, hand: PokerHand, card_deck: Deck):
-        """Korvaa pyydetyn määrän kortteja  korttipakasta.
+    def replace_cards(cards_to_keep: list, hand: PokerHand, card_deck: Deck):
+        """Korvaa pyydetyt kortit korttipakasta.
         Args:
-            cards: kokonaislukulista, korttien sijainnit jotka korvataan
+            cards: Kortit, jotka halutaan pitää
             hand: käsi, josta kortit korvataan
-            card_deck:korttipakka josta kortit jaetaan
+            card_deck:korttipakka josta uudet kortit jaetaan
         Returns:
-                Käsi, josta kortit on satunnaisesti korvattu.
+                Käsi, josta halutut kortit on korvattu uusilla korteilla.
         """
 
-        cards.sort(reverse=True)
-        hand.remove_cards(cards)
-        for _ in range(len(cards)):
-            card_number = choice(range(card_deck.number_of_cards()))
-            card = card_deck.get_card(card_number)
-            hand.add_card(card)
+        for card in hand.get_cards():
+            if str(card) not in cards_to_keep:
+                new_card_number = choice(range(card_deck.number_of_cards()))
+                new_card = card_deck.get_card(new_card_number)
+                hand.replace_card(card,new_card )
 
         return hand

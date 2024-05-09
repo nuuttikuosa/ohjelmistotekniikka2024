@@ -4,7 +4,7 @@ from ui.ui import UI
 
 def main():
     window = Tk()
-    window.title("Videopoker application")
+    window.title("Videopoker")
 
     ui_view = UI(window)
     ui_view.start()

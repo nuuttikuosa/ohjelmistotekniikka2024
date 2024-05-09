@@ -15,8 +15,12 @@ class PokerHand:
         for i in card_list:
             self.cards.pop(i)
 
-    def replace_card(self, old_card: int, new_card: PlayingCard):
-        self.cards[old_card] = new_card
+    def replace_card(self, old_card, new_card: PlayingCard):
+
+        for i in range(len(self.cards)):
+            if str(self.cards[i]) == str(old_card):
+                self.cards[i] = new_card
+                return
 
     def number_of_cards(self):
         return len(self.cards)
