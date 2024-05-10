@@ -16,6 +16,7 @@ from config import GAME_EVENT_LOG_FILE_PATH
 
 NUMBER_OF_CARDS_IN_HAND = 5
 NUMBER_OF_CARDS_IN_DECK = 52
+PRICE_OF_GAME_ROUND = 1
 
 DEFAULT_GAME = 1
 
@@ -49,10 +50,8 @@ class VideoPokerService:
         self.current_player = None
         self.game_repository = game_repository
         self.user_repository = user_repository
-        deck = Deck()
-        for i in range(NUMBER_OF_CARDS_IN_DECK):
-            deck.add_card(PlayingCard(i))
-        self.deck = deck
+
+        self.deck = self.__init_deck()
         self.evaluator = evaluator
         self.selected_cards = []
         self.game = None
@@ -61,9 +60,13 @@ class VideoPokerService:
         self.__init_logging(GAME_EVENT_LOG_FILE_PATH)
 
     def __init_logging(self, log_path):
-       logger.add(log_path, rotation="12:00", retention="10 days")
+        logger.add(log_path, rotation="12:00", retention="10 days")
 
-
+    def __init_deck(self):
+        deck = Deck()
+        for i in range(NUMBER_OF_CARDS_IN_DECK):
+            deck.add_card(PlayingCard(i))
+        return deck
 
     def deal_hand(self, count: int = NUMBER_OF_CARDS_IN_HAND):
         """Jakaa pokerikäden, pyydetyn määrän kortteja
@@ -72,8 +75,11 @@ class VideoPokerService:
             count: haluttu määrä kortteja
         """
         self.selected_cards = []
+        self.deck = self.__init_deck()
         self.hand = self.dealer.deal_hand(count, self.deck)
         logger.info(f"Hand dealt successfully: {self.hand}")
+
+        self.current_player.reduce_balance(PRICE_OF_GAME_ROUND)
 
     def get_hand(self):
         """Palauttaa aikaisemmin jaetun pokerikäden
@@ -93,6 +99,9 @@ class VideoPokerService:
         self.dealer.replace_cards(self.selected_cards, self.hand, self.deck)
         logger.info(f"Cards changed successfully:{self.selected_cards}")
         logger.info(f"New Hand:{self.hand}")
+
+        self.current_player.add_balance(
+            PRICE_OF_GAME_ROUND*self.get_pay_out_for_hand())
 
     def evaluate_hand(self):
         """Evaluoi tämänhetkisen käden
@@ -178,6 +187,10 @@ class VideoPokerService:
         if self.current_player is None:
             self.current_player = self.create_player(User(user, 1000))
 
+    def logout(self):
+        self.update_player(self.current_player)
+        self.current_player = None
+
     def get_current_player(self):
         """Palauttaa peliä tällä hetkellä pelaavan pelaajan
         Return:
@@ -206,6 +219,10 @@ class VideoPokerService:
 
     def get_payout_table_text(self):
         return str(self.game.get_payout_table())
+
+    def get_player_list_text(self):
+        player_str = "\n".join([str(player) for player in self.get_players()])
+        return player_str
 
 
 video_poker_service = VideoPokerService(Dealer(3), PokerHandEvaluator())

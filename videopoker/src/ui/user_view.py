@@ -1,11 +1,11 @@
 from tkinter import ttk, StringVar, constants
-from services.videopokerservice import video_poker_service, UserExistsError
+from services.videopokerservice import UserExistsError
 
 
 class UserView:
     """Käyttäjän kirjautumisesta vastaava näkymä."""
 
-    def __init__(self, root, handle_user):
+    def __init__(self, root, handle_user, video_poker_service):
         """Luokan konstruktori. Luo uuden kirjautumisnäkymän.
 
         Args:
@@ -23,7 +23,7 @@ class UserView:
         self._username_entry = None
         self._error_variable = None
         self._error_label = None
-
+        self.__video_poker_service = video_poker_service
         self._initialize()
 
     def pack(self):
@@ -38,7 +38,7 @@ class UserView:
         username = self._username_entry.get()
 
         try:
-            video_poker_service.login(username)
+            self.__video_poker_service.login(username)
             self._handle_user()
         except UserExistsError:
             self._show_error("Problems with finding user database")
@@ -69,7 +69,14 @@ class UserView:
             foreground="red"
         )
 
+        payout_table_text = ttk.Label(
+            master=self._frame,
+            text=f"Alla on olemssa olevat pelaajaprofoofiilit. \nJos haluat käyttää olemassa olevaa profiilia, anna sen nimi. \nJos annat uuden nimen, sinulle luodaan uusi profiili: \n\n{self.__video_poker_service.get_player_list_text()}"
+        )
+
         self._error_label.grid(padx=5, pady=5)
+
+        payout_table_text.grid(padx=5, pady=5)
 
         self._initialize_username_field()
 

@@ -36,7 +36,7 @@ class UI:
 
         self._current_view = UserView(
             self._root,
-            self._show_video_poker_view,
+            self._show_video_poker_view, video_poker_service
         )
 
         self._current_view.pack()

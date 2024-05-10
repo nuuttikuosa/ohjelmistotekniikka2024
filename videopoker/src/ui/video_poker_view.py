@@ -113,6 +113,7 @@ class VideoPokerView:
         self.__hand_value_text = None
         self._hand_frame = None
         self._hand_view = None
+        self.__user_label = None
 
         self._initialize()
 
@@ -125,7 +126,7 @@ class VideoPokerView:
         self._frame.destroy()
 
     def _user_handler(self):
-        # todo_service.logout()
+        self.__video_poker_service.logout()
         self._handle_stop_playing()
 
     def _initialize_hand_view(self):
@@ -141,7 +142,7 @@ class VideoPokerView:
         self._hand_view.pack()
 
     def _initialize_header(self):
-        user_label = ttk.Label(
+        self.__user_label = ttk.Label(
             master=self._frame,
             text=f"Pelataan pelaajan {self._user.name} saldolla: {self._user.balance}"
         )
@@ -152,7 +153,8 @@ class VideoPokerView:
             command=self._user_handler
         )
 
-        user_label.grid(row=0, column=0, padx=5, pady=5, sticky=constants.W)
+        self.__user_label.grid(row=0, column=0, padx=5,
+                               pady=5, sticky=constants.W)
 
         logout_button.grid(
             row=0,
@@ -175,6 +177,8 @@ class VideoPokerView:
             self._deal_cards_button.configure(text="Vaihda kortteja")
 
         hand_value_text = f"Korkein yhdistelmä kädessä on {self.__video_poker_service.get_hand_value_text()}."
+        self.__user_label.configure(
+            text=f"Pelataan pelaajan {self._user.name} saldolla: {self._user.balance}")
 
         if self.__status == STATUS_SECOND_ROUND:
             winning = self.__video_poker_service.get_pay_out_for_hand()
@@ -185,17 +189,11 @@ class VideoPokerView:
 
         self.__hand_value_text.configure(text=hand_value_text)
         self._initialize_hand_view()
-        # todo_content = self._create_todo_entry.get()
-        # pitää kirjoittaa koodia että korttien vaihtaminen  onistuu
-        # if todo_content:
-        #    todo_service.create_todo(todo_content)
-        #    self._initialize_todo_list()
-        #    self._create_todo_entry.delete(0, constants.END)
 
     def _initialize_footer(self):
         payout_table_text = ttk.Label(
             master=self._frame,
-            text=f"Voito ovat \n{self.__video_poker_service.get_payout_table_text()}"
+            text=f"Voitot ovat \n{self.__video_poker_service.get_payout_table_text()}"
         )
 
         self.__hand_value_text = ttk.Label(
