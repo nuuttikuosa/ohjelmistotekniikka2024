@@ -93,10 +93,7 @@ class VideoPokerService:
         return self.evaluator.basic_evaluation(self.hand.get_hand_as_string_list())
 
     def get_hand_value_text(self):
-
-        value_text = str(self.evaluate_hand())
-        parts = value_text.split(".")
-        return parts[1]
+        return self.evaluate_hand().name
 
     def get_games(self):
         """Palauttaa erilaiset tietokantaan tallennetut videopokerikonfiguraatiot
@@ -106,7 +103,7 @@ class VideoPokerService:
         """
         return self.game_repository.find_games()
 
-    def get_pay_out_table(self, game_id: int):
+    def get_pay_out_table_text(self, game_id: int):
         """Palauttaa erilaiset tietokantaan tallennetut maksusäännöt,
         jotka liittyvät annettuun peliin
         Arg:
@@ -191,5 +188,7 @@ class VideoPokerService:
 
         self.game  = self.game_repository.get_game(game_id)
 
+    def get_payout_table_text(self):
+        return str(self.game.get_payout_table())
 
 video_poker_service = VideoPokerService(Dealer(3), PokerHandEvaluator())

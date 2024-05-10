@@ -196,6 +196,11 @@ class VideoPokerView:
         #    self._create_todo_entry.delete(0, constants.END)
 
     def _initialize_footer(self):
+        payout_table_text   = ttk.Label(
+            master=self._frame,
+            text=f"Voito ovat \n{self.__video_poker_service.get_payout_table_text()}"
+        )
+
         self.__hand_value_text  = ttk.Label(
             master=self._frame,
             text=f"Korkein yhdistelmä kädessä on {self.__video_poker_service.get_hand_value_text()}"
@@ -205,8 +210,7 @@ class VideoPokerView:
             text="Vaihda kortteja",
             command=self._handle_deal_cards
         )
-
-        self.__hand_value_text.grid(
+        payout_table_text.grid(
             row=2,
             column=0,
             padx=5,
@@ -214,8 +218,16 @@ class VideoPokerView:
             sticky=constants.EW
         )
 
+        self.__hand_value_text.grid(
+            row=3,
+            column=0,
+            padx=5,
+            pady=5,
+            sticky=constants.EW
+        )
+
         self._deal_cards_button.grid(
-            row=2,
+            row=3,
             column=1,
             padx=5,
             pady=5,
