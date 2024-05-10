@@ -109,7 +109,7 @@ class VideoPokerService:
         Returns:
             pokerikäden arvo HandValue enumeraationa
         """
-        return self.evaluator.jacks_or_better_basic_evaluation(self.hand.get_hand_as_string_list())
+        return self.evaluator.jacks_or_better_evaluation(self.hand.get_hand_as_string_list())
 
     def get_hand_value_text(self):
         return self.evaluate_hand().name
