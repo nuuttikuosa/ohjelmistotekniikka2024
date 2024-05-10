@@ -32,7 +32,7 @@ class TestPlayingCard(unittest.TestCase):
         self.assertEqual(str(self.hand), "AC AD AH")
 
     def test_replace_card_in_hand(self):
-        self.hand.replace_card(3, self.DeuceOfClubs)
+        self.hand.replace_card(self.AceOfSpades, self.DeuceOfClubs)
         self.assertEqual(str(self.hand), "AC AD AH 2C")
 
     def test_get_hand_as_tring_list(self):

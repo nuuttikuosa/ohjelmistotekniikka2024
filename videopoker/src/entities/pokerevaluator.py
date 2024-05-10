@@ -39,7 +39,7 @@ class PokerHandEvaluator:
 
         return False
 
-    def jacks_or_better_basic_evaluation(self, hand: list):
+    def jacks_or_better_evaluation(self, hand: list):
 
         ranks = sorted('--23456789TJQKA'.find(rank) for rank, _ in hand)
         hand_value = self.basic_evaluation(hand)

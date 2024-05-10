@@ -124,7 +124,7 @@ class TestPlayingCard(unittest.TestCase):
         self.hand.add_card(self.TenOfClubs)
         self.hand.add_card(self.JackOfClubs)
         self.hand.add_card(self.QueenOfClubs)
-        self.assertEqual(self.evaluator.basic_evaluation(
+        self.assertEqual(self.evaluator.jacks_or_better_evaluation(
             self.hand.get_hand_as_string_list()), HandValue.PAIR_JACKS_OR_BETTER)
 
     def test_pair_of_kings(self):
@@ -133,7 +133,7 @@ class TestPlayingCard(unittest.TestCase):
         self.hand.add_card(self.TenOfClubs)
         self.hand.add_card(self.JackOfClubs)
         self.hand.add_card(self.QueenOfClubs)
-        self.assertEqual(self.evaluator.basic_evaluation(
+        self.assertEqual(self.evaluator.jacks_or_better_evaluation(
             self.hand.get_hand_as_string_list()), HandValue.PAIR_JACKS_OR_BETTER)
 
     def test_pair_of_queens(self):
@@ -142,7 +142,7 @@ class TestPlayingCard(unittest.TestCase):
         self.hand.add_card(self.TenOfClubs)
         self.hand.add_card(self.JackOfClubs)
         self.hand.add_card(self.QueenOfClubs)
-        self.assertEqual(self.evaluator.basic_evaluation(
+        self.assertEqual(self.evaluator.jacks_or_better_evaluation(
             self.hand.get_hand_as_string_list()), HandValue.PAIR_JACKS_OR_BETTER)
 
     def test_pair_of_jacks(self):
@@ -151,7 +151,7 @@ class TestPlayingCard(unittest.TestCase):
         self.hand.add_card(self.TenOfClubs)
         self.hand.add_card(self.JackOfClubs)
         self.hand.add_card(self.QueenOfClubs)
-        self.assertEqual(self.evaluator.basic_evaluation(
+        self.assertEqual(self.evaluator.jacks_or_better_evaluation(
             self.hand.get_hand_as_string_list()), HandValue.PAIR_JACKS_OR_BETTER)
 
     def test_one_pair(self):

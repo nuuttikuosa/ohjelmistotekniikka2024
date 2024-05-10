@@ -17,5 +17,11 @@ class Game:
     def get_game_id(self):
         return self.__game_id
 
+    def get_name(self):
+        return self.__name
+
+    def get_note(self):
+        return self.__note
+
     def __str__(self):
         return self.__name + " - " + self.__note
