@@ -7,7 +7,7 @@ from entities.pokerevaluator import PokerHandEvaluator
 NUMBER_OF_CARDS_IN_HAND = 5
 NUMBER_OF_CARDS_IN_DECK = 52
 
-DEFAULT_PAY_OUT_TABLE = 1
+DEFAULT_GAME = 1
 
 from repositories.game_repository import (
     game_repository as default_game_reposotory
@@ -53,8 +53,9 @@ class VideoPokerService:
         self.deck = deck
         self.evaluator = evaluator
         self.selected_cards = []
+        self.game = None
 
-        self.set_pay_out_table(DEFAULT_PAY_OUT_TABLE)
+        self.set_game(DEFAULT_GAME)
 
     def deal_hand(self, count: int = NUMBER_OF_CARDS_IN_HAND):
         """Jakaa pokerikäden, pyydetyn määrän kortteja
@@ -123,16 +124,11 @@ class VideoPokerService:
         Returns:
             palauttaa rahamääräisen voiton
         """
-        pay_out = 0
         hand_value = self.evaluate_hand()
-        for pay_row in self.__pay_out_table:
-            if pay_row[0].value == hand_value.value:
-                pay_out = pay_row[1]
 
-        self.current_player.balance += pay_out
-        self.update_player(self.current_player)
+        self.game.get_payout_for_hand(hand_value)
 
-        return pay_out
+        return self.game.get_payout_for_hand(hand_value)
 
     def get_players(self):
         """Palauttaa erilaiset tietokantaan tallennetut pelaajaprofiilit
@@ -191,8 +187,9 @@ class VideoPokerService:
     def get_selected_cards(self):
         return self.selected_cards
 
-    def set_pay_out_table(self, game_id: int):
-        self.__pay_out_table = self.get_pay_out_table(game_id)
+    def set_game(self, game_id: int = DEFAULT_GAME):
+
+        self.game  = self.game_repository.get_game(game_id)
 
 
 video_poker_service = VideoPokerService(Dealer(3), PokerHandEvaluator())

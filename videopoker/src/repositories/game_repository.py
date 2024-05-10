@@ -1,7 +1,7 @@
 from database_connection import get_database_connection
 from entities.game import Game
 from entities.hand_value import HandValue
-
+from entities.payout_table import PayoutTable
 
 def get_game_by_row(row):
     return Game(row["id"], row["name"], row["note"]) if row else None
@@ -32,7 +32,25 @@ class GameRepository:
             "SELECT hand, payout FROM pay_tables WHERE game_id = ?", (game_id,))
         rows = cursor.fetchall()
 
-        return list(map(get_pay_out_by_row, rows))
+        payout_table = PayoutTable()
+
+        for row in rows:
+           payout_table.add_payout(row[0], row[1])
+
+        return payout_table
+
+    def get_game(self, game_id: int):
+
+        cursor = self.__connection.cursor()
+        cursor.execute("SELECT * FROM games WHERE id = ?", (game_id,))
+        row = cursor.fetchone()
+
+        game = Game(row["id"], row["name"], row["note"])
+
+        game.set_payout_table(self.get_pay_table(game_id))
+
+        return game
+
 
     def delete_all(self):
         """Poistaa kaikki pelikonfiguraatiot.
