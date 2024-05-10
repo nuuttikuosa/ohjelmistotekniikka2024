@@ -1,3 +1,5 @@
+from loguru import logger
+
 from repositories.user_repository import (
     user_repository as default_user_repository
 )
@@ -9,6 +11,8 @@ from entities.deck import Deck
 from entities.card import PlayingCard
 from entities.user import User
 from entities.pokerevaluator import PokerHandEvaluator
+
+from config import GAME_EVENT_LOG_FILE_PATH
 
 NUMBER_OF_CARDS_IN_HAND = 5
 NUMBER_OF_CARDS_IN_DECK = 52
@@ -54,6 +58,12 @@ class VideoPokerService:
         self.game = None
 
         self.set_game(DEFAULT_GAME)
+        self.__init_logging(GAME_EVENT_LOG_FILE_PATH)
+
+    def __init_logging(self, log_path):
+       logger.add(log_path, rotation="12:00", retention="10 days")
+
+
 
     def deal_hand(self, count: int = NUMBER_OF_CARDS_IN_HAND):
         """Jakaa pokerikäden, pyydetyn määrän kortteja
@@ -63,6 +73,7 @@ class VideoPokerService:
         """
         self.selected_cards = []
         self.hand = self.dealer.deal_hand(count, self.deck)
+        logger.info(f"Hand dealt successfully: {self.hand}")
 
     def get_hand(self):
         """Palauttaa aikaisemmin jaetun pokerikäden
@@ -80,6 +91,8 @@ class VideoPokerService:
         """
 
         self.dealer.replace_cards(self.selected_cards, self.hand, self.deck)
+        logger.info(f"Cards changed successfully:{self.selected_cards}")
+        logger.info(f"New Hand:{self.hand}")
 
     def evaluate_hand(self):
         """Evaluoi tämänhetkisen käden
@@ -120,9 +133,13 @@ class VideoPokerService:
         """
         hand_value = self.evaluate_hand()
 
-        self.game.get_payout_for_hand(hand_value)
+        payout = self.game.get_payout_for_hand(hand_value)
 
-        return self.game.get_payout_for_hand(hand_value)
+        logger.info(f"Hand evaluated: {self.hand}")
+        logger.success(f"Hand value: {hand_value.name}")
+        logger.success(f"Payout: {payout}")
+
+        return payout
 
     def get_players(self):
         """Palauttaa erilaiset tietokantaan tallennetut pelaajaprofiilit
