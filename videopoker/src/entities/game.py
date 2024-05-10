@@ -14,5 +14,8 @@ class Game:
     def get_payout_for_hand(self, hand_value):
         return self.__payout_table.get_payout(hand_value)
 
+    def get_game_id(self):
+        return self.__game_id
+
     def __str__(self):
         return self.__name + " - " + self.__note

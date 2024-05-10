@@ -20,11 +20,8 @@ def main():
     games = videopoker.get_games()
     for game in games:
         print(str(game))
-    pay_out_table = videopoker.get_pay_out_table(1)
 
-    for payout in pay_out_table:
-        print(payout[0].name, payout[1])
-    print()
+    print(videopoker.get_pay_out_table_text)
     print("Players:")
     players = videopoker.get_players()
     for player in players:
@@ -54,7 +51,7 @@ def main():
         print("Here is your new hand:\n")
         print(videopoker.get_hand())
         print(videopoker.evaluate_hand())
-        winning = videopoker.get_pay_out_for_hand(pay_out_table)
+        winning = videopoker.get_pay_out_for_hand()
         print(f"You won {winning }")
 
         print(f"your balance {videopoker.get_current_player().balance }")

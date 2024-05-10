@@ -17,10 +17,12 @@ class PokerHand:
 
     def replace_card(self, old_card, new_card: PlayingCard):
 
-        for i in range(len(self.cards)):
-            if str(self.cards[i]) == str(old_card):
-                self.cards[i] = new_card
-                return
+        item = None
+        for card in self.cards:
+            if str(card) == str(old_card):
+                item = card
+
+        self.cards[self.cards.index(item)] = new_card
 
     def number_of_cards(self):
         return len(self.cards)

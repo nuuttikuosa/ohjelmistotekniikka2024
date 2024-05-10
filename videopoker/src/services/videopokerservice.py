@@ -1,3 +1,9 @@
+from repositories.user_repository import (
+    user_repository as default_user_repository
+)
+from repositories.game_repository import (
+    game_repository as default_game_reposotory
+)
 from entities.dealer import Dealer
 from entities.deck import Deck
 from entities.card import PlayingCard
@@ -8,14 +14,6 @@ NUMBER_OF_CARDS_IN_HAND = 5
 NUMBER_OF_CARDS_IN_DECK = 52
 
 DEFAULT_GAME = 1
-
-from repositories.game_repository import (
-    game_repository as default_game_reposotory
-)
-
-from repositories.user_repository import (
-    user_repository as default_user_repository
-)
 
 
 class UserExistsError(Exception):
@@ -81,7 +79,6 @@ class VideoPokerService:
             Korttipakka, josta on vaihdettu pyydetyt kortit uusiin.
         """
 
-
         self.dealer.replace_cards(self.selected_cards, self.hand, self.deck)
 
     def evaluate_hand(self):
@@ -90,7 +87,7 @@ class VideoPokerService:
         Returns:
             pokerikäden arvo HandValue enumeraationa
         """
-        return self.evaluator.basic_evaluation(self.hand.get_hand_as_string_list())
+        return self.evaluator.jacks_or_better_basic_evaluation(self.hand.get_hand_as_string_list())
 
     def get_hand_value_text(self):
         return self.evaluate_hand().name
@@ -178,17 +175,20 @@ class VideoPokerService:
             kortin id
         """
         if card_id in self.selected_cards:
-            self.selected_cards = [item for item in self.selected_cards if item != card_id]
+            self.selected_cards = [
+                item for item in self.selected_cards if item != card_id]
         else:
             self.selected_cards.append(card_id)
+
     def get_selected_cards(self):
         return self.selected_cards
 
     def set_game(self, game_id: int = DEFAULT_GAME):
 
-        self.game  = self.game_repository.get_game(game_id)
+        self.game = self.game_repository.get_game(game_id)
 
     def get_payout_table_text(self):
         return str(self.game.get_payout_table())
+
 
 video_poker_service = VideoPokerService(Dealer(3), PokerHandEvaluator())

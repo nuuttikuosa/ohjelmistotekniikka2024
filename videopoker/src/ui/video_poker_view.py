@@ -24,7 +24,6 @@ class VideoPokerHandView:
                 Kutsuttava-arvo, jota kutsutaan kun kortin alla olevaa valitse bappia painetaan. Saa argumentiksi id-arvon.
         """
 
-
         self._root = root
 
         self._video_poker_service = video_poker_service
@@ -52,7 +51,6 @@ class VideoPokerHandView:
         else:
             self.__buttons[card_id].config(text="Valitse")
 
-
     def _initialize_card_item(self, card: PlayingCard, column):
         item_frame = ttk.Frame(master=self._frame)
 
@@ -67,7 +65,7 @@ class VideoPokerHandView:
                 command=lambda: self.handle_press_button(str(card))
             )
 
-            self.__buttons[str(card)]= select_card_button
+            self.__buttons[str(card)] = select_card_button
 
         label.grid(row=0, column=0, padx=5, pady=5, sticky=constants.N)
 
@@ -79,7 +77,6 @@ class VideoPokerHandView:
                 pady=5,
                 sticky=constants.NSEW
             )
-
 
         item_frame.grid(row=0, column=column, padx=5, pady=5, sticky=tk.NSEW)
 
@@ -174,7 +171,7 @@ class VideoPokerView:
 
         elif self.__status == STATUS_SECOND_ROUND:
             self.__video_poker_service.deal_hand()
-            self.__status =STATUS_FIRST_ROUND
+            self.__status = STATUS_FIRST_ROUND
             self._deal_cards_button.configure(text="Vaihda kortteja")
 
         hand_value_text = f"Korkein yhdistelmä kädessä on {self.__video_poker_service.get_hand_value_text()}."
@@ -196,16 +193,16 @@ class VideoPokerView:
         #    self._create_todo_entry.delete(0, constants.END)
 
     def _initialize_footer(self):
-        payout_table_text   = ttk.Label(
+        payout_table_text = ttk.Label(
             master=self._frame,
             text=f"Voito ovat \n{self.__video_poker_service.get_payout_table_text()}"
         )
 
-        self.__hand_value_text  = ttk.Label(
+        self.__hand_value_text = ttk.Label(
             master=self._frame,
             text=f"Korkein yhdistelmä kädessä on {self.__video_poker_service.get_hand_value_text()}"
         )
-        self._deal_cards_button= ttk.Button(
+        self._deal_cards_button = ttk.Button(
             master=self._frame,
             text="Vaihda kortteja",
             command=self._handle_deal_cards

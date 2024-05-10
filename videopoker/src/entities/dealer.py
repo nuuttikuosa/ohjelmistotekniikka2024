@@ -43,6 +43,6 @@ class Dealer:
             if str(card) not in cards_to_keep:
                 new_card_number = choice(range(card_deck.number_of_cards()))
                 new_card = card_deck.get_card(new_card_number)
-                hand.replace_card(card,new_card )
+                hand.replace_card(card, new_card)
 
         return hand

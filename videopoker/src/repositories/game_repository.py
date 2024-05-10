@@ -3,6 +3,7 @@ from entities.game import Game
 from entities.hand_value import HandValue
 from entities.payout_table import PayoutTable
 
+
 def get_game_by_row(row):
     return Game(row["id"], row["name"], row["note"]) if row else None
 
@@ -35,7 +36,7 @@ class GameRepository:
         payout_table = PayoutTable()
 
         for row in rows:
-           payout_table.add_payout(row[0], row[1])
+            payout_table.add_payout(row[0], row[1])
 
         return payout_table
 
@@ -50,7 +51,6 @@ class GameRepository:
         game.set_payout_table(self.get_pay_table(game_id))
 
         return game
-
 
     def delete_all(self):
         """Poistaa kaikki pelikonfiguraatiot.

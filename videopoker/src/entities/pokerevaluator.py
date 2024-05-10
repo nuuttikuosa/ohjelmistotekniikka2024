@@ -39,6 +39,16 @@ class PokerHandEvaluator:
 
         return False
 
+    def jacks_or_better_basic_evaluation(self, hand: list):
+
+        ranks = sorted('--23456789TJQKA'.find(rank) for rank, _ in hand)
+        hand_value = self.basic_evaluation(hand)
+        if hand_value == HandValue.PAIR:
+            if self.__jacks_or_better_pair(ranks):
+                hand_value = HandValue.PAIR_JACKS_OR_BETTER
+
+        return hand_value
+
     def basic_evaluation(self, hand: list):
         """Analysoi onko pokerikädessä pokerin sääntöjen mukaista korttiyhdistelmää
             josta maksettaisiin voittoja
@@ -73,10 +83,7 @@ class PokerHandEvaluator:
         elif counts == [1, 2, 2]:
             hand_value = HandValue.TWO_PAIRS
         elif counts == [1, 1, 1, 2]:
-            if self.__jacks_or_better_pair(ranks):
-                hand_value = HandValue.PAIR_JACKS_OR_BETTER
-            else:
-                hand_value = HandValue.PAIR
+            hand_value = HandValue.PAIR
         else:
             hand_value = HandValue.HIGH_CARD
         return hand_value
