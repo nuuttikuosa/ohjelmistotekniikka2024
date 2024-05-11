@@ -1,4 +1,5 @@
 from random import choice, seed
+import time
 
 from entities.deck import Deck
 from entities.hand import PokerHand
@@ -6,8 +7,11 @@ from entities.hand import PokerHand
 
 class Dealer:
 
-    def __init__(self, seed_value: int):
-        seed(seed_value)
+    def __init__(self, seed_value=None):
+        if seed_value is not None:
+            seed(seed_value)
+        else:
+            seed(time.time())
 
     @staticmethod
     def deal_hand(count: int, card_deck: Deck):
