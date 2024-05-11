@@ -122,17 +122,6 @@ class VideoPokerService:
         """
         return self.game_repository.find_games()
 
-    def get_pay_out_table_text(self, game_id: int):
-        """Palauttaa erilaiset tietokantaan tallennetut maksusäännöt,
-        jotka liittyvät annettuun peliin
-        Arg:
-            game_id: pokeripelin id tietokannassa (int)
-        Returns:
-            Palauttaa kaikki peliin liittyvät palkintosäännöt
-        """
-
-        return self.game_repository.get_pay_table(game_id)
-
     def get_pay_out_for_hand(self):
         """Palauttaa käden voiton
         Arg:
@@ -225,4 +214,4 @@ class VideoPokerService:
         return player_str
 
 
-video_poker_service = VideoPokerService(Dealer(3), PokerHandEvaluator())
+video_poker_service = VideoPokerService(Dealer(), PokerHandEvaluator())

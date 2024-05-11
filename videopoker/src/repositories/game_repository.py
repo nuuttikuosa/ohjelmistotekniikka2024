@@ -1,15 +1,10 @@
 from database_connection import get_database_connection
 from entities.game import Game
-from entities.hand_value import HandValue
 from entities.payout_table import PayoutTable
 
 
 def get_game_by_row(row):
     return Game(row["id"], row["name"], row["note"]) if row else None
-
-
-def get_pay_out_by_row(row):
-    return (HandValue(row["hand"]), row["payout"]) if row else None
 
 
 class GameRepository:

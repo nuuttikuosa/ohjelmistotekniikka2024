@@ -1,190 +1,75 @@
-2024-05-10 21:24:43.689 | INFO     | services.videopokerservice:deal_hand:76 - Hand dealt successfully: 4D AH JH TC AD
-2024-05-10 21:24:48.523 | INFO     | services.videopokerservice:replace_cards:94 - Cards changed successfully:['AH', 'AD']
-2024-05-10 21:24:48.524 | INFO     | services.videopokerservice:replace_cards:95 - New Hand:6S AH 9H TS AD
-2024-05-10 21:24:48.525 | INFO     | services.videopokerservice:get_pay_out_for_hand:138 - Hand evaluated: 6S AH 9H TS AD
-2024-05-10 21:24:48.525 | SUCCESS  | services.videopokerservice:get_pay_out_for_hand:139 - Hand value: PAIR_JACKS_OR_BETTER
-2024-05-10 21:24:48.526 | SUCCESS  | services.videopokerservice:get_pay_out_for_hand:140 - Payout: 1
-2024-05-10 21:24:50.674 | INFO     | services.videopokerservice:deal_hand:76 - Hand dealt successfully: 7S 6C JS 2C KH
-2024-05-10 21:24:53.034 | INFO     | services.videopokerservice:replace_cards:94 - Cards changed successfully:['KH']
-2024-05-10 21:24:53.035 | INFO     | services.videopokerservice:replace_cards:95 - New Hand:9D QS 7D 5D KH
-2024-05-10 21:24:53.037 | INFO     | services.videopokerservice:get_pay_out_for_hand:138 - Hand evaluated: 9D QS 7D 5D KH
-2024-05-10 21:24:53.037 | SUCCESS  | services.videopokerservice:get_pay_out_for_hand:139 - Hand value: HIGH_CARD
-2024-05-10 21:24:53.038 | SUCCESS  | services.videopokerservice:get_pay_out_for_hand:140 - Payout: 0
-2024-05-10 21:24:54.779 | INFO     | services.videopokerservice:deal_hand:76 - Hand dealt successfully: 5S 8S TH AC QC
-2024-05-10 21:24:58.099 | INFO     | services.videopokerservice:replace_cards:94 - Cards changed successfully:['AC', 'QC']
-2024-05-10 21:24:58.100 | INFO     | services.videopokerservice:replace_cards:95 - New Hand:6H 8C AS AC QC
-2024-05-10 21:24:58.102 | INFO     | services.videopokerservice:get_pay_out_for_hand:138 - Hand evaluated: 6H 8C AS AC QC
-2024-05-10 21:24:58.102 | SUCCESS  | services.videopokerservice:get_pay_out_for_hand:139 - Hand value: PAIR_JACKS_OR_BETTER
-2024-05-10 21:24:58.103 | SUCCESS  | services.videopokerservice:get_pay_out_for_hand:140 - Payout: 1
-2024-05-10 21:24:59.801 | INFO     | services.videopokerservice:deal_hand:76 - Hand dealt successfully: 3H JD 9S 3C 4S
-2024-05-10 21:25:03.915 | INFO     | services.videopokerservice:replace_cards:94 - Cards changed successfully:['3C', '3H']
-2024-05-10 21:25:03.916 | INFO     | services.videopokerservice:replace_cards:95 - New Hand:3H 7C 2D 3C 3S
-2024-05-10 21:25:03.919 | INFO     | services.videopokerservice:get_pay_out_for_hand:138 - Hand evaluated: 3H 7C 2D 3C 3S
-2024-05-10 21:25:03.919 | SUCCESS  | services.videopokerservice:get_pay_out_for_hand:139 - Hand value: THREE
-2024-05-10 21:25:03.920 | SUCCESS  | services.videopokerservice:get_pay_out_for_hand:140 - Payout: 3
-2024-05-11 01:11:50.218 | INFO     | services.videopokerservice:deal_hand:76 - Hand dealt successfully: 4D AH JH TC AD
-2024-05-11 01:27:24.796 | INFO     | services.videopokerservice:deal_hand:76 - Hand dealt successfully: 4D AH JH TC AD
-2024-05-11 01:27:34.954 | INFO     | services.videopokerservice:replace_cards:94 - Cards changed successfully:['AH', 'AD']
-2024-05-11 01:27:34.955 | INFO     | services.videopokerservice:replace_cards:95 - New Hand:6S AH 9H TS AD
-2024-05-11 01:27:34.957 | INFO     | services.videopokerservice:get_pay_out_for_hand:138 - Hand evaluated: 6S AH 9H TS AD
-2024-05-11 01:27:34.958 | SUCCESS  | services.videopokerservice:get_pay_out_for_hand:139 - Hand value: PAIR_JACKS_OR_BETTER
-2024-05-11 01:27:34.959 | SUCCESS  | services.videopokerservice:get_pay_out_for_hand:140 - Payout: 1
-2024-05-11 01:27:48.679 | INFO     | services.videopokerservice:deal_hand:76 - Hand dealt successfully: 7S 6C JS 2C KH
-2024-05-11 01:42:08.642 | INFO     | services.videopokerservice:deal_hand:80 - Hand dealt successfully: 4D AH JH TC AD
-2024-05-11 01:42:17.962 | INFO     | services.videopokerservice:replace_cards:100 - Cards changed successfully:['AH', 'AD']
-2024-05-11 01:42:17.963 | INFO     | services.videopokerservice:replace_cards:101 - New Hand:6S AH 9H TS AD
-2024-05-11 01:42:17.964 | INFO     | services.videopokerservice:get_pay_out_for_hand:145 - Hand evaluated: 6S AH 9H TS AD
-2024-05-11 01:42:17.965 | SUCCESS  | services.videopokerservice:get_pay_out_for_hand:146 - Hand value: PAIR_JACKS_OR_BETTER
-2024-05-11 01:42:17.965 | SUCCESS  | services.videopokerservice:get_pay_out_for_hand:147 - Payout: 1
-2024-05-11 01:42:17.967 | INFO     | services.videopokerservice:get_pay_out_for_hand:145 - Hand evaluated: 6S AH 9H TS AD
-2024-05-11 01:42:17.967 | SUCCESS  | services.videopokerservice:get_pay_out_for_hand:146 - Hand value: PAIR_JACKS_OR_BETTER
-2024-05-11 01:42:17.968 | SUCCESS  | services.videopokerservice:get_pay_out_for_hand:147 - Payout: 1
-2024-05-11 01:42:27.948 | INFO     | services.videopokerservice:deal_hand:80 - Hand dealt successfully: KH 6C 3S 2C 8H
-2024-05-11 01:42:32.744 | INFO     | services.videopokerservice:replace_cards:100 - Cards changed successfully:['KH']
-2024-05-11 01:42:32.744 | INFO     | services.videopokerservice:replace_cards:101 - New Hand:KH 7D 4S 5D 3D
-2024-05-11 01:42:32.744 | INFO     | services.videopokerservice:get_pay_out_for_hand:145 - Hand evaluated: KH 7D 4S 5D 3D
-2024-05-11 01:42:32.744 | SUCCESS  | services.videopokerservice:get_pay_out_for_hand:146 - Hand value: HIGH_CARD
-2024-05-11 01:42:32.744 | SUCCESS  | services.videopokerservice:get_pay_out_for_hand:147 - Payout: 0
-2024-05-11 01:42:32.745 | INFO     | services.videopokerservice:get_pay_out_for_hand:145 - Hand evaluated: KH 7D 4S 5D 3D
-2024-05-11 01:42:32.745 | SUCCESS  | services.videopokerservice:get_pay_out_for_hand:146 - Hand value: HIGH_CARD
-2024-05-11 01:42:32.745 | SUCCESS  | services.videopokerservice:get_pay_out_for_hand:147 - Payout: 0
-2024-05-11 01:42:37.066 | INFO     | services.videopokerservice:deal_hand:80 - Hand dealt successfully: 8S 6H JH KH 7H
-2024-05-11 01:42:43.105 | INFO     | services.videopokerservice:replace_cards:100 - Cards changed successfully:['6H', 'JH', 'KH', '7H']
-2024-05-11 01:42:43.106 | INFO     | services.videopokerservice:replace_cards:101 - New Hand:AD 6H JH KH 7H
-2024-05-11 01:42:43.107 | INFO     | services.videopokerservice:get_pay_out_for_hand:145 - Hand evaluated: AD 6H JH KH 7H
-2024-05-11 01:42:43.107 | SUCCESS  | services.videopokerservice:get_pay_out_for_hand:146 - Hand value: HIGH_CARD
-2024-05-11 01:42:43.107 | SUCCESS  | services.videopokerservice:get_pay_out_for_hand:147 - Payout: 0
-2024-05-11 01:42:43.107 | INFO     | services.videopokerservice:get_pay_out_for_hand:145 - Hand evaluated: AD 6H JH KH 7H
-2024-05-11 01:42:43.107 | SUCCESS  | services.videopokerservice:get_pay_out_for_hand:146 - Hand value: HIGH_CARD
-2024-05-11 01:42:43.107 | SUCCESS  | services.videopokerservice:get_pay_out_for_hand:147 - Payout: 0
-2024-05-11 01:42:45.354 | INFO     | services.videopokerservice:deal_hand:80 - Hand dealt successfully: 3S JC 4D 6S QC
-2024-05-11 01:42:51.752 | INFO     | services.videopokerservice:replace_cards:100 - Cards changed successfully:['QC', 'JC']
-2024-05-11 01:42:51.752 | INFO     | services.videopokerservice:replace_cards:101 - New Hand:QH JC 3H 2C QC
-2024-05-11 01:42:51.753 | INFO     | services.videopokerservice:get_pay_out_for_hand:145 - Hand evaluated: QH JC 3H 2C QC
-2024-05-11 01:42:51.753 | SUCCESS  | services.videopokerservice:get_pay_out_for_hand:146 - Hand value: PAIR_JACKS_OR_BETTER
-2024-05-11 01:42:51.753 | SUCCESS  | services.videopokerservice:get_pay_out_for_hand:147 - Payout: 1
-2024-05-11 01:42:51.754 | INFO     | services.videopokerservice:get_pay_out_for_hand:145 - Hand evaluated: QH JC 3H 2C QC
-2024-05-11 01:42:51.754 | SUCCESS  | services.videopokerservice:get_pay_out_for_hand:146 - Hand value: PAIR_JACKS_OR_BETTER
-2024-05-11 01:42:51.754 | SUCCESS  | services.videopokerservice:get_pay_out_for_hand:147 - Payout: 1
-2024-05-11 01:42:55.410 | INFO     | services.videopokerservice:deal_hand:80 - Hand dealt successfully: 5S KS 6C KC 2S
-2024-05-11 02:09:55.451 | INFO     | services.videopokerservice:deal_hand:80 - Hand dealt successfully: 4D AH JH TC AD
-2024-05-11 02:10:02.569 | INFO     | services.videopokerservice:replace_cards:100 - Cards changed successfully:['AH', 'AD']
-2024-05-11 02:10:02.570 | INFO     | services.videopokerservice:replace_cards:101 - New Hand:6S AH 9H TS AD
-2024-05-11 02:10:02.571 | INFO     | services.videopokerservice:get_pay_out_for_hand:145 - Hand evaluated: 6S AH 9H TS AD
-2024-05-11 02:10:02.571 | SUCCESS  | services.videopokerservice:get_pay_out_for_hand:146 - Hand value: PAIR_JACKS_OR_BETTER
-2024-05-11 02:10:02.571 | SUCCESS  | services.videopokerservice:get_pay_out_for_hand:147 - Payout: 1
-2024-05-11 02:10:02.572 | INFO     | services.videopokerservice:get_pay_out_for_hand:145 - Hand evaluated: 6S AH 9H TS AD
-2024-05-11 02:10:02.573 | SUCCESS  | services.videopokerservice:get_pay_out_for_hand:146 - Hand value: PAIR_JACKS_OR_BETTER
-2024-05-11 02:10:02.573 | SUCCESS  | services.videopokerservice:get_pay_out_for_hand:147 - Payout: 1
-2024-05-11 02:10:07.418 | INFO     | services.videopokerservice:deal_hand:80 - Hand dealt successfully: KH 6C 3S 2C 8H
-2024-05-11 02:10:17.072 | INFO     | services.videopokerservice:replace_cards:100 - Cards changed successfully:['2C', '3S', '6C']
-2024-05-11 02:10:17.073 | INFO     | services.videopokerservice:replace_cards:101 - New Hand:7D 6C 3S 2C 4S
-2024-05-11 02:10:17.075 | INFO     | services.videopokerservice:get_pay_out_for_hand:145 - Hand evaluated: 7D 6C 3S 2C 4S
-2024-05-11 02:10:17.076 | SUCCESS  | services.videopokerservice:get_pay_out_for_hand:146 - Hand value: HIGH_CARD
-2024-05-11 02:10:17.076 | SUCCESS  | services.videopokerservice:get_pay_out_for_hand:147 - Payout: 0
-2024-05-11 02:10:17.077 | INFO     | services.videopokerservice:get_pay_out_for_hand:145 - Hand evaluated: 7D 6C 3S 2C 4S
-2024-05-11 02:10:17.078 | SUCCESS  | services.videopokerservice:get_pay_out_for_hand:146 - Hand value: HIGH_CARD
-2024-05-11 02:10:17.078 | SUCCESS  | services.videopokerservice:get_pay_out_for_hand:147 - Payout: 0
-2024-05-11 02:10:24.073 | INFO     | services.videopokerservice:deal_hand:80 - Hand dealt successfully: 3D AC TS 8H KH
-2024-05-11 02:10:29.896 | INFO     | services.videopokerservice:replace_cards:100 - Cards changed successfully:['AC', 'KH']
-2024-05-11 02:10:29.898 | INFO     | services.videopokerservice:replace_cards:101 - New Hand:2S AC 9H 3H KH
-2024-05-11 02:10:29.899 | INFO     | services.videopokerservice:get_pay_out_for_hand:145 - Hand evaluated: 2S AC 9H 3H KH
-2024-05-11 02:10:29.900 | SUCCESS  | services.videopokerservice:get_pay_out_for_hand:146 - Hand value: HIGH_CARD
-2024-05-11 02:10:29.900 | SUCCESS  | services.videopokerservice:get_pay_out_for_hand:147 - Payout: 0
-2024-05-11 02:10:29.901 | INFO     | services.videopokerservice:get_pay_out_for_hand:145 - Hand evaluated: 2S AC 9H 3H KH
-2024-05-11 02:10:29.902 | SUCCESS  | services.videopokerservice:get_pay_out_for_hand:146 - Hand value: HIGH_CARD
-2024-05-11 02:10:29.902 | SUCCESS  | services.videopokerservice:get_pay_out_for_hand:147 - Payout: 0
-2024-05-11 02:10:32.625 | INFO     | services.videopokerservice:deal_hand:80 - Hand dealt successfully: 3S JC 4D 6S QC
-2024-05-11 02:10:37.392 | INFO     | services.videopokerservice:replace_cards:100 - Cards changed successfully:['JC', 'QC']
-2024-05-11 02:10:37.393 | INFO     | services.videopokerservice:replace_cards:101 - New Hand:QH JC 3H 2C QC
-2024-05-11 02:10:37.400 | INFO     | services.videopokerservice:get_pay_out_for_hand:145 - Hand evaluated: QH JC 3H 2C QC
-2024-05-11 02:10:37.401 | SUCCESS  | services.videopokerservice:get_pay_out_for_hand:146 - Hand value: PAIR_JACKS_OR_BETTER
-2024-05-11 02:10:37.402 | SUCCESS  | services.videopokerservice:get_pay_out_for_hand:147 - Payout: 1
-2024-05-11 02:10:37.403 | INFO     | services.videopokerservice:get_pay_out_for_hand:145 - Hand evaluated: QH JC 3H 2C QC
-2024-05-11 02:10:37.404 | SUCCESS  | services.videopokerservice:get_pay_out_for_hand:146 - Hand value: PAIR_JACKS_OR_BETTER
-2024-05-11 02:10:37.404 | SUCCESS  | services.videopokerservice:get_pay_out_for_hand:147 - Payout: 1
-2024-05-11 02:10:40.897 | INFO     | services.videopokerservice:deal_hand:80 - Hand dealt successfully: 5S KS 6C KC 2S
-2024-05-11 02:13:11.408 | INFO     | services.videopokerservice:deal_hand:80 - Hand dealt successfully: 4D AH JH TC AD
-2024-05-11 02:13:15.784 | INFO     | services.videopokerservice:replace_cards:100 - Cards changed successfully:['AH', 'AD']
-2024-05-11 02:13:15.784 | INFO     | services.videopokerservice:replace_cards:101 - New Hand:6S AH 9H TS AD
-2024-05-11 02:13:15.785 | INFO     | services.videopokerservice:get_pay_out_for_hand:145 - Hand evaluated: 6S AH 9H TS AD
-2024-05-11 02:13:15.785 | SUCCESS  | services.videopokerservice:get_pay_out_for_hand:146 - Hand value: PAIR_JACKS_OR_BETTER
-2024-05-11 02:13:15.785 | SUCCESS  | services.videopokerservice:get_pay_out_for_hand:147 - Payout: 1
-2024-05-11 02:13:15.785 | INFO     | services.videopokerservice:get_pay_out_for_hand:145 - Hand evaluated: 6S AH 9H TS AD
-2024-05-11 02:13:15.786 | SUCCESS  | services.videopokerservice:get_pay_out_for_hand:146 - Hand value: PAIR_JACKS_OR_BETTER
-2024-05-11 02:13:15.786 | SUCCESS  | services.videopokerservice:get_pay_out_for_hand:147 - Payout: 1
-2024-05-11 02:13:18.106 | INFO     | services.videopokerservice:deal_hand:80 - Hand dealt successfully: KH 6C 3S 2C 8H
-2024-05-11 02:13:21.216 | INFO     | services.videopokerservice:replace_cards:100 - Cards changed successfully:['KH']
-2024-05-11 02:13:21.217 | INFO     | services.videopokerservice:replace_cards:101 - New Hand:KH 7D 4S 5D 3D
-2024-05-11 02:13:21.219 | INFO     | services.videopokerservice:get_pay_out_for_hand:145 - Hand evaluated: KH 7D 4S 5D 3D
-2024-05-11 02:13:21.219 | SUCCESS  | services.videopokerservice:get_pay_out_for_hand:146 - Hand value: HIGH_CARD
-2024-05-11 02:13:21.219 | SUCCESS  | services.videopokerservice:get_pay_out_for_hand:147 - Payout: 0
-2024-05-11 02:13:21.221 | INFO     | services.videopokerservice:get_pay_out_for_hand:145 - Hand evaluated: KH 7D 4S 5D 3D
-2024-05-11 02:13:21.221 | SUCCESS  | services.videopokerservice:get_pay_out_for_hand:146 - Hand value: HIGH_CARD
-2024-05-11 02:13:21.221 | SUCCESS  | services.videopokerservice:get_pay_out_for_hand:147 - Payout: 0
-2024-05-11 02:13:23.577 | INFO     | services.videopokerservice:deal_hand:80 - Hand dealt successfully: 8S 6H JH KH 7H
-2024-05-11 02:13:30.360 | INFO     | services.videopokerservice:replace_cards:100 - Cards changed successfully:['JH', 'KH', '7H', '6H']
-2024-05-11 02:13:30.361 | INFO     | services.videopokerservice:replace_cards:101 - New Hand:AD 6H JH KH 7H
-2024-05-11 02:13:30.363 | INFO     | services.videopokerservice:get_pay_out_for_hand:145 - Hand evaluated: AD 6H JH KH 7H
-2024-05-11 02:13:30.363 | SUCCESS  | services.videopokerservice:get_pay_out_for_hand:146 - Hand value: HIGH_CARD
-2024-05-11 02:13:30.364 | SUCCESS  | services.videopokerservice:get_pay_out_for_hand:147 - Payout: 0
-2024-05-11 02:13:30.365 | INFO     | services.videopokerservice:get_pay_out_for_hand:145 - Hand evaluated: AD 6H JH KH 7H
-2024-05-11 02:13:30.365 | SUCCESS  | services.videopokerservice:get_pay_out_for_hand:146 - Hand value: HIGH_CARD
-2024-05-11 02:13:30.365 | SUCCESS  | services.videopokerservice:get_pay_out_for_hand:147 - Payout: 0
-2024-05-11 02:13:32.512 | INFO     | services.videopokerservice:deal_hand:80 - Hand dealt successfully: 3S JC 4D 6S QC
-2024-05-11 02:13:36.680 | INFO     | services.videopokerservice:replace_cards:100 - Cards changed successfully:['QC', 'JC']
-2024-05-11 02:13:36.681 | INFO     | services.videopokerservice:replace_cards:101 - New Hand:QH JC 3H 2C QC
-2024-05-11 02:13:36.682 | INFO     | services.videopokerservice:get_pay_out_for_hand:145 - Hand evaluated: QH JC 3H 2C QC
-2024-05-11 02:13:36.683 | SUCCESS  | services.videopokerservice:get_pay_out_for_hand:146 - Hand value: PAIR_JACKS_OR_BETTER
-2024-05-11 02:13:36.684 | SUCCESS  | services.videopokerservice:get_pay_out_for_hand:147 - Payout: 1
-2024-05-11 02:13:36.685 | INFO     | services.videopokerservice:get_pay_out_for_hand:145 - Hand evaluated: QH JC 3H 2C QC
-2024-05-11 02:13:36.686 | SUCCESS  | services.videopokerservice:get_pay_out_for_hand:146 - Hand value: PAIR_JACKS_OR_BETTER
-2024-05-11 02:13:36.687 | SUCCESS  | services.videopokerservice:get_pay_out_for_hand:147 - Payout: 1
-2024-05-11 02:13:38.897 | INFO     | services.videopokerservice:deal_hand:80 - Hand dealt successfully: 5S KS 6C KC 2S
-2024-05-11 02:13:43.224 | INFO     | services.videopokerservice:replace_cards:100 - Cards changed successfully:['KS', 'KC']
-2024-05-11 02:13:43.225 | INFO     | services.videopokerservice:replace_cards:101 - New Hand:4C KS JD KC 3C
-2024-05-11 02:13:43.227 | INFO     | services.videopokerservice:get_pay_out_for_hand:145 - Hand evaluated: 4C KS JD KC 3C
-2024-05-11 02:13:43.228 | SUCCESS  | services.videopokerservice:get_pay_out_for_hand:146 - Hand value: PAIR_JACKS_OR_BETTER
-2024-05-11 02:13:43.228 | SUCCESS  | services.videopokerservice:get_pay_out_for_hand:147 - Payout: 1
-2024-05-11 02:13:43.229 | INFO     | services.videopokerservice:get_pay_out_for_hand:145 - Hand evaluated: 4C KS JD KC 3C
-2024-05-11 02:13:43.230 | SUCCESS  | services.videopokerservice:get_pay_out_for_hand:146 - Hand value: PAIR_JACKS_OR_BETTER
-2024-05-11 02:13:43.230 | SUCCESS  | services.videopokerservice:get_pay_out_for_hand:147 - Payout: 1
-2024-05-11 02:13:45.736 | INFO     | services.videopokerservice:deal_hand:80 - Hand dealt successfully: 6D 7H 3S QS AD
-2024-05-11 02:13:53.608 | INFO     | services.videopokerservice:replace_cards:100 - Cards changed successfully:['AD']
-2024-05-11 02:13:53.609 | INFO     | services.videopokerservice:replace_cards:101 - New Hand:KS 5H 3H 5S AD
-2024-05-11 02:13:53.611 | INFO     | services.videopokerservice:get_pay_out_for_hand:145 - Hand evaluated: KS 5H 3H 5S AD
-2024-05-11 02:13:53.612 | SUCCESS  | services.videopokerservice:get_pay_out_for_hand:146 - Hand value: PAIR
-2024-05-11 02:13:53.612 | SUCCESS  | services.videopokerservice:get_pay_out_for_hand:147 - Payout: 0
-2024-05-11 02:13:53.613 | INFO     | services.videopokerservice:get_pay_out_for_hand:145 - Hand evaluated: KS 5H 3H 5S AD
-2024-05-11 02:13:53.613 | SUCCESS  | services.videopokerservice:get_pay_out_for_hand:146 - Hand value: PAIR
-2024-05-11 02:13:53.614 | SUCCESS  | services.videopokerservice:get_pay_out_for_hand:147 - Payout: 0
-2024-05-11 02:13:57.459 | INFO     | services.videopokerservice:deal_hand:80 - Hand dealt successfully: 4H TC KD 8C 4C
-2024-05-11 02:14:01.888 | INFO     | services.videopokerservice:replace_cards:100 - Cards changed successfully:[]
-2024-05-11 02:14:01.889 | INFO     | services.videopokerservice:replace_cards:101 - New Hand:KC KH 6D TD JH
-2024-05-11 02:14:01.891 | INFO     | services.videopokerservice:get_pay_out_for_hand:145 - Hand evaluated: KC KH 6D TD JH
-2024-05-11 02:14:01.892 | SUCCESS  | services.videopokerservice:get_pay_out_for_hand:146 - Hand value: PAIR_JACKS_OR_BETTER
-2024-05-11 02:14:01.892 | SUCCESS  | services.videopokerservice:get_pay_out_for_hand:147 - Payout: 1
-2024-05-11 02:14:01.894 | INFO     | services.videopokerservice:get_pay_out_for_hand:145 - Hand evaluated: KC KH 6D TD JH
-2024-05-11 02:14:01.895 | SUCCESS  | services.videopokerservice:get_pay_out_for_hand:146 - Hand value: PAIR_JACKS_OR_BETTER
-2024-05-11 02:14:01.895 | SUCCESS  | services.videopokerservice:get_pay_out_for_hand:147 - Payout: 1
-2024-05-11 02:14:05.848 | INFO     | services.videopokerservice:deal_hand:80 - Hand dealt successfully: QS 3S 8D 3H TH
-2024-05-11 02:14:09.968 | INFO     | services.videopokerservice:replace_cards:100 - Cards changed successfully:['QS']
-2024-05-11 02:14:09.970 | INFO     | services.videopokerservice:replace_cards:101 - New Hand:QS AD 4S QD 2S
-2024-05-11 02:14:09.971 | INFO     | services.videopokerservice:get_pay_out_for_hand:145 - Hand evaluated: QS AD 4S QD 2S
-2024-05-11 02:14:09.972 | SUCCESS  | services.videopokerservice:get_pay_out_for_hand:146 - Hand value: PAIR_JACKS_OR_BETTER
-2024-05-11 02:14:09.972 | SUCCESS  | services.videopokerservice:get_pay_out_for_hand:147 - Payout: 1
-2024-05-11 02:14:09.973 | INFO     | services.videopokerservice:get_pay_out_for_hand:145 - Hand evaluated: QS AD 4S QD 2S
-2024-05-11 02:14:09.973 | SUCCESS  | services.videopokerservice:get_pay_out_for_hand:146 - Hand value: PAIR_JACKS_OR_BETTER
-2024-05-11 02:14:09.973 | SUCCESS  | services.videopokerservice:get_pay_out_for_hand:147 - Payout: 1
-2024-05-11 02:14:19.248 | INFO     | services.videopokerservice:deal_hand:80 - Hand dealt successfully: KH 2H 2S 3D JD
-2024-05-11 02:44:10.015 | INFO     | services.videopokerservice:deal_hand:80 - Hand dealt successfully: 4D AH JH TC AD
-2024-05-11 02:45:36.651 | INFO     | services.videopokerservice:deal_hand:80 - Hand dealt successfully: 4D AH JH TC AD
-2024-05-11 02:45:42.512 | INFO     | services.videopokerservice:replace_cards:100 - Cards changed successfully:['AH', 'AD']
-2024-05-11 02:45:42.513 | INFO     | services.videopokerservice:replace_cards:101 - New Hand:6S AH 9H TS AD
-2024-05-11 02:45:42.514 | INFO     | services.videopokerservice:get_pay_out_for_hand:147 - Hand evaluated: 6S AH 9H TS AD
-2024-05-11 02:45:42.515 | SUCCESS  | services.videopokerservice:get_pay_out_for_hand:148 - Hand value: PAIR_JACKS_OR_BETTER
-2024-05-11 02:45:42.515 | SUCCESS  | services.videopokerservice:get_pay_out_for_hand:149 - Payout: 1
-2024-05-11 02:45:42.517 | INFO     | services.videopokerservice:get_pay_out_for_hand:147 - Hand evaluated: 6S AH 9H TS AD
-2024-05-11 02:45:42.517 | SUCCESS  | services.videopokerservice:get_pay_out_for_hand:148 - Hand value: PAIR_JACKS_OR_BETTER
-2024-05-11 02:45:42.518 | SUCCESS  | services.videopokerservice:get_pay_out_for_hand:149 - Payout: 1
-2024-05-11 02:45:45.523 | INFO     | services.videopokerservice:deal_hand:80 - Hand dealt successfully: KH 6C 3S 2C 8H
+2024-05-11 15:03:36.591 | INFO     | services.videopokerservice:deal_hand:80 - Hand dealt successfully: 4D AH JH TC AD
+2024-05-11 15:04:22.078 | INFO     | services.videopokerservice:replace_cards:100 - Cards changed successfully:['AD', 'AH']
+2024-05-11 15:04:22.079 | INFO     | services.videopokerservice:replace_cards:101 - New Hand:6S AH 9H TS AD
+2024-05-11 15:04:22.080 | INFO     | services.videopokerservice:get_pay_out_for_hand:147 - Hand evaluated: 6S AH 9H TS AD
+2024-05-11 15:04:22.081 | SUCCESS  | services.videopokerservice:get_pay_out_for_hand:148 - Hand value: PAIR_JACKS_OR_BETTER
+2024-05-11 15:04:22.081 | SUCCESS  | services.videopokerservice:get_pay_out_for_hand:149 - Payout: 1
+2024-05-11 15:04:22.082 | INFO     | services.videopokerservice:get_pay_out_for_hand:147 - Hand evaluated: 6S AH 9H TS AD
+2024-05-11 15:04:22.083 | SUCCESS  | services.videopokerservice:get_pay_out_for_hand:148 - Hand value: PAIR_JACKS_OR_BETTER
+2024-05-11 15:04:22.083 | SUCCESS  | services.videopokerservice:get_pay_out_for_hand:149 - Payout: 1
+2024-05-11 15:04:29.382 | INFO     | services.videopokerservice:deal_hand:80 - Hand dealt successfully: KH 6C 3S 2C 8H
+2024-05-11 15:04:33.270 | INFO     | services.videopokerservice:replace_cards:100 - Cards changed successfully:['KH']
+2024-05-11 15:04:33.271 | INFO     | services.videopokerservice:replace_cards:101 - New Hand:KH 7D 4S 5D 3D
+2024-05-11 15:04:33.272 | INFO     | services.videopokerservice:get_pay_out_for_hand:147 - Hand evaluated: KH 7D 4S 5D 3D
+2024-05-11 15:04:33.272 | SUCCESS  | services.videopokerservice:get_pay_out_for_hand:148 - Hand value: HIGH_CARD
+2024-05-11 15:04:33.273 | SUCCESS  | services.videopokerservice:get_pay_out_for_hand:149 - Payout: 0
+2024-05-11 15:04:33.274 | INFO     | services.videopokerservice:get_pay_out_for_hand:147 - Hand evaluated: KH 7D 4S 5D 3D
+2024-05-11 15:04:33.274 | SUCCESS  | services.videopokerservice:get_pay_out_for_hand:148 - Hand value: HIGH_CARD
+2024-05-11 15:04:33.274 | SUCCESS  | services.videopokerservice:get_pay_out_for_hand:149 - Payout: 0
+2024-05-11 15:04:37.078 | INFO     | services.videopokerservice:deal_hand:80 - Hand dealt successfully: 8S 6H JH KH 7H
+2024-05-11 15:04:41.406 | INFO     | services.videopokerservice:replace_cards:100 - Cards changed successfully:['JH', 'KH']
+2024-05-11 15:04:41.407 | INFO     | services.videopokerservice:replace_cards:101 - New Hand:AD 9S JH KH JC
+2024-05-11 15:04:41.408 | INFO     | services.videopokerservice:get_pay_out_for_hand:147 - Hand evaluated: AD 9S JH KH JC
+2024-05-11 15:04:41.408 | SUCCESS  | services.videopokerservice:get_pay_out_for_hand:148 - Hand value: PAIR_JACKS_OR_BETTER
+2024-05-11 15:04:41.409 | SUCCESS  | services.videopokerservice:get_pay_out_for_hand:149 - Payout: 1
+2024-05-11 15:04:41.410 | INFO     | services.videopokerservice:get_pay_out_for_hand:147 - Hand evaluated: AD 9S JH KH JC
+2024-05-11 15:04:41.410 | SUCCESS  | services.videopokerservice:get_pay_out_for_hand:148 - Hand value: PAIR_JACKS_OR_BETTER
+2024-05-11 15:04:41.410 | SUCCESS  | services.videopokerservice:get_pay_out_for_hand:149 - Payout: 1
+2024-05-11 15:04:45.471 | INFO     | services.videopokerservice:deal_hand:80 - Hand dealt successfully: 3D 4S JC JH 2H
+2024-05-11 15:04:53.541 | INFO     | services.videopokerservice:deal_hand:80 - Hand dealt successfully: TS 2C 6S 7C AC
+2024-05-11 19:35:55.866 | INFO     | services.videopokerservice:deal_hand:80 - Hand dealt successfully: 4D AH JH TC AD
+2024-05-11 19:36:00.308 | INFO     | services.videopokerservice:replace_cards:100 - Cards changed successfully:['AH', 'AD']
+2024-05-11 19:36:00.309 | INFO     | services.videopokerservice:replace_cards:101 - New Hand:6S AH 9H TS AD
+2024-05-11 19:36:00.310 | INFO     | services.videopokerservice:get_pay_out_for_hand:147 - Hand evaluated: 6S AH 9H TS AD
+2024-05-11 19:36:00.310 | SUCCESS  | services.videopokerservice:get_pay_out_for_hand:148 - Hand value: PAIR_JACKS_OR_BETTER
+2024-05-11 19:36:00.310 | SUCCESS  | services.videopokerservice:get_pay_out_for_hand:149 - Payout: 1
+2024-05-11 19:36:00.311 | INFO     | services.videopokerservice:get_pay_out_for_hand:147 - Hand evaluated: 6S AH 9H TS AD
+2024-05-11 19:36:00.311 | SUCCESS  | services.videopokerservice:get_pay_out_for_hand:148 - Hand value: PAIR_JACKS_OR_BETTER
+2024-05-11 19:36:00.311 | SUCCESS  | services.videopokerservice:get_pay_out_for_hand:149 - Payout: 1
+2024-05-11 19:36:02.053 | INFO     | services.videopokerservice:deal_hand:80 - Hand dealt successfully: KH 6C 3S 2C 8H
+2024-05-11 19:36:04.796 | INFO     | services.videopokerservice:replace_cards:100 - Cards changed successfully:['KH']
+2024-05-11 19:36:04.797 | INFO     | services.videopokerservice:replace_cards:101 - New Hand:KH 7D 4S 5D 3D
+2024-05-11 19:36:04.798 | INFO     | services.videopokerservice:get_pay_out_for_hand:147 - Hand evaluated: KH 7D 4S 5D 3D
+2024-05-11 19:36:04.798 | SUCCESS  | services.videopokerservice:get_pay_out_for_hand:148 - Hand value: HIGH_CARD
+2024-05-11 19:36:04.798 | SUCCESS  | services.videopokerservice:get_pay_out_for_hand:149 - Payout: 0
+2024-05-11 19:36:04.799 | INFO     | services.videopokerservice:get_pay_out_for_hand:147 - Hand evaluated: KH 7D 4S 5D 3D
+2024-05-11 19:36:04.799 | SUCCESS  | services.videopokerservice:get_pay_out_for_hand:148 - Hand value: HIGH_CARD
+2024-05-11 19:36:04.800 | SUCCESS  | services.videopokerservice:get_pay_out_for_hand:149 - Payout: 0
+2024-05-11 20:29:53.556 | INFO     | services.videopokerservice:deal_hand:80 - Hand dealt successfully: 4D AH JH TC AD
+2024-05-11 20:29:57.230 | INFO     | services.videopokerservice:replace_cards:100 - Cards changed successfully:['AH', 'AD']
+2024-05-11 20:29:57.231 | INFO     | services.videopokerservice:replace_cards:101 - New Hand:6S AH 9H TS AD
+2024-05-11 20:29:57.232 | INFO     | services.videopokerservice:get_pay_out_for_hand:147 - Hand evaluated: 6S AH 9H TS AD
+2024-05-11 20:29:57.232 | SUCCESS  | services.videopokerservice:get_pay_out_for_hand:148 - Hand value: PAIR_JACKS_OR_BETTER
+2024-05-11 20:29:57.233 | SUCCESS  | services.videopokerservice:get_pay_out_for_hand:149 - Payout: 1
+2024-05-11 20:29:57.234 | INFO     | services.videopokerservice:get_pay_out_for_hand:147 - Hand evaluated: 6S AH 9H TS AD
+2024-05-11 20:29:57.234 | SUCCESS  | services.videopokerservice:get_pay_out_for_hand:148 - Hand value: PAIR_JACKS_OR_BETTER
+2024-05-11 20:29:57.235 | SUCCESS  | services.videopokerservice:get_pay_out_for_hand:149 - Payout: 1
+2024-05-12 01:40:18.185 | INFO     | services.videopokerservice:deal_hand:80 - Hand dealt successfully: 4D AH JH TC AD
+2024-05-12 01:40:21.487 | INFO     | services.videopokerservice:replace_cards:100 - Cards changed successfully:['AH', 'AD']
+2024-05-12 01:40:21.488 | INFO     | services.videopokerservice:replace_cards:101 - New Hand:6S AH 9H TS AD
+2024-05-12 01:40:21.489 | INFO     | services.videopokerservice:get_pay_out_for_hand:136 - Hand evaluated: 6S AH 9H TS AD
+2024-05-12 01:40:21.490 | SUCCESS  | services.videopokerservice:get_pay_out_for_hand:137 - Hand value: PAIR_JACKS_OR_BETTER
+2024-05-12 01:40:21.490 | SUCCESS  | services.videopokerservice:get_pay_out_for_hand:138 - Payout: 1
+2024-05-12 01:40:21.492 | INFO     | services.videopokerservice:get_pay_out_for_hand:136 - Hand evaluated: 6S AH 9H TS AD
+2024-05-12 01:40:21.492 | SUCCESS  | services.videopokerservice:get_pay_out_for_hand:137 - Hand value: PAIR_JACKS_OR_BETTER
+2024-05-12 01:40:21.492 | SUCCESS  | services.videopokerservice:get_pay_out_for_hand:138 - Payout: 1
+2024-05-12 01:40:23.319 | INFO     | services.videopokerservice:deal_hand:80 - Hand dealt successfully: KH 6C 3S 2C 8H
+2024-05-12 01:40:26.463 | INFO     | services.videopokerservice:replace_cards:100 - Cards changed successfully:['KH']
+2024-05-12 01:40:26.463 | INFO     | services.videopokerservice:replace_cards:101 - New Hand:KH 7D 4S 5D 3D
+2024-05-12 01:40:26.464 | INFO     | services.videopokerservice:get_pay_out_for_hand:136 - Hand evaluated: KH 7D 4S 5D 3D
+2024-05-12 01:40:26.464 | SUCCESS  | services.videopokerservice:get_pay_out_for_hand:137 - Hand value: HIGH_CARD
+2024-05-12 01:40:26.464 | SUCCESS  | services.videopokerservice:get_pay_out_for_hand:138 - Payout: 0
+2024-05-12 01:40:26.465 | INFO     | services.videopokerservice:get_pay_out_for_hand:136 - Hand evaluated: KH 7D 4S 5D 3D
+2024-05-12 01:40:26.465 | SUCCESS  | services.videopokerservice:get_pay_out_for_hand:137 - Hand value: HIGH_CARD
+2024-05-12 01:40:26.465 | SUCCESS  | services.videopokerservice:get_pay_out_for_hand:138 - Payout: 0
+2024-05-12 01:40:27.974 | INFO     | services.videopokerservice:deal_hand:80 - Hand dealt successfully: 8S 6H JH KH 7H

@@ -2,7 +2,7 @@ import unittest
 from repositories.game_repository import game_repository
 from entities.game import Game
 from database_connection import get_database_connection
-from entities.hand_value import HandValue
+
 
 class TestGameRepository(unittest.TestCase):
     def create_test_data(self, connection):
@@ -65,3 +65,10 @@ class TestGameRepository(unittest.TestCase):
         self.assertEqual(len(str(pay_table)), 208)
         self.assertEqual(pay_table.get_payout(10), 0)
         self.assertEqual(pay_table.get_payout(100), 800)
+
+    def test_get_game(self):
+        game = game_repository.get_game(1)
+
+        self.assertEqual(game.get_game_id(), self.game.get_game_id())
+        self.assertEqual(game.get_name(), self.game.get_name())
+        self.assertEqual(game.get_note(), self.game.get_note())

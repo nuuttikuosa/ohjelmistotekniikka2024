@@ -38,3 +38,7 @@ class TestPlayingCard(unittest.TestCase):
     def test_get_hand_as_tring_list(self):
         self.assertEqual(self.hand.get_hand_as_string_list(),
                          ["AC", "AD", "AH", "AS"])
+
+    def test_get_cards(self):
+        card_list = self.hand.get_cards()
+        self.assertEqual(str(card_list[0]), "AC")
