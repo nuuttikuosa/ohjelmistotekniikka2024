@@ -13,7 +13,7 @@ Ohjelma on testattu Pythonon 3.8. Oletettavasti ei toimi vanhemmilla versioilla.
 - [Käyttöohje](./videopoker/documentation/kayttoohje.md)
 - [Vaatimusmäärittely](./videopoker/documentation/requirements.md)
 - [Arkkitehtuurikuvaus](./videopoker/documentation/arkkitehtuuri.md)
-- [Testausraportti](./videopoker/documentation/testiraportti.md)
+- [Testausraportti](./videopoker/documentation/testiraportti.MD)
 - [Työaikakirjanpito](./videopoker/documentation/working_hours.md)
 - [Changelog](./videopoker/documentation/changelog.md)
 
