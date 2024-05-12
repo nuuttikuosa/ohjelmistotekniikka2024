@@ -35,7 +35,7 @@ Videopokeri-sovellukselle on suoritettu manuaalinen  järjestelmätesti. Kaikki 
 
 Sovellus on haettu ja sitä on testattu käyttöohjeen mukaisesti cubbli-Linux-ympäristössä. Testauksessa on käytetty myös eri tiedostopolkuja ja  konfiguraatioita _.env_-tiedostoa muokkaamalla.
 
-Sovellusta on testattu sekä tilanteissa, joissa käyttäjät ja työt tallettavat tiedostot ovat olleet olemassa ja joissa niitä ei ole ollut jolloin ohjelma on luonut ne itse.
+Sovellusta on testattu sellaisissa tilanteissa, joissa on ollut käytössä aikaisempi pelitietokanta, jossa pelitilien saldot ovat kehittyneet pelin muakisesti, että tilanteissa, joissa on luotu uusi pelitietokanta.
 
 ### Toiminnallisuudet
 
