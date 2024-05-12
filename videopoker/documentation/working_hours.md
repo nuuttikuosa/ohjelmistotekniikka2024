@@ -17,7 +17,6 @@
 | 28.4. | 2    | Investigating reference application GUI   |
 | 29.4. | 5    | Starting to implement first version of GUI and needed modifications to service glass |
 | 30.4. | 10    | Finished first version of the GUI - Need to extend and improve during the last week. wrote first version of the user instruction manual and architecture documentation  |
-
 | 7.5. | 3    | Fixed showing png images in GUI. Add new external library to project : pillow to convert pn images.
 | 8.5. | 6    | Implemented GUI with pictures and managed to change button locations correct.
 | 9.5. | 8    | Implemented flipping buttons "Valitse" / "Vapauta" to GUI and changed service player to support new GUI
