@@ -10,18 +10,22 @@ Pakkaus _ui_ sisältää käyttöliittymäkoodin, _services_ sovelluslogiikan ja
 
 Käyttöliittymä sisältää kolme erillistä näkymää:
 
-- Kirjautuminen
+- Peliprofiilin valinta
 - Videopokeri pelin
 
-Kaikki äkymät on toteuteuttu omina luokkinaan. Näkymistä yksi on aina kerrallaan näkyvänä. Näkymien näyttämistä koordinoi [UI](../src/ui/ui.py)-luokka. Käyttöliittymä on pyritty eristämään täysin sovelluslogiikasta, joka on palvelukerroksessa. Käyttöliittymä kutsuu [TodoService](../src/services/todo_service.py)-luokan metodeja.
+Kaikki näkymät on toteuteuttu omina luokkinaan. Näkymistä yksi on aina kerrallaan näkyvänä. Näkymien näyttämistä koordinoi [UI](../src/ui/ui.py)-luokka. Käyttöliittymä on pyritty eristämään täysin sovelluslogiikasta, joka on palvelukerroksessa. Käyttöliittymä kutsuu [VideoPokerService](../src/services/videopokerservice.py)-luokan metodeja.
 
-Sovelluksen pelaaminen on hyvin samanlaista eri käyttäjille, vain käyttäen pelitilin saldo on käyttäjäkohtainen. Yksi kierros peliä maksaa yhden yksikön ja voitot määräytyvät voittotaulukon mukaan.
+Sovellus on Videopokeri, jonka pelaaminen on monille tuttua huoltoasemilta ja marketeista.
+
+Kun pelikortteja vaihdetaan eli kun jaetaan uusi käsi tai kädessä vaihdetaan kortteja, niin kutsutaan sovelluksen [initialize_hand_view](https://github.com/ohjelmistotekniikka-hy/python-todo-app/blob/master/src/ui/video_poker_view.py) metodia, joka renderöi korttinäkymän uudelleen palvelukerrokselta saamiensa pelikorttien perusteella,
+
+Sovelluksen pelaaminen on hyvin samanlaista eri käyttäjille, vain käyttäjien pelitilin saldo on käyttäjäkohtainen. Yksi kierros peliä maksaa yhden yksikön ja voitot määräytyvät voittotaulukon mukaan.
 
 ## Päätoiminnallisuudet
 
 Kuvataan seuraavaksi sovelluksen toimintalogiikka  päätoiminnallisuuden osalta sekvenssikaaviona.
 
-Alussa käyttäjä kirjautuu sovellukseen antamalla nimensä. Sovellus hakee tietokannasta käyttäjän pelitilin saldon. Seuraavaksi sovellus hakee tietokannasta oletuspelin, _jätkä tai parempi_ tiedot ja voittotaulukon. 
+Alussa käyttäjä kirjautuu sovellukseen antamalla nimensä. Sovellus hakee tietokannasta käyttäjän pelitilin saldon. Seuraavaksi sovellus hakee tietokannasta oletuspelin, _jätkä tai parempi_ tiedot ja voittotaulukon.
 
 Käyttäjä päättää pelata kierroksen videopokeria. Ohjelma jakaa hänelle käden ja arvioi käden korttiyhdistelmät. Käyttää voi halutessaan vaihtaa kortteja kädessä ja ohjelma vaihtaa kortit, arvioi kortityhdistelmät ja laskee käyttäjän voiton ja päivittää käyttäjän pelitilin saldon.
 ![Sekvenssikaavio](./kuvat/sekvenssi-pelin_kulku.png)
@@ -37,7 +41,7 @@ Ohjelman luokkakaavio on seuraavanlainen:
 ## Ohjelman rakenteeseen jääneet heikkoudet
 
 ### Videopokerikäsien arviointi
-Keskeinen arviointifunktio on hieman liian pitkä ja monimutkainen. Pylint ilmoittaa liian pitkistä ja monimutkaisista metodeista luokan PokerHandEvaluator metodissa basic_evaluation. Evaluointi on kuitenkin logiikaltaan sellainen, että jos se jaettaisiin kahteen funktioon, niin koodin looginen ymmärrettävyys kärsisi, joten olen pitänyt tämän toiminnallisuuden yhtenä kokonaisuutena. Periaatteessa suorien ja värien arvioinnin voi eriyttää muutta käden arvioinnista. 
+Keskeinen arviointifunktio on hieman liian pitkä ja monimutkainen. Pylint ilmoittaa liian pitkistä ja monimutkaisista metodeista luokan PokerHandEvaluator metodissa basic_evaluation. Evaluointi on kuitenkin logiikaltaan sellainen, että jos se jaettaisiin kahteen funktioon, niin koodin looginen ymmärrettävyys kärsisi, joten olen pitänyt tämän toiminnallisuuden yhtenä kokonaisuutena. Periaatteessa suorien ja värien arvioinnin voi eriyttää muutta käden arvioinnista.
 
 ### Käyttöliittymä
 
