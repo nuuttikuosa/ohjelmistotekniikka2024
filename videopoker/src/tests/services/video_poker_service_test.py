@@ -4,6 +4,7 @@ from entities.game import Game
 from entities.dealer import Dealer
 from entities.payout_table import PayoutTable
 from entities.pokerevaluator import PokerHandEvaluator
+from entities.user import User
 from services.videopokerservice import VideoPokerService
 
 
@@ -12,8 +13,12 @@ class FakeGameRepository:
     def __init__(self, games=None):
         self.games = games or []
 
-    def get_game(self, game_id):
-        return Game(1,"Peli","hyvä peli")
+    def get_game(self, game_id: int):
+        game = Game(game_id,"Peli","hyvä peli")
+        payout_table = PayoutTable()
+        payout_table.add_payout(100,800)
+        game.set_payout_table(payout_table)
+        return game
 
     def get_payout_table(self):
         payout_table = PayoutTable()
@@ -27,6 +32,13 @@ class FakeUserRepository:
 
     def find_all(self):
         return self.users
+
+    def get_players(self):
+        return self.users
+
+    def create_player(self, user):
+        self.users.append(user)
+        return user
 
 class TestVideoPokerService(unittest.TestCase):
     def setUp(self):
@@ -123,3 +135,20 @@ class TestVideoPokerService(unittest.TestCase):
 
         self.assertEqual(video_poker_service.get_current_player(), None)
 
+    def test_get_payout_table_text_stubbed(self):
+        video_poker_service = VideoPokerService(
+            Dealer(3), PokerHandEvaluator(), FakeGameRepository())
+        video_poker_service.set_game()
+        payout_text = video_poker_service.get_payout_table_text()
+        self.assertEqual(payout_text, "  800 : ROYAL_FLUSH ")
+
+    def test_get_player_list_text_stubbed(self):
+
+        user_repository = FakeUserRepository()
+        user_repository.create_player(User("Nuutti",1000))
+        video_poker_service = VideoPokerService(
+            Dealer(3), PokerHandEvaluator(), FakeGameRepository(),user_repository)
+        player_list = f"Nuutti: 1000"
+
+        self.assertEqual(
+            video_poker_service.get_player_list_text(), player_list)
