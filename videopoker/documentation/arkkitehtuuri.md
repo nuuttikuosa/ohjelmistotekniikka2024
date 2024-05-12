@@ -17,7 +17,7 @@ Kaikki näkymät on toteuteuttu omina luokkinaan. Näkymistä yksi on aina kerra
 
 Sovellus on Videopokeri, jonka pelaaminen on monille tuttua huoltoasemilta ja marketeista.
 
-Kun pelikortteja vaihdetaan eli kun jaetaan uusi käsi tai kädessä vaihdetaan kortteja, niin kutsutaan sovelluksen [initialize_hand_view](https://github.com/ohjelmistotekniikka-hy/python-todo-app/blob/master/src/ui/video_poker_view.py) metodia, joka renderöi korttinäkymän uudelleen palvelukerrokselta saamiensa pelikorttien perusteella,
+Kun pelikortteja vaihdetaan eli kun jaetaan uusi käsi tai kädessä vaihdetaan kortteja, niin kutsutaan sovelluksen [initialize_hand_view](https://github.com/nuuttikuosa/ohjelmistotekniikka2024/blob/main/videopoker/src/ui/video_poker_view.py) metodia, joka renderöi korttinäkymän uudelleen palvelukerrokselta saamiensa pelikorttien perusteella,
 
 Sovelluksen pelaaminen on hyvin samanlaista eri käyttäjille, vain käyttäjien pelitilin saldo on käyttäjäkohtainen. Yksi kierros peliä maksaa yhden yksikön ja voitot määräytyvät voittotaulukon mukaan.
 
