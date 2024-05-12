@@ -68,13 +68,18 @@ class UserView:
             textvariable=self._error_variable,
             foreground="red"
         )
+        payout_text =f"Alla on olemssa olevat pelaajaprofoofiilit. \nJos haluat käyttää olemassa olevaa profiilia, anna sen nimi. \nJos annat uuden nimen, sinulle luodaan uusi profiili: \n\n"
         try:
-            payout_table_text = ttk.Label(
-                master=self._frame,
-                text=f"Alla on olemssa olevat pelaajaprofoofiilit. \nJos haluat käyttää olemassa olevaa profiilia, anna sen nimi. \nJos annat uuden nimen, sinulle luodaan uusi profiili: \n\n{self.__video_poker_service.get_player_list_text()}"
-            )
-        except UserExistsError:
+
+            payout_text +=self.__video_poker_service.get_player_list_text()
+
+        except :
             self._show_error("Problems with finding user database")
+
+        payout_table_text = ttk.Label(
+                master=self._frame,
+                text=payout_text
+            )
 
         self._error_label.grid(padx=5, pady=5)
 

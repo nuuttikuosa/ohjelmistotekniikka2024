@@ -56,7 +56,7 @@ Game "1" -- "1" PayoutTable
 PayoutTable "n" -- "1" GameRepository
 ```
 
-Toiminnallisista kokonaisuuksista vastaa luokkan [VideoPokerService](../src/services/videopokerservice.py) ainoa olio. Luokka tarjoaa kaikille käyttäliittymän toiminnoille oman metodin. Näitä ovat esimerkiksi:
+Toiminnallisista kokonaisuuksista vastaa luokan [VideoPokerService](../src/services/videopokerservice.py) ainoa olio. Luokka tarjoaa kaikille käyttäliittymän toiminnoille oman metodin. Näitä ovat esimerkiksi:
 
 - `login(user)`
 - `deal(count)`
@@ -73,14 +73,18 @@ Pakkauksen _repositories_ luokat `GameRepository` ja `UserRepository` huolehtiva
 
 
 ### Kuvatiedostot
-Pelikorttit näytetään kuvina graafisella käyttöliittymällä. Käyttöliittymä käyttää pakkauksen _repositories_ luokkaa `ImageRepository` kuvien lukemiseen levyltä. Luokka noudattaa Repository suunnittelumallia ja kuvatiedostot voidaan tulevaisuudessa ladata vaikka tietokannasta tai internetissä olevasta hakemistosta, jos toteutusta muutetaan.
+Pelikortit näytetään kuvina graafisella käyttöliittymällä. Käyttöliittymä käyttää pakkauksen _repositories_ luokkaa `ImageRepository` kuvien lukemiseen levyltä. Luokka noudattaa Repository suunnittelumallia ja kuvatiedostot voidaan tulevaisuudessa ladata vaikka tietokannasta tai internetissä olevasta hakemistosta, jos toteutusta muutetaan.
 
 
 ## Päätoiminnallisuudet
 
 Kuvataan seuraavaksi sovelluksen toimintalogiikka  päätoiminnallisuuden osalta sekvenssikaaviona.
 
-Kun peliprofiilinäkymän syötekenttään kirjoitetetataan peliprofiilin nimi, jota ei ole vielä tietokannassa ja jonka jälkeen klikataan painiketta _Pelaa_, niin sovelluksen kontrolli etenee seuraavasti:
+Alussa sovellus avaa peliprofiilin valintanäytön, johon on haettu tietokannasta siellä olevat peliprofiilit (pelaajan nimi ja pelitilin saldo). Käyttäjä voi valita olemassaolevat peliprofiilin tai luoda uuden.
+
+### Peliprofiilin valitseminen
+
+Kun peliprofiilinäkymän syötekenttään kirjoitetaan peliprofiilin nimi, jota ei ole vielä tietokannassa ja jonka jälkeen klikataan painiketta _Pelaa_, niin sovelluksen kontrolli etenee seuraavasti:
 
 ```mermaid
 
@@ -101,21 +105,67 @@ sequenceDiagram
   UI->UI: show_video_poker_view()
 ```
 
-
-Alussa sovellut avaa peliprofiilin valintanäytön, johon on haettu tietokannasta siellä olevat peliprofiilit (pelaajan nimi ja pelitilin saldo). Käyttäjä voi valita olemassaolevat peliprofiilin tai luoda uuden.
-
 Seuraavaksi sovellus hakee tietokannasta oletuspelin, _jätkä tai parempi_ tiedot ja voittotaulukon.
 
- Ohjelma jakaa hänelle käden ja arvioi käden korttiyhdistelmät. Käyttää voi halutessaan vaihtaa kortteja kädessä ja ohjelma vaihtaa kortit, arvioi kortityhdistelmät ja laskee käyttäjän voiton ja päivittää käyttäjän pelitilin saldon.
-![Sekvenssikaavio](./kuvat/sekvenssi-pelin_kulku.png)
+ Ohjelma jakaa hänelle käden ja arvioi käden korttiyhdistelmät. Käyttää voi halutessaan vaihtaa kortteja kädessä ja ohjelma vaihtaa kortit, arvioi korttiyhdistelmät ja laskee käyttäjän voiton ja päivittää käyttäjän pelitilin saldon.
 
-Kehitysversiossa kortit käytetään käyttöliittymällä kirjainyhdistelminä, mutta seuraavassa versiossa otetaan käyttöön png-tyyppiset kuvat pelikorteille.
+### Uuden käden jakaminen pelaajalle
 
-## Rakenne
+Kun Pelaaja painaa videopokerin pelaamisnäytöllä "Jaa uusi käsi", niin sovelluksen kontrolli etenee seuraavasti:
 
-Ohjelman luokkakaavio on seuraavanlainen:
+```mermaid
+sequenceDiagram
+  actor Player
+  participant UI
+  participant VideoPokerService
+  participant Deck
+  participant Playingcard
+  Player->>UI: painaa "Jaa uusi käsi" painiketta
+  UI->>UI:handle_deal_cards
+  UI->>VideoPokerService: deal_hand()
+  VideoPokerService->>VideoPokerService: init_deck()
+  VideoPokerService->>Deck: Deck()
+  Deck-->>VideoPokerService: deck
+  VideoPokerService->>Playingcard: PlayingCard(i)
+  Playingcard-->>VideoPokerService: playing card
+  VideoPokerService->>Deck: add_card()
+  Deck-->>VideoPokerService: card added
+  VideoPokerService->>Dealer: deal_hand(count)
+  Dealer->PokerHand:PokerHand()
+  PokerHand-->>Dealer:hand
+  Dealer->>Deck: number_of_cards()
+  Deck-->>Dealer: number of card in deck
+  Dealer->>Deck: get_card(card_number)
+  Deck-->> Dealer: card
+  Dealer->>PokerHand: add_card(card)
+  PokerHand-->> Dealer: card added
+  Dealer-->>VideoPokerService: hand
+  VideoPokerService -->>VideoPokerService: lokita jaettu käsi onnistuneesti
+  VideoPokerService ->> User: reduce_balance(PRICE_OF_GAME_ROUND)
+  User-->>VideoPokerService: pelitilin saldoa vähennetty
+  VideoPokerService->>UI: Käsi jaettu
+  UI->UI: initialize_hand_view()
+```
+### Muut toiminnallisuudet
 
-![Luokkakaavio](./kuvat/arkkitehtuuri-luokkakaavio.png)
+Sama periaate toistuu sovelluksen kaikissa toiminnallisuuksissa, käyttöliittymän tapahtumakäsittelijä kutsuu sopivaa sovelluslogiikan metodia, sovelluslogiikka kutsuu palvelukerrosta. Kontrollin palatessa käyttöliittymään, päivitetään tarvittaessa videopokeri näkymä  sekä aktiivinen näkymä.
+
+## Ohjelman sisäiset tietotyypit
+
+Ohjelmassa käsitellään pelikortteja kaksimerkkisinä stringeinä. Esimerkiksi pokerikäsi voi olla:
+JS AC KH 8C 9S
+
+Tässä toinen kirjain viittaa kortin maahan ja sen englanninkieliseen nimeen:
+s = Spades
+C = Clubs
+H = Hearts
+D = Diamonds
+ja ensimmäinen kirjain kortin suuruuteen:
+2,3,4,5,6,7,8,9,T,J,Q,K ja A, jossa T = 10, J = jätkä, Q = kuningatar, K = kuningas ja A on ässä.
+
+## Lokitus
+
+Ohjelmassa käytetään loguru lokitusviitekehystä toiminnalliseen lokitukseen. Tällöin jaetut kortit ja korttien valuaatiot lokitetaan, jotta jälkikäteen voidaan validoida pelaajien väitteitä mahdollisesti virheellisestä jaetuista tai jakamattomista voitoista.
 
 ## Ohjelman rakenteeseen jääneet heikkoudet
 
