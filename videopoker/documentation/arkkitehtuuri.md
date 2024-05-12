@@ -33,7 +33,7 @@ Sovelluksen loogisen tietomallin muodostavat luokat:
 - [PokerHandEvaluator](https://github.com/nuuttikuosa/ohjelmistotekniikka2024/blob/main/videopoker/src/entities/pokerevaluator.py), joka kuvaa käden arviointisääntöjä eli pelin sääntöjä.
 - [User](https://github.com/nuuttikuosa/ohjelmistotekniikka2024/blob/main/videopoker/src/entities/user.py), joka kuvaa pelaajaa
 
-Ohjelman tluokkien väliset suhteet ovat:
+Ohjelman luokkien väliset suhteet ovat:
 ```mermaid
  classDiagram
 PokerHand "1" -- "5" PlayingCard
@@ -56,11 +56,53 @@ Game "1" -- "1" PayoutTable
 PayoutTable "n" -- "1" GameRepository
 ```
 
+Toiminnallisista kokonaisuuksista vastaa luokkan [VideoPokerService](../src/services/videopokerservice.py) ainoa olio. Luokka tarjoaa kaikille käyttäliittymän toiminnoille oman metodin. Näitä ovat esimerkiksi:
+
+- `login(user)`
+- `deal(count)`
+- `get_hand()`
+- `select_card(card_id)`
+- `replace_cards()`
+- `logout()`
+
+VideoPokerService pääsee käsiksi pelaajaprofiileihin, peleihin ja  voittotaulukkoihin pysyväistietojen säilytyksestä vastaavien luokkien [GameRepository](https://github.com/nuuttikuosa/ohjelmistotekniikka2024/blob/main/videopoker/src/repositories/game_repository.py) ja [UserRepository](https://github.com/nuuttikuosa/ohjelmistotekniikka2024/blob/main/videopoker/src/repositories/user_repository.py) kautta. Nämä sijaitsevat pakkauksessa _repositories_. Luokkien toteutus injektoidaan sovelluslogiikalle konstruktorikutsun yhteydessä.
+
+## Tietojen pysyväistallennus
+
+Pakkauksen _repositories_ luokat `GameRepository` ja `UserRepository` huolehtivat tietojen tallettamisesta. Molemmat luokat käyttävät SQLite-tietokantaa, joka alustetaan [initialize_database.py](https://github.com/nuuttikuosa/ohjelmistotekniikka2024/blob/main/videopoker/src/initialize_database.py)-tiedostossa.
+
+
+### Kuvatiedostot
+Pelikorttit näytetään kuvina graafisella käyttöliittymällä. Käyttöliittymä käyttää pakkauksen _repositories_ luokkaa `ImageRepository` kuvien lukemiseen levyltä. Luokka noudattaa Repository suunnittelumallia ja kuvatiedostot voidaan tulevaisuudessa ladata vaikka tietokannasta tai internetissä olevasta hakemistosta, jos toteutusta muutetaan.
+
+
 ## Päätoiminnallisuudet
 
 Kuvataan seuraavaksi sovelluksen toimintalogiikka  päätoiminnallisuuden osalta sekvenssikaaviona.
 
-Alussa sovellut avaa peliprofiilin valintanäytön, johon on haettu tietokannasta siellä olevat peliprofiilit (pelaajan nimi ja pelitilin saldo). Käyttäjä voi valita olemassaolevat peliprofiilin tain luoda uuden.
+Kun peliprofiilinäkymän syötekenttään kirjoitetetataan peliprofiilin nimi, jota ei ole vielä tietokannassa ja jonka jälkeen klikataan painiketta _Pelaa_, niin sovelluksen kontrolli etenee seuraavasti:
+
+```mermaid
+
+sequenceDiagram
+  actor Player
+  participant UI
+  participant VideoPokerService
+  participant UserRepository
+  Player->>UI: painaa "Pelaa" painiketta
+  UI->>VideoPokerService: login("Nuutti")
+  VideoPokerService->>UserRepository: get_players()
+  UserRepository-->>VideoPokerService: players
+  VideoPokerService->>User: User(user, 1000)
+  User-->> VideoPokerService: player
+  VideoPokerService->>UserRepository: create_player(user)
+  UserRepository-->> VideoPokerService:  player created
+  VideoPokerService->>UI: player created
+  UI->UI: show_video_poker_view()
+```
+
+
+Alussa sovellut avaa peliprofiilin valintanäytön, johon on haettu tietokannasta siellä olevat peliprofiilit (pelaajan nimi ja pelitilin saldo). Käyttäjä voi valita olemassaolevat peliprofiilin tai luoda uuden.
 
 Seuraavaksi sovellus hakee tietokannasta oletuspelin, _jätkä tai parempi_ tiedot ja voittotaulukon.
 

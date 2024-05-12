@@ -1,0 +1,15 @@
+sequenceDiagram
+  actor Player
+  participant UI
+  participant VideoPokerService
+  participant UserRepository
+  Player->>UI: painaa "Pelaa" painiketta
+  UI->>VideoPokerService: login("Nuutti")
+  VideoPokerService->>UserRepository: get_players()
+  UserRepository-->>VideoPokerService: players
+  VideoPokerService->>User: User(user, 1000)
+  User-->> VideoPokerService: player
+  VideoPokerService->>UserRepository: create_player(user)
+  UserRepository-->> VideoPokerService:  player created 
+  VideoPokerService->>UI: player created 
+  UI->UI: show_video_poker_view()
