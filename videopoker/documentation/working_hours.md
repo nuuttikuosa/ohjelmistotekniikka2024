@@ -17,10 +17,10 @@
 | 28.4. | 2    | Investigating reference application GUI   |
 | 29.4. | 5    | Starting to implement first version of GUI and needed modifications to service glass |
 | 30.4. | 10    | Finished first version of the GUI - Need to extend and improve during the last week. wrote first version of the user instruction manual and architecture documentation  |
-| 7.5. | 3    | Fixed showing png images in GUI. Add new external library to project : pillow to convert pn images.
-| 8.5. | 6    | Implemented GUI with pictures and managed to change button locations correct.
-| 9.5. | 8    | Implemented flipping buttons "Valitse" / "Vapauta" to GUI and changed service player to support new GUI
-| 10.5. | 9    | implemented
-| 1.5. | 9.5    | Implemented integration to repositories from GUI: game_repository and user_repository + balance saving and showing in GUI.  Writing missing unit tests. Add new external library to project : loguru for logging.
-| 12.5. | 12.5    | Wrote remaining dockstring documentation. Wrote test report. Updated remaining documentation.
+| 7.5. | 3    | Fixed showing png images in GUI. Add new external library to project : pillow to convert png images.|
+| 8.5. | 6    | Implemented GUI with pictures and managed to change button locations correct.|
+| 9.5. | 8    | Implemented flipping buttons "Valitse" / "Vapauta" to GUI and changed service player to support new GUI |
+| 10.5. | 9    | Implemented integration to repositories from GUI: game_repository and user_repository + balance saving and showing in GUI.|
+| 11.5. | 9.5    | Wrote missing unit tests. Add new external library to project : loguru for logging. Fixed many small things and bug fixing from application testing |
+| 12.5. | 12.5    | Wrote remaining dockstring documentation. Wrote test report. Updated remaining documentation.|
 | Total   | 107   | |
