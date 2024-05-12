@@ -20,9 +20,36 @@ Repositorio-luokkaa ImageRepository luokkaa testataan samoilla kuvatiedostoilla,
 Sovelluksessa on seuraavat entiteettiluokat: PlayingCard, Dealer, Deck, Game, PokerHandd, HandValue, PayoutTable, PokerHandEvaluator ja User. Näillä on vastaavat testiluokat, jotka sisältävät entiteettien yksikkötestit.
 
 
-### Testauskattavuus
-Käyttöliittymäkerrosta lukuunottamatta sovelluksen testauksen haarautumakattavuus on 99%
+### Automaatiotestauksen testauskattavuus
+Käyttöliittymäkerrosta lukuun ottamatta sovelluksen testauksen haarautumakattavuus on 99%
 
 ![](./kuvat/testaus-testikattavuus.png)
 
-Automaatiotestauksen ulkopuolelle jäivät _build.py_- ja _initialize\_database.py_-tiedostojen suorittaminen komentoriviltä.
+Automaatiotestauksen ulkopuolelle jäivät _build.py_- ja _initialize\_database.py_-tiedostojen suorittaminen komentoriviltä ja Dealer-luokan testaus tämänhetkiseen kellonaikaan perustuvalla seed:illä. Nämä on testattu manuaalisesti järjestelmätestin laajuudessa.
+
+## Järjestelmätestaus
+
+Videopokeri-sovellukselle on suoritettu manuaalinen  järjestelmätesti. Kaikki järjestelmätestissä löytyneet sovellusvirheet on korjattu julkaisuversioon 1.0.
+
+### Asennus ja konfigurointi
+
+Sovellus on haettu ja sitä on testattu käyttöohjeen mukaisesti cubbli-Linux-ympäristössä. Testauksessa on käytetty myös eri tiedostopolkuja ja  konfiguraatioita _.env_-tiedostoa muokkaamalla.
+
+Sovellusta on testattu sekä tilanteissa, joissa käyttäjät ja työt tallettavat tiedostot ovat olleet olemassa ja joissa niitä ei ole ollut jolloin ohjelma on luonut ne itse.
+
+### Toiminnallisuudet
+
+Kaikki vaatimusmäärittelyn ja käyttöohjeen kuvaamat toiminnallisuudet on testattu.
+
+## Hyväksymistestaus
+
+Asiakas - Projektitiimin parisuhde on suorittanut sovellukselle hyväksymistestauksen ja hyväksynyt sovelluksen vastaamaan vaatimuksia. Asiakkaan mielestä ainoa merkittävä puute sovelluksessa on, että se on hyödytön ("What usefull can I do with this? Play poker? It's waste of time.").
+
+
+## Sovelluksen tunnetut puutteet.
+
+Sovellut ei anna tällä hetkellä kunnollisia virheilmoituksia, jos:
+
+- Tietokantaa ei ole alustettu
+- Sovelluksen tietokanta katoaa kesken sovelluksen suorituksen
+- Sovelluksen tarvitsemat kuvatiedostot puuttuvat.
