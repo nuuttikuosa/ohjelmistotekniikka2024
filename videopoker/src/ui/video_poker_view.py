@@ -61,7 +61,7 @@ class VideoPokerHandView:
         if self.__status == STATUS_FIRST_ROUND:
             select_card_button = ttk.Button(
                 master=item_frame,
-                text="Select",
+                text="Valitse",
                 command=lambda: self.handle_press_button(str(card))
             )
 

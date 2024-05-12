@@ -51,7 +51,7 @@ class UserView:
         self._error_label.grid_remove()
 
     def _initialize_username_field(self):
-        username_label = ttk.Label(master=self._frame, text="User")
+        username_label = ttk.Label(master=self._frame, text="Pelaaja")
 
         self._username_entry = ttk.Entry(master=self._frame)
 
