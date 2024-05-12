@@ -33,7 +33,28 @@ Sovelluksen loogisen tietomallin muodostavat luokat:
 - [PokerHandEvaluator](https://github.com/nuuttikuosa/ohjelmistotekniikka2024/blob/main/videopoker/src/entities/pokerevaluator.py), joka kuvaa käden arviointisääntöjä eli pelin sääntöjä.
 - [User](https://github.com/nuuttikuosa/ohjelmistotekniikka2024/blob/main/videopoker/src/entities/user.py), joka kuvaa pelaajaa
 
-
+Ohjelman tluokkien väliset suhteet ovat:
+```mermaid
+ classDiagram
+PokerHand "1" -- "5" PlayingCard
+Deck "1" -- "52" PlayingCard
+VideoPokerService "1" -- "1" Deck
+VideoPokerService "1" -- "1" PokerHand
+VideoPokerService "1" -- "1" Dealer
+VideoPokerService "1" -- "n" PokerHandEvaluator
+VideoPokerService "1" -- "1" UserRepository
+VideoPokerService "1" -- "1" GameRepository
+PokerHandEvaluator "1" -- "n" HandValue
+GameRepository "1" -- "n" HandValue
+UserInterface  "1"--"1" ImageRepository
+UserInterface  "1"--"1" VideoPokerService
+User "1" -- "1" VideoPokerService
+User "n" -- "1" UserRepository
+Game "1" -- "1" VideoPokerService
+Game "n" -- "1" GameRepository
+Game "1" -- "1" PayoutTable
+PayoutTable "n" -- "1" GameRepository
+```
 
 ## Päätoiminnallisuudet
 
