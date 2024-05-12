@@ -27,4 +27,12 @@
 - tehty ensimmäinen versio käyttöohjeesta
 - kirjoitettu noin puolelle luokista docstring dokumentaatio
 
-  
+## Lopullinen palautus
+- viimeistelty käyttöliittymä
+- muokattu palvelukerrosta vastaamana graafista käyttöliittymää
+- poistettu vanha tekstipohjainen käyttöliittymä
+- kirjoitettu yksikkötestit loppuun. Haaraumakattavuus 99%.
+- jäjestelmämestattu sovellus.
+- Asias suoritti asiakastestauksen ja asiakkaan kanssa pidetty sovelluksen hyväksymispalaveri 12.5.2024.
+- kirjoitettu testiraportti, päivitetty dokumentaatio ja readme.
+- parannettu koodin laatua ja rakennetta
