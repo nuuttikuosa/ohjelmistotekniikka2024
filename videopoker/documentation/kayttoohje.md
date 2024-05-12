@@ -4,10 +4,11 @@ Lataa projektin viimeisimmän [releasen](https://github.com/ohjelmistotekniikka-
 
 ## Konfigurointi
 
-Tallennukseen käytettävän tietokannan nimeä voi konfiguroida muokkaamalla käynnistyshakemistossa olevaa _config.py_-tiedostoa. Tietokanta luodaan _data_-hakemistoon, jos sitä ei ole. Konfiguraation muoto on seuraava:
+Tallennukseen käytettävän tietokannan nimeä ja lokitiedostojen nimiä voi muuttaa muokkaamalla käynnistyshakemistossa olevaa _.env_-tiedostoa. Tietokanta luodaan _data_-hakemistoon build komennolla, jos sitä ei ole. Lokitoedostot sijaitsevat _logs_-hakemistossa  Konfiguraation muoto on seuraava:
 
 ```
-DATABASE_FILENAME = "game_database.sqlite"
+DATABASE_FILENAME=game_database.sqlite
+GAME_EVENT_LOG_FILENAME = game_event_log.log
 ```
 
 ## Ohjelman käynnistäminen
@@ -26,26 +27,32 @@ poetry run invoke build
 
 Nyt ohjelman voi käynnistää komennolla tekstikäyttöliittymään:
 
-```
+```bash
 poetry run invoke start
-```
-ja graafiseen käyttöliittymään:
-
-```
-poetry run invoke startGUI
 ```
 
 ## Kirjautuminen
 
-Sovellus käynnistyy kirjautumisnäkymään:
+Sovellus käynnistyy Peliprofiilinäkymään:
 
 ![](./kuvat/login-ikkuna.png)
 
-Kirjautuminen onnistuu kirjoittamalla gamename syötekenttään ja painamalla "Login"-painiketta.
+Ikkunassa näkyy tietokannassa olevat pelaajaprofiilit ja niiden pelitilien saldot. On mahdollista valita olemassa oleva pelaajaprofiili kirjoittamalla pelaajaprofiilin nimi tai voidaan luoda uusi pelaajaprofiili kirjoittamalla uuden pelaajaprofiilin nimi.
+
+Pelaaminen alkaa painamalla "Play"-painiketta.
 
 ## Videopokerin pelaaminen
 
-Peli jakaa käyttäjälle viisi korttia, joista jokaisen alla on lukitsemispainike, jollla lukitaan ne kortit jotka halutaa pitää toiselle kierrokselle.
+Pelaajaprofiilin valitsemisen jälkeen siirrytään videopokerin pelaus näkymään:
+
+![](./kuvat/videopokerin-pelaaminen-kierros-yksi.png)
+
+
+Peli jakaa käyttäjälle viisi korttia, joista jokaisen alla on lukitsemispainike "Valitse", jollla lukitaan ne kortit jotka halutaa pitää toiselle kierrokselle.
+
+Kun painetaan "Vaihda Kortit", niin halutut kortit vaihdetaan ja paras korttiyhdistelmä arvioidaan:
+
+![](./kuvat/videopokerin-pelaaminen-kierros-kaksi.png)
 
 ## Videopokerin pelaamisen lopettaminen
 Kun käyttäjä päättää lopettaa videopokerin pelaamisen, niin sovellus tallentaa pelitilin saldon tietkantaa seuraavaa pelisessiota varten.
