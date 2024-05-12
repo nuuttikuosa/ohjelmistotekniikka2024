@@ -18,10 +18,12 @@ class VideoPokerHandView:
         Args:
             root:
                 TKinter-elementti, jonka sisään näkymä alustetaan.
-            todos:
-                Lista Card-olioita, jotka näkymässä näytetään
-            handle_set_todo_done:
-                Kutsuttava-arvo, jota kutsutaan kun kortin alla olevaa valitse bappia painetaan. Saa argumentiksi id-arvon.
+            video_poker_service:
+                pelin sovelluskerros
+            card_image_repository:
+                kuvarepositorio
+            status: onkko pelin ensimmäine kierros, kortit jaettu, pitää valita mitä pidetään
+            vai toinen kierros, kun kortit on vaihdettu
         """
 
         self._root = root
