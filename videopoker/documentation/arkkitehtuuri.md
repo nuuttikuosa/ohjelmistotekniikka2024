@@ -21,13 +21,29 @@ Kun pelikortteja vaihdetaan eli kun jaetaan uusi käsi tai kädessä vaihdetaan 
 
 Sovelluksen pelaaminen on hyvin samanlaista eri käyttäjille, vain käyttäjien pelitilin saldo on käyttäjäkohtainen. Yksi kierros peliä maksaa yhden yksikön ja voitot määräytyvät voittotaulukon mukaan.
 
+## Sovelluslogiikka
+Sovelluksen loogisen tietomallin muodostavat luokat:
+- [PlayingCard](https://github.com/nuuttikuosa/ohjelmistotekniikka2024/blob/main/videopoker/src/entities/card.py), joka kuvaa pelikorttia
+- [Dealer](https://github.com/nuuttikuosa/ohjelmistotekniikka2024/blob/main/videopoker/src/entities/dealer.py), joka kuvaa korttipelin jakajaa ja jaka käden ja uudet pelikortit.
+- [Deck](https://github.com/nuuttikuosa/ohjelmistotekniikka2024/blob/main/videopoker/src/entities/deck.py), joka kuvaa korttipakkaa
+- [Game] (https://github.com/nuuttikuosa/ohjelmistotekniikka2024/blob/main/videopoker/src/entities/game.py), joka kuvaa tiettyä videopokeria ja sen sääntöjä ja voittotaulukkoa.
+- [PokerHand](https://github.com/nuuttikuosa/ohjelmistotekniikka2024/blob/main/videopoker/src/entities/hand.py), joka kuvaa pokerikättä eli joukkoa pelikortteja.
+- [HandValue](https://github.com/nuuttikuosa/ohjelmistotekniikka2024/blob/main/videopoker/src/entities/hand_value.py), joka kuvaa käden arvoa. esim. suora, väri, kaksi paria tai hai.
+- [PayoutTable](https://github.com/nuuttikuosa/ohjelmistotekniikka2024/blob/main/videopoker/src/entities/payout_table.py), joka kuvaa tietyn videopokerin voittoaulukkoa
+- [PokerHandEvaluator](https://github.com/nuuttikuosa/ohjelmistotekniikka2024/blob/main/videopoker/src/entities/pokerhandevaluator.py), joka kuvaa käden arviointisääntöjä eli pelin sääntöjä.
+- [User](https://github.com/nuuttikuosa/ohjelmistotekniikka2024/blob/main/videopoker/src/entities/user.py), joka kuvaa pelaajaa
+
+
+
 ## Päätoiminnallisuudet
 
 Kuvataan seuraavaksi sovelluksen toimintalogiikka  päätoiminnallisuuden osalta sekvenssikaaviona.
 
-Alussa käyttäjä kirjautuu sovellukseen antamalla nimensä. Sovellus hakee tietokannasta käyttäjän pelitilin saldon. Seuraavaksi sovellus hakee tietokannasta oletuspelin, _jätkä tai parempi_ tiedot ja voittotaulukon.
+Alussa sovellut avaa peliprofiilin valintanäytön, johon on haettu tietokannasta siellä olevat peliprofiilit (pelaajan nimi ja pelitilin saldo). Käyttäjä voi valita olemassaolevat peliprofiilin tain luoda uuden.
 
-Käyttäjä päättää pelata kierroksen videopokeria. Ohjelma jakaa hänelle käden ja arvioi käden korttiyhdistelmät. Käyttää voi halutessaan vaihtaa kortteja kädessä ja ohjelma vaihtaa kortit, arvioi kortityhdistelmät ja laskee käyttäjän voiton ja päivittää käyttäjän pelitilin saldon.
+Seuraavaksi sovellus hakee tietokannasta oletuspelin, _jätkä tai parempi_ tiedot ja voittotaulukon.
+
+ Ohjelma jakaa hänelle käden ja arvioi käden korttiyhdistelmät. Käyttää voi halutessaan vaihtaa kortteja kädessä ja ohjelma vaihtaa kortit, arvioi kortityhdistelmät ja laskee käyttäjän voiton ja päivittää käyttäjän pelitilin saldon.
 ![Sekvenssikaavio](./kuvat/sekvenssi-pelin_kulku.png)
 
 Kehitysversiossa kortit käytetään käyttöliittymällä kirjainyhdistelminä, mutta seuraavassa versiossa otetaan käyttöön png-tyyppiset kuvat pelikorteille.
@@ -45,4 +61,4 @@ Keskeinen arviointifunktio on hieman liian pitkä ja monimutkainen. Pylint ilmoi
 
 ### Käyttöliittymä
 
-Käyttöliittymän tyhmittelyä voisi parantaa rajattomasti, mutta koska en ole kovinkaan visuaalinen henkilö. Oikeassa ohjelmistoprojektissa käyttöliittymän viilaus olisi UX designerin eikä toteuttajan tehtävä.
+Käyttöliittymän ryhmittelyä voisi parantaa rajattomasti, mutta koska en ole kovinkaan visuaalinen henkilö. Oikeassa ohjelmistoprojektissa käyttöliittymän viilaus olisi UX designerin eikä toteuttajan tehtävä.
