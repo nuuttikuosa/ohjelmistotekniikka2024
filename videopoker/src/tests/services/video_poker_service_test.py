@@ -1,9 +1,32 @@
 import unittest
 
+from entities.game import Game
 from entities.dealer import Dealer
+from entities.payout_table import PayoutTable
 from entities.pokerevaluator import PokerHandEvaluator
 from services.videopokerservice import VideoPokerService
 
+
+class FakeGameRepository:
+
+    def __init__(self, games=None):
+        self.games = games or []
+
+    def get_game(self, game_id):
+        return Game(1,"Peli","hyvä peli")
+
+    def get_payout_table(self):
+        payout_table = PayoutTable()
+        payout_table.add_payout(100,800)
+
+        return payout_table
+
+class FakeUserRepository:
+    def __init__(self, users=None):
+        self.users = users or []
+
+    def find_all(self):
+        return self.users
 
 class TestVideoPokerService(unittest.TestCase):
     def setUp(self):
@@ -99,3 +122,4 @@ class TestVideoPokerService(unittest.TestCase):
         video_poker_service.logout()
 
         self.assertEqual(video_poker_service.get_current_player(), None)
+
