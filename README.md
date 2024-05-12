@@ -3,22 +3,20 @@
 Tämän sovelluksen avulla voi pelata videopokeria. Ohjelma on kirjoitettu Pythonilla.
 
 ## Releases
-Ohjelman toinen julkaisu (Release) - viikko6 löytyy [täältä](https://github.com/nuuttikuosa/ohjelmistotekniikka2024/releases/tag/viikko6) 
-
-## Koodikatselmointi
-
-[Nostettu issue löytyy täältä](https://github.com/iita-mari/ot-harjoitustyo/issues/1)
+Ohjelman loppujulkaisu (Release) - versio_1.0 löytyy [täältä](https://github.com/nuuttikuosa/ohjelmistotekniikka2024/releases/tag/viikko6) 
 
 
 ## Python-versiosta
 Ohjelma on testattu Pythonon 3.8. Oletettavasti ei toimi vanhemmilla versioilla.
 
 ## Dokumentaatio
+- [Käyttöohje](./videopoker/documentation/kayttoohje.md)
 - [Vaatimusmäärittely](./videopoker/documentation/requirements.md)
 - [Arkkitehtuurikuvaus](./videopoker/documentation/arkkitehtuuri.md)
+- [Testausraportti](./videopoker/documentation/testiraportti.md)
 - [Työaikakirjanpito](./videopoker/documentation/working_hours.md)
 - [Changelog](./videopoker/documentation/changelog.md)
-- [Käyttöohje](./videopoker/documentation/kayttoohje.md)
+
   
 ## Asennus
 
@@ -38,11 +36,6 @@ poetry run invoke build
 ```bash
 poetry run invoke start
 ```
-4. Tai vaihtoehtoisesti alustava graafisen käyttöliittymän versio komennolla
-```bash
-poetry run invoke startGUI
-```
-
 ## Komentorivitoiminnot
 
 ### Ohjelman suorittaminen
