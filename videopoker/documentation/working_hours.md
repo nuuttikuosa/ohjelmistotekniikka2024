@@ -22,5 +22,5 @@
 | 9.5. | 8    | Implemented flipping buttons "Valitse" / "Vapauta" to GUI and changed service layer to support fully new GUI |
 | 10.5. | 9    | Implemented integration to repositories from GUI: game_repository and user_repository + balance saving and showing in GUI.|
 | 11.5. | 9.5    | Wrote missing unit tests. Add new external library to project : loguru for logging. Fixed many small things and bug fixing from application testing |
-| 12.5. | 12.5    | Wrote remaining dockstring documentation. Wrote test report. Updated remaining documentation.|
+| 12.5. | 12.5    | Wrote remaining dockstring documentation. Wrote test report. Updated remaining documentation. Fixed bugs|
 | Total   | 107   | |
