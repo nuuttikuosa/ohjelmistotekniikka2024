@@ -5,7 +5,7 @@ from entities.pokerevaluator import PokerHandEvaluator
 from services.videopokerservice import VideoPokerService
 
 
-class TestPlayingCard(unittest.TestCase):
+class TestVideoPokerService(unittest.TestCase):
     def setUp(self):
         pass
 
