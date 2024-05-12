@@ -23,6 +23,6 @@ Sovelluksessa on seuraavat entiteettiluokat: PlayingCard, Dealer, Deck, Game, Po
 ### Testauskattavuus
 Käyttöliittymäkerrosta lukuunottamatta sovelluksen testauksen haarautumakattavuus on 99%
 
-![](./kuvat/testuas-testikattavuus.png)
+![](./kuvat/testaus-testikattavuus.png)
 
 Automaatiotestauksen ulkopuolelle jäivät _build.py_- ja _initialize\_database.py_-tiedostojen suorittaminen komentoriviltä.
