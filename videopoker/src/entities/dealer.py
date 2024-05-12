@@ -6,6 +6,12 @@ from entities.hand import PokerHand
 
 
 class Dealer:
+    """Luokka, joka kuvaa pokeripelin jakajaa
+
+    Attributes:
+        seed: optionaalinen Kokonaisluku, joka alustaa satunnaislukugeneraattorin.
+        Käytetään testauksessa, jotta saadaan aina samat kortit yksikkötesteille.
+    """
 
     def __init__(self, seed_value=None):
         if seed_value is not None:
@@ -20,7 +26,7 @@ class Dealer:
             count: jaettavien korttien määrä
             card_deck:korttipakka josta kortit jaetaan
         Returns:
-                pyydetyn määrän satunnaosia kortteja korttipakasta
+                pyydetyn määrän satunnaisia kortteja korttipakasta
         """
 
         hand = PokerHand()

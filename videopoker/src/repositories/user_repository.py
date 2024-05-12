@@ -7,12 +7,22 @@ def get_user_by_row(row):
 
 
 class UserRepository:
+    """Pelaajiin liittyvistä tietokantaoperaatioista vastaava luokka.
+    """
 
     def __init__(self, connection):
+        """Luokan konstruktori.
+        Args:
+            connection: Tietokantayhteyden Connection-olio
+        """
 
         self._connection = connection
 
     def find_all(self):
+        """Palauttaa kaikki käyttäjät.
+        Returns:
+            Palauttaa listan User-olioita.
+        """
 
         cursor = self._connection.cursor()
 
@@ -23,6 +33,12 @@ class UserRepository:
         return list(map(get_user_by_row, rows))
 
     def create(self, user):
+        """Tallentaa pelaajan tietokantaan.
+        Args:
+            todo: Tallennettava pelaaja User-oliona.
+        Returns:
+            Tallennettu pselaaja User-oliona.
+        """
 
         cursor = self._connection.cursor()
 
@@ -36,6 +52,12 @@ class UserRepository:
         return user
 
     def update(self, user):
+        """Päivittää pelaajan pelitilin saldon tietokantaan.
+        Args:
+            todo: Tallennettava pelaaja User-oliona.
+        Returns:
+            Päivitetty pelaaja User-oliona.
+        """
 
         cursor = self._connection.cursor()
 

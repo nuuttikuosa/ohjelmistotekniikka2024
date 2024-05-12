@@ -8,12 +8,26 @@ def get_game_by_row(row):
 
 
 class GameRepository:
+    """Peleihin ja niiden sääntöihin vastaavaann Game luokkaan
+    liittyvistä tietokantaoperaatioista vastaava luokka.
+    """
 
     def __init__(self, connection):
+        """Luokan konstruktori.
+
+        Args:
+            connection: Tietokantayhteyden Connection-olio
+        """
 
         self.__connection = connection
 
     def find_games(self):
+        """Palauttaa kaikki tietokannassa olevat pelit.
+
+        Returns:
+            Palauttaa listan Game-olioita, jotka sisältävät pelin nimen ja
+            kuvauksen, mutta ei vielä niiden voitottaulukkoa.
+        """
 
         cursor = self.__connection.cursor()
         cursor.execute("SELECT * FROM games")
@@ -22,6 +36,12 @@ class GameRepository:
         return list(map(get_game_by_row, rows))
 
     def get_pay_table(self, game_id: int):
+        """Palauttaa tietyn pelin voittotaulukon.
+        Args:
+        game_id: pelin numero tietokannassa
+        Returns:
+            Palauttaa pelin voittotaulikon PayoutTable oliona.
+        """
 
         cursor = self.__connection.cursor()
         cursor.execute(
@@ -36,6 +56,12 @@ class GameRepository:
         return payout_table
 
     def get_game(self, game_id: int):
+        """Palauttaa tietyn pelin tietokannasta.
+        Args:
+        game_id: pelin numero tietokannassa
+        Returns:
+            Palauttaa pelin voittotaulikon PayoutTable oliona.
+        """
 
         cursor = self.__connection.cursor()
         cursor.execute("SELECT * FROM games WHERE id = ?", (game_id,))
@@ -48,7 +74,7 @@ class GameRepository:
         return game
 
     def delete_all(self):
-        """Poistaa kaikki pelikonfiguraatiot.
+        """Poistaa kaikki pelikonfiguraatiot tietokannasta.
         """
 
         cursor = self.__connection.cursor()

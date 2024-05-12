@@ -21,7 +21,7 @@ class PokerHandEvaluator:
         return count == 2
 
     def __jacks_or_better_pair(self, ranks: list):
-        """Palauttaa tiedon sisältääkö pokerikäsi ison parin (jätkä tai isompi) n
+        """Palauttaa tiedon sisältääkö pokerikäsi ison parin (jätkä tai isompi)
 
         Args:
             ranks: lista kokonaislukuja, joka kertoo jokaisen arvon frekvenssin
@@ -40,6 +40,14 @@ class PokerHandEvaluator:
         return False
 
     def jacks_or_better_evaluation(self, hand: list):
+        """Analysoi onko pokerikädessä pokerin sääntöjen mukaista korttiyhdistelmää
+            josta maksettaisiin voittoja. Huomioi jätkäparin tai sitä isommat parit.
+
+        Args:
+            hand: lista kahden merkin mittaisia merkkijonoja, jotka kertovat korttien tyypin
+        Returns:
+            hand value tyyppisen enumeraation, joka kertoo käden arvon.
+        """
 
         ranks = sorted('--23456789TJQKA'.find(rank) for rank, _ in hand)
         hand_value = self.basic_evaluation(hand)
@@ -51,7 +59,7 @@ class PokerHandEvaluator:
 
     def basic_evaluation(self, hand: list):
         """Analysoi onko pokerikädessä pokerin sääntöjen mukaista korttiyhdistelmää
-            josta maksettaisiin voittoja
+            josta maksettaisiin voittoja. Perus pokerin säännöt.
 
         Args:
             hand: lista kahden merkin mittaisia merkkijonoja, jotka kertovat korttien tyypin

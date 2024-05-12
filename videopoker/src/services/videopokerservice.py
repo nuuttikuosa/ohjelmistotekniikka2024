@@ -37,7 +37,9 @@ class VideoPokerService:
 
         Args:
             dealer:
-                Olio dealer luokasta, joka jakaa korttipakasta satunnaisesti halutun määrän kortteja
+                Olio dealer luokasta, joka jakaa korttipakasta halutun määrän satunnaisia kortteja
+            evaluator:
+                olio, joka analysoi mitä korttiyhdostelmiä pokerikäsessä on.
             game_repository:
                 Vapaaehtoinen, oletusarvoltaan GameRepository-olio.
                 Olio, jolla on GameRepository-luokkaa vastaavat metodit.
@@ -82,7 +84,7 @@ class VideoPokerService:
         self.current_player.reduce_balance(PRICE_OF_GAME_ROUND)
 
     def get_hand(self):
-        """Palauttaa aikaisemmin jaetun pokerikäden
+        """Palauttaa jaetun pokerikäden. Pokerikäsi on tallennettu videopokerservice luokkaan.
 
         Returns:
             Hand objektin, jossa pelikortit
@@ -90,7 +92,7 @@ class VideoPokerService:
         return self.hand
 
     def replace_cards(self):
-        """Vaihtaa pokerikädestä pyydetyt kortit
+        """Vaihtaa pokerikädestä pyydetyt kortit uusiin satunnaisiin kortteihin
 
         Returns:
             Korttipakka, josta on vaihdettu pyydetyt kortit uusiin.
@@ -112,6 +114,12 @@ class VideoPokerService:
         return self.evaluator.jacks_or_better_evaluation(self.hand.get_hand_as_string_list())
 
     def get_hand_value_text(self):
+        """Palauttaa tämänhetkisen käden parhaan korttiyhdistelmän nimen stringinä.
+
+        Returns:
+            tämänhetkisen pokerikäden arvo HandValue enumeraation nimenä eli stringinä
+        """
+
         return self.evaluate_hand().name
 
     def get_games(self):
@@ -123,9 +131,7 @@ class VideoPokerService:
         return self.game_repository.find_games()
 
     def get_pay_out_for_hand(self):
-        """Palauttaa käden voiton
-        Arg:
-            pay_table: lista voittomaksusääntöjä
+        """Palauttaa tämänhetkisen käden voiton
         Returns:
             palauttaa rahamääräisen voiton
         """
@@ -140,7 +146,7 @@ class VideoPokerService:
         return payout
 
     def get_players(self):
-        """Palauttaa erilaiset tietokantaan tallennetut pelaajaprofiilit
+        """Palauttaa tietokantaan tallennetut pelaajaprofiilit
         Returns:
             Tietokantaan tallennetut pelaajaprofiit User objektilistana
         """
@@ -151,7 +157,7 @@ class VideoPokerService:
         Args:
             Tietokantaan tallennettava pelaaja User-objektina
         Returns:
-            Tietokantaan tallennetun pelaajan User objektina
+            Tietokantaan tallennetun pelaajan User objektin
         """
         return self.user_repository.create(player)
 
@@ -163,7 +169,8 @@ class VideoPokerService:
         self.user_repository.update(player)
 
     def login(self, user):
-        """ Hakee pelaajan tiedot (saldon) tietokannasta tai luo uuden pelaajan
+        """ Hakee pelaajan tiedot (saldon) tietokannasta tai luo uuden pelaajan.
+        Asettaa pelaajan pelin tämänhetkiseksi pelaajaksi.
         Args:
             user: pelaajan nimi merkkijonona
         """
@@ -177,6 +184,9 @@ class VideoPokerService:
             self.current_player = self.create_player(User(user, 1000))
 
     def logout(self):
+        """ Tallentaa tämänhetkisen pelaajan saldon tietokantaan ja
+        asettaa tämänthetkiseksi pelaajaksi None
+        """
         self.update_player(self.current_player)
         self.current_player = None
 
@@ -188,7 +198,7 @@ class VideoPokerService:
         return self.current_player
 
     def select_card(self, card_id):
-        """Valitsee kortti pidettäväksi myös pelin toisella kierroksella
+        """Valitsee kortin pidettäväksi myös pelin toisella kierroksella
             Tai poistaa kortin valittujen korttien joukosta, jos se on jo valittu.
         Args:
             kortin id
@@ -200,16 +210,31 @@ class VideoPokerService:
             self.selected_cards.append(card_id)
 
     def get_selected_cards(self):
+        """Palauttaa tällähetkellä seuraavalle kirrokselle pidettäväksi valitut kortit
+        Returns:
+            Valittujen korttien id lista
+        """
         return self.selected_cards
 
     def set_game(self, game_id: int = DEFAULT_GAME):
-
+        """Asettaa pelattavan pelin(nimi ja voittotaulukko)
+        Args:
+            Pelin id tietokannassa
+        """
         self.game = self.game_repository.get_game(game_id)
 
     def get_payout_table_text(self):
+        """Palauttaa tämänhetkisen pelin voittotaulukon
+        Returns:
+            Voittotaulukko string muodossa käyttöliittymää varten
+        """
         return str(self.game.get_payout_table())
 
     def get_player_list_text(self):
+        """Palauttaa tietokannassa olevat pelaajaprofiilit
+        Returns:
+            Lista pelaajaprofiileita string muodossa
+        """
         player_str = "\n".join([str(player) for player in self.get_players()])
         return player_str
 

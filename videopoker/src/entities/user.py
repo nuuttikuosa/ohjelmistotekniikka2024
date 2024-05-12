@@ -1,5 +1,12 @@
 class User:
+    """Luokka, joka kuvaa pokeripelin pelaajaa"""
+
     def __init__(self, name, balance):
+        """Luokan konstruktori.
+        Args:
+        name : pelaajan nimi
+        balance: pelaajan pelitilin saldo, voi olla negatiivinen.
+        """
         self.name = name
         self.balance = balance
 
