@@ -71,7 +71,7 @@ Tiedoston [.pylintrc](./videopoker/.pylintrc) määrittelemät tarkistukset voi 
 poetry run invoke lint
 ```
 # Korttikuvien lähde
-Pelissä käytetyt pelikorttien kuvat ovat public domain ja kuvien tekijä pyysi mainitsemaan löhteen:
+Pelissä käytetyt pelikorttien kuvat ovat public domain ja kuvien tekijä pyysi mainitsemaan lähteen:
 https://tekeye.uk/playing_cards/svg-playing-cards
 
 If you have found these Public Domain SVG Playing Card images useful please 
