@@ -69,3 +69,15 @@ Tiedoston [.pylintrc](./videopoker/.pylintrc) määrittelemät tarkistukset voi 
 
 ```bash
 poetry run invoke lint
+```
+# Korttikuvien lähde
+Pelissä käytetyt pelikorttien kuvat ovat public domain ja kuvien tekijä pyysi mainitsemaan löhteen:
+https://tekeye.uk/playing_cards/svg-playing-cards
+
+If you have found these Public Domain SVG Playing Card images useful please 
+provide a link to this article, it would be appreciated for the hard work 
+that has gone into creating and maintaining this resource. 
+
+Drop me an email, dan@tekeye.uk with information on your completed project 
+that uses these playing card images and I will add a link to it.
+
